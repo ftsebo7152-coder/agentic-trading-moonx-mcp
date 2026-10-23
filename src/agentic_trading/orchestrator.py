@@ -15,19 +15,29 @@ class AgenticTradingOrchestrator:
         self.risk=IndependentRiskEngine(settings.limits,timezone=settings.timezone)
         self.paper=PaperBroker(store,settings.account,settings.capital,self.risk)
 
-    def run(self,markets,specs,now,*,macro,liquidity,validation,synthetic_demonstration=False):
+    def run(self,markets,specs,now,*,macro,liquidity,validation,synthetic_demonstration=False,asset_identities=None):
         if self.settings.mode not in (Mode.PAPER,Mode.BACKTEST,Mode.REPLAY):
             raise TradingError("this orchestrator only opens isolated simulated positions")
         if synthetic_demonstration and not macro.get("synthetic"):
             raise TradingError("demonstration bypass requires explicitly labelled synthetic data")
+        from .universe import resolve_universe, identity_error
+        universe=resolve_universe(self.settings,self.store,now)
+        # Protect open positions even after removal from the current universe.
+        with self.store.transaction(self.settings.account) as tx:
+            open_symbols=[p["symbol"] for p in tx.positions(self.settings.account)]
+        symbols=list(dict.fromkeys([*universe["symbols"],*open_symbols]))
         run_id=str(uuid4());results=[]
-        for symbol in self.settings.watchlist:
+        for symbol in symbols:
             try:
                 bars=markets.get(symbol,[]);validate_candles(bars)
                 bars=[b for b in bars if b.time<=utc(now)]
                 if not bars:raise TradingError("NO_COMPLETED_CANDLES")
                 # Existing-position management runs before every entry gate, including kill switch.
                 for b in bars:self.paper.monitor(symbol,b)
+                blocked=universe["excluded"].get(symbol)
+                if symbol not in universe["symbols"]:blocked="POSITION_EXIT_ONLY"
+                blocked=blocked or identity_error(symbol,universe,(asset_identities or {}).get(symbol))
+                if blocked:raise TradingError(blocked)
                 with self.store.transaction(self.settings.account) as tx:
                     positions=tx.positions(self.settings.account)
                 safety=SafetySupervisor().inspect(positions,now,data_time=bars[-1].time,
@@ -66,7 +76,7 @@ class AgenticTradingOrchestrator:
                                 "synthetic_demonstration":synthetic_demonstration})
             except (TradingError,KeyError,ValueError) as exc:
                 results.append({"symbol":symbol,"status":"NO_TRADE","reason":str(exc)})
-        report={"run_id":run_id,"mode":self.settings.mode,"at":now,"results":results,"synthetic_demonstration":synthetic_demonstration}
+        report={"run_id":run_id,"mode":self.settings.mode,"at":now,"universe":universe,"results":results,"synthetic_demonstration":synthetic_demonstration}
         with self.store.transaction(self.settings.account) as tx:
             tx.execute("INSERT INTO runs(id,account,at,payload) VALUES(?,?,?,?)",(run_id,self.settings.account,now.isoformat(),dumps(report)))
             tx.event(self.settings.account,"SCAN",report,now)

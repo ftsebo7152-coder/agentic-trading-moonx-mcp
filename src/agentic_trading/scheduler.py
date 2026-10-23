@@ -23,7 +23,7 @@ def worker(settings,store,bundle_path,*,once=False,send_email=False,monitor_seco
                 for bar in bars:
                     if bar.time<=now:engine.paper.monitor(symbol,bar)
             if time.monotonic()>=next_scan:
-                result=engine.run(markets,specs,now,macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}))
+                result=engine.run(markets,specs,now,macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}),asset_identities=data.get("asset_identities",{}))
                 print(dumps(result),flush=True);next_scan=time.monotonic()+settings.scan_interval_minutes*60
             if send_email:
                 NotificationWorker(store,SMTPEmailSender()).flush(now)

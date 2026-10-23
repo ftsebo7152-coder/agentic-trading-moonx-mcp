@@ -7,9 +7,20 @@
     "ETH",
     "SOL",
     "INJ",
-    "TRX"
+    "TRX",
+    "PUMP",
+    "XRP",
+    "BNB",
+    "HYPE",
+    "UNI",
+    "AVAX",
+    "AAVE",
+    "POL",
+    "ALGO",
+    "HOOD"
   ],
   "scan_interval_minutes": 60,
   "timezone": "Africa/Lagos",
-  "limits": {}
+  "limits": {},
+  "universe": "cmc_top100"
 }

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-23",
+  "scope": "Dynamic CMC Top 100 union with pinned PAPER watchlist and HOOD equity identity",
+  "core_tests": {
+    "passed": 127,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests -q"
+  },
+  "skill_validation": "PASS; 29 Codex/Claude pairs checked; skill-creator quick_validate PASS",
+  "installed_skill_sha256": "fe3bdae1995c5350c2da95f9e07b384c09281df7933e26cbdb01d29896bd8efb",
+  "cli_smoke": "universe --config configs/paper.json: FALLBACK_PINNED_ONLY, 15 symbols",
+  "authenticated_cmc_fetch": "NOT_VERIFIED; valid CMC_API_KEY required",
+  "market_feeds": "Collector must supply per-asset candles, asset_identities, macro, liquidity and validation; not added by this update",
+  "remote_orders": "DISABLED"
+}

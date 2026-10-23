@@ -33,6 +33,7 @@ def build_parser():
     mail=sub.add_parser("notify");mail.add_argument("--limit",type=int,default=50)
     bt=sub.add_parser("backtest");bt.add_argument("--bundle",required=True);bt.add_argument("--symbol",default="BTC");bt.add_argument("--output")
     sub.add_parser("top100")
+    universe=sub.add_parser("universe");universe.add_argument("--config",required=True)
     moon=sub.add_parser("moonx-read");moon.add_argument("--symbol",default="BTC");moon.add_argument("--output",required=True)
     sub.add_parser("mcp-server")
     worker=sub.add_parser("worker");worker.add_argument("--config",required=True);worker.add_argument("--bundle",required=True)
@@ -60,7 +61,7 @@ def main(argv=None):
         elif args.command=="scan":
             from .orchestrator import AgenticTradingOrchestrator
             settings=Settings.load(args.config);data,markets,specs=load_bundle(args.bundle)
-            result=AgenticTradingOrchestrator(settings,store).run(markets,specs,utc(args.now) if args.now else now_utc(),macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}))
+            result=AgenticTradingOrchestrator(settings,store).run(markets,specs,utc(args.now) if args.now else now_utc(),macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}),asset_identities=data.get("asset_identities",{}))
         elif args.command=="report":result=store.report(args.account)
         elif args.command=="performance":
             from .reporting import performance_report
@@ -75,6 +76,9 @@ def main(argv=None):
             data,markets,specs=load_bundle(args.bundle)
             result=backtest(markets[args.symbol],specs[args.symbol],scratch=str(Path(args.database).parent))
             if args.output:Path(args.output).write_text(dumps(result),encoding="utf8")
+        elif args.command=="universe":
+            from .universe import resolve_universe
+            result=resolve_universe(Settings.load(args.config),store,now_utc())
         elif args.command=="top100":
             from .market_data import CoinMarketCapUniverse
             result=CoinMarketCapUniverse().top100(store,now_utc())

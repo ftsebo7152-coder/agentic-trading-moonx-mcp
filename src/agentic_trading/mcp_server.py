@@ -27,6 +27,6 @@ def serve(database):
         from .orchestrator import AgenticTradingOrchestrator
         settings=Settings.load(os.environ["TRADING_CONFIG_PATH"])
         data,markets,specs=load_bundle(os.environ["TRADING_BUNDLE_PATH"])
-        return AgenticTradingOrchestrator(settings,store).run(markets,specs,now_utc(),macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}))
+        return AgenticTradingOrchestrator(settings,store).run(markets,specs,now_utc(),macro=data.get("macro",{}),liquidity=data.get("liquidity",{}),validation=data.get("validation",{}),asset_identities=data.get("asset_identities",{}))
 
     server.run(transport="stdio")

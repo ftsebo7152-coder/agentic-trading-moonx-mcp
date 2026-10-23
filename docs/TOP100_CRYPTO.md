@@ -1,7 +1,33 @@
-# Top 100 dynamique et identité
+# Top 100 dynamique et identite
 
-CoinMarketCapUniverse utilise l'API officielle `/v1/cryptocurrency/listings/latest`, limit=100, sort=market_cap et convert=USD, avec CMC_API_KEY. Documentation consultée : https://coinmarketcap.com/api/documentation/ . `python -m agentic_trading.cli top100` demande la clé, sauvegarde le snapshot en SQL, conserve IDs/noms/slugs/rangs/tags/plateforme/quotes et calcule entrées/sorties depuis le snapshot précédent.
+`configs/paper.json` active `universe: "cmc_top100"`. A chaque scan PAPER, le moteur recupere les 100 premiers actifs de l'API officielle CoinMarketCap `/v1/cryptocurrency/listings/latest` (capitalisation, USD). Il conserve IDs, noms, slugs, rangs, tags, plateformes et quotes dans un snapshot SQL et calcule les entrees/sorties. Les rangs 1 a 100 et les 100 identifiants uniques sont controles.
 
-La liste n'est pas codée en dur et les stablecoins restent dans le référentiel tout en étant exclus des opportunités. Le scan de volatilité distingue HIGH_VOLATILITY_TRADABLE, HIGH_VOLATILITY_HIGH_RISK, LOW_LIQUIDITY, INSUFFICIENT_DATA; il exige profondeur, spread, volume, funding et open interest. Les seuils actuels sont des règles de recherche à calibrer, pas une preuve d'exploitabilité.
+Le moteur scanne l'union du classement et des actifs prioritaires : BTC, ETH, SOL, INJ, TRX, PUMP, XRP, BNB, HYPE, UNI, AVAX, AAVE, POL, ALGO, HOOD. La liste prioritaire reste suivie meme hors classement. HOOD correspond a l'action Robinhood Markets (NASDAQ), separee des cryptos. XAUUSD/XAGUSD/NAS100 restent des profils disponibles, a ajouter explicitement a la watchlist pour les surveiller.
 
-Aucune clé CMC n'a été fournie : pas de récupération Top 100 authentifiée pendant cette livraison. Un snapshot initial ne reconstitue pas les compositions historiques; conserver les snapshots à partir du déploiement et acquérir l'historique autorisé pour éviter le biais de survivance. La disponibilité MoonX ne se déduit pas du classement. PUMP exige vérification d'identifiant/slug/contrat; INJ désigne Injective. Les profils prioritaires peuvent être hors Top 100 à une date donnée.
+Les commandes `scan`, `worker` et l'outil MCP `trading_scan` passent tous par ce meme resolveur. `universe` affiche le resultat sans analyser ni ouvrir de position :
+
+```powershell
+python -m agentic_trading.cli universe --config configs/paper.json
+python -m agentic_trading.cli scan --config configs/paper.json --bundle CHEMIN_BUNDLE.json
+```
+
+Charger CMC_API_KEY depuis le .env prive ignore ou le gestionnaire de secrets. Ne pas publier la cle. Sans cle valide, en cas d'erreur reseau ou de classement incomplet, le statut est FALLBACK_PINNED_ONLY : seuls les actifs prioritaires sont analyses. Aucun ancien snapshot ne se fait passer pour un classement actuel. `universe: "static"` conserve une liste fixe sans appel CMC. BACKTEST/REPLAY ne consultent jamais le classement actuel pour simuler une composition historique; HISTORICAL_UNIVERSE_REQUIRED signale cette limite.
+
+## Identites et donnees necessaires
+
+La collecte des bougies, du calendrier, de la liquidite et des preuves quantitatives reste le role du collecteur de bundles. Cette mise a jour ne cree aucun flux de prix pour les 100 actifs ni pour HOOD. Un actif sans bougies cloturees produit NO_TRADE; aucune specification de courtier n'est inventee. La disponibilite MoonX ne se deduit pas du classement.
+
+Ajouter `asset_identities` a la racine du bundle. Pour chaque actif du classement, renseigner le `cmc_id` reel correspondant au snapshot. Pour un actif prioritaire absent du classement, fournir son `cmc_slug` canonique (voir configs/instrument-profiles.json). PUMP designe pump.fun, slug pump-fun. Un symbole duplique ou incompatible avec l'identite prioritaire est bloque. Pour HOOD, fournir exactement :
+
+```json
+{"asset_identities": {
+  "PUMP": {"cmc_slug": "pump-fun"},
+  "HOOD": {"asset_class": "equity", "exchange": "NASDAQ", "symbol": "HOOD"}
+}}
+```
+
+Cet exemple ne suffit pas pour PUMP s'il appartient au snapshot Top 100 : son cmc_id est alors obligatoire. Les identites proviennent du fournisseur authentifie, pas d'une deduction depuis le ticker. Les stablecoins restent dans les 100 lignes du referentiel et sont exclus des nouvelles opportunites. Les positions ouvertes restent supervisees meme apres sortie du classement ou de la watchlist; fournir leurs bougies au collecteur pour permettre leurs sorties protectrices.
+
+Tous les actifs restent soumis aux memes plafonds de risque, stop obligatoire, liquidite, calendrier et attestations quantitatives. PAPER uniquement; aucun ordre distant n'est active. Le test Top 100 utilise des reponses synthetiques; une recuperation authentifiee de 100 actifs n'a pas ete certifiee sur ce poste.
+
+Sources d'identite : https://coinmarketcap.com/currencies/pump-fun/ et https://robinhood.com/us/en/stocks/HOOD/ . API : https://coinmarketcap.com/api/documentation/ .

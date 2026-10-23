@@ -3,39 +3,51 @@
     "symbol": "BTC",
     "broker_specs_verified": false,
     "execution_enabled": false,
-    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "bitcoin"
   },
   "ETH": {
     "symbol": "ETH",
     "broker_specs_verified": false,
     "execution_enabled": false,
-    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "ethereum"
   },
   "SOL": {
     "symbol": "SOL",
     "broker_specs_verified": false,
     "execution_enabled": false,
-    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "solana"
   },
   "INJ": {
     "symbol": "INJ",
     "broker_specs_verified": false,
     "execution_enabled": false,
     "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
-    "note": "Injective; never ING."
+    "note": "Injective; never ING.",
+    "asset_class": "crypto",
+    "cmc_slug": "injective"
   },
   "PUMP": {
     "symbol": "PUMP",
     "broker_specs_verified": false,
     "execution_enabled": false,
     "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
-    "note": "Require CMC ID, slug and platform/address identity; symbol alone is insufficient."
+    "note": "Require CMC ID, slug and platform/address identity; symbol alone is insufficient.",
+    "asset_class": "crypto",
+    "cmc_slug": "pump-fun"
   },
   "TRX": {
     "symbol": "TRX",
     "broker_specs_verified": false,
     "execution_enabled": false,
-    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "tron"
   },
   "XAUUSD": {
     "symbol": "XAUUSD",
@@ -70,5 +82,80 @@
     "execution_enabled": false,
     "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
     "note": "NAS100/US100/NDX/futures are not interchangeable."
+  },
+  "XRP": {
+    "symbol": "XRP",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "xrp"
+  },
+  "BNB": {
+    "symbol": "BNB",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "bnb"
+  },
+  "HYPE": {
+    "symbol": "HYPE",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "hyperliquid"
+  },
+  "UNI": {
+    "symbol": "UNI",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "uniswap"
+  },
+  "AVAX": {
+    "symbol": "AVAX",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "avalanche"
+  },
+  "AAVE": {
+    "symbol": "AAVE",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "aave"
+  },
+  "POL": {
+    "symbol": "POL",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "polygon-ecosystem-token"
+  },
+  "ALGO": {
+    "symbol": "ALGO",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "asset_class": "crypto",
+    "cmc_slug": "algorand"
+  },
+  "HOOD": {
+    "symbol": "HOOD",
+    "asset_class": "equity",
+    "name": "Robinhood Markets, Inc.",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "note": "US stock; never infer a crypto token or a tokenized-stock contract from this ticker."
   }
 }

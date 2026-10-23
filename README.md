@@ -53,7 +53,7 @@ Les adaptateurs refusent la soumission distante dans cette version. Le moteur PA
 
 ## Données, validation et notifications
 
-La configuration normale est [configs/paper.json](configs/paper.json). Une watchlist peut contenir seulement cinq actifs. Les contrats fournis comme profils sont **non vérifiés**, à l'exception des contrats fictifs de l'exemple. Le système s'abstient lorsqu'un contrat, la liquidité, le calendrier ou la validation quantitative manque.
+La configuration normale est [configs/paper.json](configs/paper.json). Elle conserve 15 actifs prioritaires et ajoute le Top 100 CMC lorsque la source est disponible. Les contrats fournis comme profils sont **non vérifiés**, à l'exception des contrats fictifs de l'exemple. Le système s'abstient lorsqu'un contrat, la liquidité, le calendrier ou la validation quantitative manque.
 
 ```sh
 python -m agentic_trading.cli scan --config configs/paper.json --bundle examples/synthetic-market.json
@@ -82,3 +82,7 @@ Les exemples de tâches sont dans `templates/`. Le service doit disposer d'un di
 Les deux sources sont conservées, licences et attributions incluses, dans `vendor/`. Le nouveau noyau est écrit séparément. Les modules actions américaines, SEC et Congrès restent accessibles comme outils de recherche hérités; ils ne deviennent pas des signaux crypto. Le pont TradingView/CDP est optionnel et n'est pas démarré par le runtime.
 
 Lire [SOURCE_AUDIT.md](docs/SOURCE_AUDIT.md), [TEST_RESULTS.md](docs/TEST_RESULTS.md), [LIVE_TRADING_SAFETY.md](docs/LIVE_TRADING_SAFETY.md) et [DELIVERY.md](docs/DELIVERY.md). Aucune performance attendue ou garantie de gain n'est annoncée.
+
+## Mise a jour de l'univers surveille
+
+La configuration PAPER raccorde automatiquement le Top 100 CoinMarketCap a chaque scan et conserve les 15 actifs prioritaires, dont PUMP et HOOD (action NASDAQ). Sans CMC_API_KEY, repli explicite sur les priorites. La couverture des prix et fondamentaux depend du collecteur de bundles; aucun flux supplementaire ni ordre reel n'est active. Voir [Top 100 et identites](docs/TOP100_CRYPTO.md).

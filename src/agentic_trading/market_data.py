@@ -63,6 +63,8 @@ class CoinMarketCapUniverse:
                "tags":r.get("tags",[]),"quote":r["quote"]["USD"],"platform":r.get("platform"),
                "opportunity_excluded":"stablecoin" in r.get("tags",[])} for r in raw["data"]]
         if len({r["id"] for r in rows})!=100:raise TradingError("duplicate CMC IDs")
+        if {r["rank"] for r in rows} != set(range(1,101)):
+            raise TradingError("TOP100_RANKS_INVALID")
         with store.transaction() as tx:
             previous=tx.execute("SELECT payload FROM snapshots WHERE kind='CMC_TOP100' ORDER BY at DESC LIMIT 1").fetchone()
         previous_ids={r["id"] for r in json.loads(previous["payload"])["assets"]} if previous else set()

@@ -54,7 +54,8 @@ class Settings:
     mode: Mode = Mode.PAPER
     account: str = "local-paper"
     capital: str = "1250"
-    watchlist: tuple[str, ...] = ("BTC", "ETH", "SOL", "INJ", "TRX")
+    watchlist: tuple[str, ...] = ("BTC", "ETH", "SOL", "INJ", "TRX", "PUMP", "XRP", "BNB", "HYPE", "UNI", "AVAX", "AAVE", "POL", "ALGO", "HOOD")
+    universe: str = "static"
     scan_interval_minutes: int = 60
     timezone: str = "Africa/Lagos"
     limits: RiskLimits = RiskLimits()
@@ -62,6 +63,8 @@ class Settings:
     def __post_init__(self):
         object.__setattr__(self, "mode", Mode(self.mode))
         object.__setattr__(self, "watchlist", tuple(self.watchlist))
+        if self.universe not in ("static", "cmc_top100"):
+            raise TradingError("unknown universe")
         if D(self.capital) <= 0 or not self.watchlist or len(set(self.watchlist)) != len(self.watchlist):
             raise TradingError("positive capital and unique watchlist required")
         if not isinstance(self.scan_interval_minutes, int) or self.scan_interval_minutes <= 0:
