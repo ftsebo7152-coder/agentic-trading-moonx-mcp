@@ -27,3 +27,5 @@
 **M. Feuille de route** : ROADMAP.md précise les développements et dépendances externes; ce projet v0.1 n'est pas déclaré achevé au sens de toute l'infrastructure demandée.
 
 **N. Avant le réel** : compléter diligence fournisseur, contrats, qualification quantitative, compte/permissions/consentement, protections hébergées, état UNKNOWN/réconciliation, supervision persistante, isolation administrative et notifications vérifiées. Aucune activation réelle pendant cette mission.
+
+Mise a jour du 23 octobre 2026 : une voie LIVE supervisee MoonX futures est maintenant implementee et testee avec transport simule (entree protegee, intents persistants, reconciliation et fermeture). Voir [LIVE_TRADING_SAFETY.md](LIVE_TRADING_SAFETY.md) pour le perimetre et les qualifications de plateforme restantes. PAPER reste le choix courant.

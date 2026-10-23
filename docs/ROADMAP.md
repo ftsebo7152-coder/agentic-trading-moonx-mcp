@@ -10,3 +10,5 @@
 8. Réel MoonX : diligence fournisseur, contrat et protection, mécanisme d'intention UNKNOWN/reconciled, supervision persistante, consentement administratif borné et contrôle des permissions de l'hôte. Ne pas activer le réel par simple changement du prompt. La disponibilité de trois TP natifs reste à démontrer.
 
 Cette feuille de route distingue des dépendances externes et des développements encore nécessaires. La v0.1 livre le cycle PAPER local; elle n'est pas un système de production réel achevé.
+
+Mise a jour du 23 octobre 2026 : une voie LIVE supervisee MoonX futures est maintenant implementee et testee avec transport simule (entree protegee, intents persistants, reconciliation et fermeture). Voir [LIVE_TRADING_SAFETY.md](LIVE_TRADING_SAFETY.md) pour le perimetre et les qualifications de plateforme restantes. PAPER reste le choix courant.

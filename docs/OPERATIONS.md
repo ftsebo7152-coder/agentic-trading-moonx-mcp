@@ -19,3 +19,5 @@ Halt suspend les entrées; la méthode monitor conserve les protections. Resume 
 Le rapport JSON conserve positions, événements, refus et file d'e-mails. La commande performance filtre par jour/semaine/mois/tout et groupe par actif, stratégie, plateforme, mode ou régime. Les régimes non enregistrés dans les positions apparaissent UNRECORDED; ne pas les inventer. Pour des rendements normalisés exacts, intégrer l'historique des flux de capital.
 
 Les snapshots vendored sont des outils complémentaires, sans rôle dans la chaîne d'ordres active. Les tests upstream peuvent se lancer via `python scripts/run_upstream_tests.py`; la suite JS nécessite d'abord npm ci --ignore-scripts dans son dossier. Les tests TradingView remote/e2e sont exclus.
+
+La voie reelle supervisee est decrite dans [LIVE_TRADING_SAFETY.md](LIVE_TRADING_SAFETY.md). Ne pas utiliser scan/worker pour le reel. Conserver une base LIVE distincte et ne pas effacer les intents pour contourner un etat incertain.

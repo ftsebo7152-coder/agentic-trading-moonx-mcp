@@ -10,7 +10,7 @@ def load_private_env(path=".env"):
     file=Path(path)
     if not file.exists():return
     allowed={"TRADING_DATABASE_URL","TRADING_EMAIL_TO","SMTP_HOST","SMTP_PORT","SMTP_USERNAME","SMTP_PASSWORD","SMTP_FROM",
-             "CMC_API_KEY","FRED_API_KEY","FINNHUB_API_KEY","CRYPTOPANIC_API_KEY","MOONX_MCP_URL"}
+             "TRADING_LIVE_ENABLED","TRADING_VALIDATION_HMAC_KEY","CMC_API_KEY","FRED_API_KEY","FINNHUB_API_KEY","CRYPTOPANIC_API_KEY","MOONX_MCP_URL"}
     for line in file.read_text(encoding="utf8").splitlines():
         if not line.strip() or line.lstrip().startswith("#") or "=" not in line:continue
         key,value=line.split("=",1);key=key.strip()
@@ -69,8 +69,6 @@ class Settings:
             raise TradingError("positive capital and unique watchlist required")
         if not isinstance(self.scan_interval_minutes, int) or self.scan_interval_minutes <= 0:
             raise TradingError("invalid scan interval")
-        if self.mode == Mode.LIVE_EXECUTION:
-            raise TradingError("LIVE_EXECUTION is unavailable in this release; administrative qualification required")
 
     @classmethod
     def load(cls, path: str | Path):

@@ -1,0 +1,105 @@
+{
+  "enabled": false,
+  "schema_qualified": false,
+  "remote_account_id": "CONFIGURE_PRIVATE_ACCOUNT_ID",
+  "max_price_drift_bps": "10",
+  "settings": {
+    "mode": "LIVE_EXECUTION",
+    "account": "live-moonx",
+    "capital": "1250",
+    "watchlist": [
+      "BTC",
+      "ETH",
+      "SOL",
+      "INJ",
+      "TRX",
+      "PUMP",
+      "XRP",
+      "BNB",
+      "HYPE",
+      "UNI",
+      "AVAX",
+      "AAVE",
+      "POL",
+      "ALGO"
+    ],
+    "limits": {}
+  },
+  "schema": {
+    "account_id_path": [
+      "user",
+      "id"
+    ],
+    "available_balance_path": [
+      "unifiedBalance",
+      "availableFor",
+      "futures"
+    ],
+    "positions_path": [
+      "positions"
+    ],
+    "orders_path": [
+      "orders"
+    ],
+    "forex_positions_path": [
+      "positions"
+    ],
+    "forex_orders_path": [
+      "orders"
+    ],
+    "price_path": [
+      "price"
+    ],
+    "protections_path": [
+      "orders"
+    ],
+    "history_path": [
+      "trades"
+    ],
+    "position_fields": {
+      "id": [
+        "id"
+      ],
+      "symbol": [
+        "symbol"
+      ],
+      "side": [
+        "side"
+      ],
+      "quantity": [
+        "quantity"
+      ],
+      "entry": [
+        "entryPrice"
+      ]
+    },
+    "protection_fields": {
+      "position_id": [
+        "positionId"
+      ],
+      "type": [
+        "type"
+      ],
+      "price": [
+        "price"
+      ]
+    },
+    "history_fields": {
+      "position_id": [
+        "positionId"
+      ],
+      "status": [
+        "status"
+      ],
+      "net_pnl": [
+        "netPnl"
+      ],
+      "closed_at": [
+        "closedAt"
+      ]
+    },
+    "stop_type": "stop_loss",
+    "target_type": "take_profit",
+    "closed_status": "closed"
+  }
+}

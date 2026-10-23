@@ -38,6 +38,11 @@ def build_parser():
     sub.add_parser("mcp-server")
     worker=sub.add_parser("worker");worker.add_argument("--config",required=True);worker.add_argument("--bundle",required=True)
     worker.add_argument("--once",action="store_true");worker.add_argument("--send-email",action="store_true")
+    for name in ("live-prepare","live-check","live-submit","live-reconcile","live-close"):
+        live=sub.add_parser(name);live.add_argument("--config",required=True)
+        if name in ("live-prepare","live-submit"):live.add_argument("--packet",required=True)
+        if name in ("live-reconcile","live-close"):live.add_argument("--attempt",required=True)
+        if name in ("live-submit","live-close"):live.add_argument("--approve",required=True)
     return parser
 
 
@@ -46,7 +51,40 @@ def main(argv=None):
     args=build_parser().parse_args(argv)
     try:
         store=Store(args.database)
-        if args.command=="demo":
+        if args.command.startswith("live-"):
+            from .live import LiveExecution,approval_id
+            from .remote_mcp import moonx_session
+            from .models import TradePlan, fingerprint
+            from .risk import economics
+            config=json.loads(Path(args.config).read_text(encoding="utf8"))
+            if args.command=="live-prepare":
+                packet=json.loads(Path(args.packet).read_text(encoding="utf8"))
+                plan=TradePlan.from_dict(packet['plan']);spec=Instrument(**packet['instrument'])
+                result={'status':'PREPARED_NOT_SENT','approval':approval_id(config,packet),
+                        'plan':plan,'economics':economics(plan,spec),'enabled':config.get('enabled',False)}
+            else:
+                url=os.environ.get('MOONX_MCP_URL')
+                if not url:raise TradingError('MOONX_MCP_URL_REQUIRED')
+                async def execute_live():
+                    writing=args.command in ('live-submit','live-close')
+                    if writing and (config.get('enabled') is not True or os.environ.get('TRADING_LIVE_ENABLED')!='YES'):
+                        raise TradingError('LIVE_NOT_ACTIVATED')
+                    async with moonx_session(url,write_enabled=writing) as broker:
+                        engine=LiveExecution(config,store,broker.transport)
+                        if args.command=='live-check':
+                            state=await engine.inspect()
+                            return {'status':'READ_ONLY_CHECK','balance':state['balance'],
+                                    'flat':not any(state[k] for k in ('positions','orders','forex','fx_orders')),
+                                    'schema_qualified':config.get('schema_qualified',False)}
+                        if args.command=='live-submit':
+                            packet=json.loads(Path(args.packet).read_text(encoding='utf8'))
+                            return await engine.submit(packet,args.approve,now_utc())
+                        if args.command=='live-close':return await engine.close(args.attempt,args.approve,now_utc())
+                        result=await engine.reconcile(args.attempt,now_utc())
+                        result['close_approval']=fingerprint({'purpose':'CLOSE_LIVE_POSITION','attempt':args.attempt})
+                        return result
+                result=asyncio.run(execute_live())
+        elif args.command=="demo":
             from .demo import scenario
             from .orchestrator import AgenticTradingOrchestrator
             from .quantitative import performance

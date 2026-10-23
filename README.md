@@ -1,6 +1,6 @@
 # Agentic Trading MoonX MCP
 
-Version **0.1.0**, développement prioritairement en français. Infrastructure installable de recherche et de **PAPER local**, avec moteur de risque déterministe, stockage persistant, sorties partielles et file d'e-mails. Aucune transaction réelle n'est autorisée par ce runtime.
+Version **0.1.0**, recherche et PAPER local, avec moteur de risque deterministe et stockage persistant. Une voie reelle supervisee MoonX futures est implementee separement, non activee et testee uniquement avec transport simule.
 
 Ce dépôt traduit le cahier des charges PDF de 55 pages en un premier logiciel vérifiable. Il ne constitue pas encore la totalité de l'infrastructure de production demandée. Le statut de chaque exigence et les blocages sont dans [REQUIREMENTS.md](docs/REQUIREMENTS.md) et [ROADMAP.md](docs/ROADMAP.md).
 
@@ -45,11 +45,11 @@ Le résultat réellement produit pendant la livraison est dans [paper-demo-resul
 
 | Connecteur | Livré et vérifié | Reste à qualifier |
 |---|---|---|
-| MoonX | 35 déclarations MCP inventoriées; prix BTC et 100 bougies reçus via le MCP connecté; client de lecture et préparation d'intentions testés avec mocks | Client autonome du dépôt non authentifié dans le cloud; spécifications des contrats; exécution et réconciliation distantes; trois TP natifs non démontrés |
+| MoonX | Lecture MCP observee; voie futures supervisee implementee et testee par mocks (entree protegee, reconciliation et fermeture) | Authentification SDK autonome, schemas/contrats et comportement effectif a qualifier sur la plateforme; un seul TP natif supporte |
 | OKX | Documentation MCP officielle examinée; constructeur de requête démo avec `x-simulated-trading: 1`, stop et TP; tests de contrat locaux | Clés démo, connexion authentifiée, transport d'ordres, réconciliation, validation des contrats et du compte |
 | Bybit | Serveur MCP officiel identifié; domaine démo officiel et constructeur de requête avec stop/TP; tests locaux | Clés démo; support du domaine démo dans la version MCP choisie; transport d'ordres, compte et réconciliation |
 
-Les adaptateurs refusent la soumission distante dans cette version. Le moteur PAPER n'a aucune référence à un transport réseau de courtage. Aucune bascule automatique vers un autre exchange n'existe. Voir [BROKER_COMPATIBILITY.md](docs/BROKER_COMPATIBILITY.md).
+La soumission supervisee MoonX futures passe par LiveExecution et les commandes live-*, avec activation et approbation explicites; les anciens adaptateurs generiques et les constructeurs OKX/Bybit restent sans soumission. Le moteur PAPER n'a aucune référence à un transport réseau de courtage. Aucune bascule automatique vers un autre exchange n'existe. Voir [BROKER_COMPATIBILITY.md](docs/BROKER_COMPATIBILITY.md).
 
 ## Données, validation et notifications
 
@@ -86,3 +86,7 @@ Lire [SOURCE_AUDIT.md](docs/SOURCE_AUDIT.md), [TEST_RESULTS.md](docs/TEST_RESULT
 ## Mise a jour de l'univers surveille
 
 La configuration PAPER raccorde automatiquement le Top 100 CoinMarketCap a chaque scan et conserve les 15 actifs prioritaires, dont PUMP et HOOD (action NASDAQ). L'API publique officielle est utilisee sans cle. En cas d'indisponibilite ou de limitation, repli explicite sur les priorites. La couverture des prix et fondamentaux depend du collecteur de bundles; aucun flux supplementaire ni ordre reel n'est active. Voir [Top 100 et identites](docs/TOP100_CRYPTO.md).
+
+## Passage supervise au reel
+
+Voir [le parcours d'activation](docs/LIVE_TRADING_SAFETY.md) : configuration separee, verification en lecture seule, preparation du plan, approbation par empreinte, envoi, reconciliation et fermeture. Les commandes ne sont pas exposees au worker ni au MCP PAPER. Aucun compte reel n'a ete active pendant le developpement.

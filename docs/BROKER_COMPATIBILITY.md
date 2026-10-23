@@ -23,3 +23,5 @@ Sources primaires : [MoonX MCP](https://moon-x.io/ai-agent/), [OKX Agent Trade K
 **Degen** est exclu : les signatures MoonX indiquent que SL/TP sont ignorés ou non supportés dans ce mode. Les futures limite sans protection atomique sont exclus des intentions exécutables.
 
 La liquidation fournie par le moteur est une approximation isolée. Aucune formule générique ne remplace les règles réelles, le prix de liquidation du fournisseur, la maintenance, les frais et les paliers du contrat.
+
+Mise a jour du 23 octobre 2026 : une voie LIVE supervisee MoonX futures est maintenant implementee et testee avec transport simule (entree protegee, intents persistants, reconciliation et fermeture). Voir [LIVE_TRADING_SAFETY.md](LIVE_TRADING_SAFETY.md) pour le perimetre et les qualifications de plateforme restantes. PAPER reste le choix courant.

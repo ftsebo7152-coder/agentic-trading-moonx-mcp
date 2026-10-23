@@ -71,8 +71,8 @@ class Models(unittest.TestCase):
         with self.assertRaises(TradingError):validate_candles([bar(),bar()])
     def test_invalid_limit(self):
         with self.assertRaises(TradingError):RiskLimits(max_trades_per_day=11)
-    def test_live_mode_rejected(self):
-        with self.assertRaises(TradingError):Settings(mode=Mode.LIVE_EXECUTION)
+    def test_live_mode_is_a_configuration_not_an_execution_permission(self):
+        self.assertEqual(Settings(mode=Mode.LIVE_EXECUTION).mode,Mode.LIVE_EXECUTION)
     def test_negative_cost(self):
         with self.assertRaises(TradingError):Costs(fee_bps=D(-1))
 

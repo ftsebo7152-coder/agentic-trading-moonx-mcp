@@ -1,4 +1,4 @@
-"""Read-only Streamable HTTP MoonX session using the official MCP Python SDK."""
+"""Explicitly permissioned Streamable HTTP MoonX session using the official MCP Python SDK."""
 from contextlib import asynccontextmanager
 import json
 from urllib.parse import urlsplit
@@ -7,12 +7,14 @@ from .models import TradingError
 
 
 class SDKMCPTransport:
-    def __init__(self,session):self.session=session
+    WRITE_TOOLS={"open_futures_position","close_futures_position"}
+    def __init__(self,session,*,write_enabled=False):
+        self.session=session;self.write_enabled=write_enabled
     async def list_tools(self):
         response=await self.session.list_tools()
         return [{"name":t.name,"inputSchema":t.inputSchema,"description":t.description} for t in response.tools]
     async def call(self,name,arguments):
-        if name not in MoonXBrokerAdapter.READ_TOOLS:raise TradingError("MCP_WRITE_TOOL_BLOCKED")
+        if name not in MoonXBrokerAdapter.READ_TOOLS and not (self.write_enabled and name in self.WRITE_TOOLS):raise TradingError("MCP_WRITE_TOOL_BLOCKED")
         response=await self.session.call_tool(name,arguments)
         if response.isError:raise TradingError("MCP_TOOL_ERROR")
         texts=[item.text for item in response.content if item.type=="text"]
@@ -22,7 +24,7 @@ class SDKMCPTransport:
 
 
 @asynccontextmanager
-async def moonx_session(url):
+async def moonx_session(url,*,write_enabled=False):
     parsed=urlsplit(url)
     if parsed.scheme!="https" or parsed.hostname!="api.moon-x.io" or parsed.username or parsed.password:
         raise TradingError("official MoonX HTTPS origin required")
@@ -32,7 +34,7 @@ async def moonx_session(url):
         async with streamablehttp_client(url) as (read,write,_):
             async with ClientSession(read,write) as session:
                 await session.initialize()
-                yield MoonXBrokerAdapter(SDKMCPTransport(session))
+                yield MoonXBrokerAdapter(SDKMCPTransport(session,write_enabled=write_enabled))
     except TradingError:raise
     except Exception:
         # Avoid leaking the personal MCP URL in an exception string.

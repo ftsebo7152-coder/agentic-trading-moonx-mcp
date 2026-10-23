@@ -1,6 +1,6 @@
 ---
 name: agentic-trading-master
-description: "Orchestrer le trading PAPER avec univers Top 100 CoinMarketCap sans cle et actifs prioritaires, analyse, risque et journal."
+description: "Orchestrer le trading PAPER Top 100 CoinMarketCap sans cle et preparer une execution MoonX futures supervisee avec risque et journal."
 ---
 
 Lire docs/OPERATIONS.md. Vérifier les données et preuves quantitatives. Un résultat BLOCK ou NO_TRADE interdit l’entrée. Gérer les protections existantes avant les nouvelles entrées.
@@ -8,7 +8,7 @@ Lire docs/OPERATIONS.md. Vérifier les données et preuves quantitatives. Un ré
 Entrées : configuration administrative, watchlist, bougies clôturées, observations disponibles et base persistante, selon le module.
 Sorties : JSON avec statut réellement confirmé et raisons des refus. Aucune donnée manquante ne doit être inventée.
 Dépendances : Python >= 3.11; projet installé. MCP/SMTP/PostgreSQL sont optionnels et doivent être configurés séparément.
-Limites : PAPER local opérationnel; envoi aux exchanges et LIVE désactivés dans cette version. Les permissions de l’hôte restent applicables.
+Limites : PAPER par defaut. Voie LIVE supervisee MoonX futures implementee separement, non activee et testee uniquement avec transport simule; lire docs/LIVE_TRADING_SAFETY.md. Les permissions de l'hote restent applicables.
 
 Exemple depuis la racine du dépôt :
 ```sh
@@ -26,3 +26,9 @@ Le classement actuel utilise par defaut l'API publique CoinMarketCap /public-api
 Stablecoins et identites ambigues sont exclus des entrees. Conserver les bougies des positions sorties du classement pour leurs protections. Donnees absentes => NO_TRADE; ne pas elargir les plafonds de risque pour couvrir davantage d'actifs. BACKTEST/REPLAY exigent des compositions historiques; aucun classement actuel ne justifie un backtest Top 100.
 
 Executer depuis la racine du depot installe. Invocation : `$agentic-trading-master`. La mise a jour du skill ne demarre ni worker ni tache planifiee.
+
+Passage futur au reel : utiliser exclusivement live-check, live-prepare, live-submit, live-reconcile et live-close selon docs/LIVE_TRADING_SAFETY.md, dans une base et un compte dedies. Settings accepte LIVE_EXECUTION; scan/worker et le MCP PAPER restent simules. Ne jamais modifier configs/paper.json pour activer implicitement le reel.
+
+Avant tout envoi, faire qualifier le schema MoonX reel, les specifications et les protections. La configuration privee enabled=true et TRADING_LIVE_ENABLED=YES permettent le transport; elles ne remplacent pas l'approbation humaine de l'empreinte du plan precis. Presenter entree/SL/TP/taille/perte estimee. Ne jamais s'auto-signer la preuve quantitative. Un seul TP natif et une position a la fois; CFD, HOOD, multi-TP distant et OKX/Bybit restent hors de cette voie.
+
+RECONCILIATION_REQUIRED => aucune nouvelle entree ni relance d'ordre; inspecter la plateforme et executer uniquement la reconciliation ou une fermeture precise approuvee. Preserver journal SQL et stops natifs. Signaler clairement qu'un test avec transport simule ne certifie pas l'execution sur le compte reel.
