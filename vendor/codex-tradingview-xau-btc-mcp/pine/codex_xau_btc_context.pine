@@ -1,0 +1,35 @@
+//@version=5
+indicator("Codex XAU/BTC Context", overlay=true, max_lines_count=100, max_labels_count=100, max_boxes_count=50)
+
+showDaily = input.bool(true, "Show previous day levels")
+showOpen = input.bool(true, "Show daily open")
+showSession = input.bool(true, "Show London/NY windows")
+
+prevHigh = request.security(syminfo.tickerid, "D", high[1])
+prevLow = request.security(syminfo.tickerid, "D", low[1])
+prevClose = request.security(syminfo.tickerid, "D", close[1])
+dayOpen = request.security(syminfo.tickerid, "D", open)
+
+plot(showDaily ? prevHigh : na, "PDH", color=color.new(color.red, 0), linewidth=1)
+plot(showDaily ? prevLow : na, "PDL", color=color.new(color.green, 0), linewidth=1)
+plot(showDaily ? prevClose : na, "PDC", color=color.new(color.gray, 0), linewidth=1)
+plot(showOpen ? dayOpen : na, "Daily Open", color=color.new(color.yellow, 0), linewidth=1)
+
+inLondon = not na(time(timeframe.period, "0800-1030"))
+inNewYork = not na(time(timeframe.period, "1430-1630"))
+
+bgcolor(showSession and inLondon ? color.new(color.blue, 92) : na, title="London window")
+bgcolor(showSession and inNewYork ? color.new(color.orange, 92) : na, title="New York window")
+
+var table context = table.new(position.top_right, 2, 5, border_width=1)
+if barstate.islast
+    table.cell(context, 0, 0, "Codex", text_color=color.white, bgcolor=color.new(color.black, 0))
+    table.cell(context, 1, 0, syminfo.ticker, text_color=color.white, bgcolor=color.new(color.black, 0))
+    table.cell(context, 0, 1, "PDH")
+    table.cell(context, 1, 1, str.tostring(prevHigh))
+    table.cell(context, 0, 2, "PDL")
+    table.cell(context, 1, 2, str.tostring(prevLow))
+    table.cell(context, 0, 3, "PDC")
+    table.cell(context, 1, 3, str.tostring(prevClose))
+    table.cell(context, 0, 4, "Open")
+    table.cell(context, 1, 4, str.tostring(dayOpen))

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "tradingview": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\VOTRE_NOM\\Downloads\\TradingView-Codex-MCP-Chat-Archive\\codex-tradingview-xau-btc-mcp\\src\\server.js"
+      ],
+      "env": {
+        "TRADINGVIEW_CDP_HOST": "127.0.0.1",
+        "TRADINGVIEW_CDP_PORT": "9222"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "codex-tradingview-xau-btc-mcp",
+  "version": "0.1.0",
+  "description": "Custom Codex MCP bridge for TradingView Desktop on Windows 11, optimized for XAU/USD, BTC/USD, and extensible intraday trading workflows.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "tv": "src/cli/index.js",
+    "codex-tv": "src/cli/index.js"
+  },
+  "exports": {
+    ".": "./src/server.js",
+    "./core": "./src/core/index.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "tv": "node src/cli/index.js",
+    "setup:codex:windows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\setup_codex_windows.ps1",
+    "desk:status": "node src/cli/index.js desk status",
+    "doctor": "node src/cli/index.js doctor",
+    "test": "npm run test:unit",
+    "test:unit": "node --test tests/pine_analyze.test.js tests/cli.test.js tests/launch.test.js tests/sanitization.test.js tests/trading_exec.test.js tests/trading_orders_filter.test.js",
+    "test:remote": "node --test tests/pine_remote.test.js tests/cli_remote.test.js",
+    "test:e2e": "node --test tests/e2e.test.js tests/selectors.test.js",
+    "test:selectors": "node --test tests/selectors.test.js",
+    "test:cli": "node --test tests/cli.test.js",
+    "test:all": "npm run test:unit && npm run test:remote && npm run test:e2e",
+    "test:verbose": "node --test --test-reporter=spec tests/pine_analyze.test.js tests/cli.test.js tests/launch.test.js tests/sanitization.test.js tests/trading_exec.test.js tests/trading_orders_filter.test.js",
+    "test:count": "node --test --test-reporter=spec tests/pine_analyze.test.js tests/cli.test.js tests/launch.test.js tests/sanitization.test.js tests/trading_exec.test.js tests/trading_orders_filter.test.js 2>&1 | tail -5"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "chrome-remote-interface": "^0.33.2",
+    "dotenv": "^16.4.7",
+    "fast-xml-parser": "^5.8.0",
+    "luxon": "^3.5.0",
+    "zod": "^3.24.0"
+  }
+}

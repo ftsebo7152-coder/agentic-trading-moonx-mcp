@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-23",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "core_tests": {
+    "count": 116,
+    "passed": 116,
+    "failed": 0
+  },
+  "upstream_day_trader": {
+    "count": 318,
+    "passed": 318
+  },
+  "upstream_tradingview": {
+    "count": 51,
+    "passed": 51
+  },
+  "skills": {
+    "codex": 29,
+    "claude": 29,
+    "synchronized": true
+  },
+  "installation": "editable package in venv with system-site-packages; no-build-isolation/no-deps",
+  "cli_checks": [
+    {
+      "arguments": [
+        "--database",
+        "state/delivery.sqlite",
+        "demo",
+        "--output",
+        "examples/paper-demo-result.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fd11ee24a0658d512380690fdd28ab6919e96e353af66876d6dd987b4c3c44a3"
+    },
+    {
+      "arguments": [
+        "--database",
+        "state/delivery.sqlite",
+        "report",
+        "--account",
+        "synthetic-demo"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "780aa7ec81bddb876a5164f6c0f4c5fc709e03de2da1e19c208395eb85c44174"
+    },
+    {
+      "arguments": [
+        "--database",
+        "state/research.sqlite",
+        "backtest",
+        "--bundle",
+        "examples/synthetic-market.json",
+        "--symbol",
+        "BTC",
+        "--output",
+        "examples/backtest-result.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "58dbcfdb6a078813d4bfa41c5a85c9feebd1a89ff6b5a1a5ed228b03c1e2d036"
+    },
+    {
+      "arguments": [
+        "--database",
+        "state/delivery.sqlite",
+        "performance",
+        "--account",
+        "synthetic-demo",
+        "--group-by",
+        "symbol"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6a7d730b73f56dd4174bbbb7cc6c97d92289a33ef4285b8d1981127cafb2154a"
+    },
+    {
+      "arguments": [
+        "--database",
+        "state/scheduled-once.sqlite",
+        "worker",
+        "--config",
+        "configs/paper.json",
+        "--bundle",
+        "examples/synthetic-market.json",
+        "--once"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "27e85edca31871a541cd71ac1821643e5cbd12c6f71be063a9aa8f8596c31e81"
+    }
+  ],
+  "demo": {
+    "opens": 1,
+    "partial_exits": 3,
+    "status": "CLOSED",
+    "pending_emails": 4,
+    "synthetic": true
+  },
+  "real_trades": 0,
+  "actual_emails_sent": 0,
+  "postgresql_live_tested": false,
+  "cloud_deployed": false,
+  "exchange_demo_account_connected": false,
+  "mcp_standalone_sdk_tested": false
+}

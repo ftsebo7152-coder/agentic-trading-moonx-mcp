@@ -1,0 +1,146 @@
+{
+  "observed_at": "2026-10-23",
+  "scope": "Tool declarations exposed in this Codex session; no write call performed",
+  "tools": [
+    {
+      "name": "cancel_forex_order",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__cancel_forex_order(args: { orderId: string; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "cancel_futures_order",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__cancel_futures_order(args: { orderId: string; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "clear_forex_tp_sl",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__clear_forex_tp_sl(args: {\n  positionId: string;\n  // Default \"both\".\n  which?: \"tp\" | \"sl\" | \"both\";\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "clear_futures_tp_sl",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__clear_futures_tp_sl(args: {\n  positionId: string;\n  // Default \"both\".\n  which?: \"tp\" | \"sl\" | \"both\";\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "close_all_futures_positions",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__close_all_futures_positions(args: { mode?: \"futures\" | \"degen\"; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "close_forex_position",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__close_forex_position(args: { positionId: string; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "close_futures_position",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__close_futures_position(args: {\n  // Percent to close, 1-100 (default 100).\n  percentage?: number;\n  positionId: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "create_deposit_link",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__create_deposit_link(args: {\n  // Amount to pay (minimum 20).\n  amount: number;\n  // Default EUR.\n  currency?: \"EUR\" | \"USD\" | \"GBP\" | \"CHF\";\n  // Default card. bank_transfer (EUR, GBP or USD only): the link shows the user bank details to send a transfer to, and the wallet is credited when the money arrives, usually 1–2 business days later.\n  paymentMethod?: \"card\" | \"apple_pay\" | \"google_pay\" | \"bank_transfer\";\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "create_moonpay_deposit_link",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__create_moonpay_deposit_link(args: {\n  // Fiat amount to spend (minimum 20).\n  amount: number;\n  // Crypto to receive, default \"USDC\".\n  cryptoCurrency?: string;\n  // Fiat currency, default \"USD\".\n  currency?: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_account_overview",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_account_overview(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_candles",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_candles(args: {\n  // Candle timeframe. Default \"1h\". (Forex/CFD does not support 6h/8h/12h.)\n  interval?: \"1m\" | \"5m\" | \"15m\" | \"30m\" | \"1h\" | \"2h\" | \"4h\" | \"6h\" | \"8h\" | \"12h\" | \"1d\" | \"1w\";\n  // Number of candles, 1-500 (default 100).\n  limit?: number;\n  // Crypto symbol (BTC, ETH…) or FX/CFD pair (EURUSD, XAUUSD, NAS100, USOIL…).\n  symbol: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_deposit_options",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_deposit_options(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_forex_trade_history",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_forex_trade_history(args: {\n  // Max rows (1-200, default 50).\n  limit?: number;\n  // Rows to skip before this page, for reading a history longer than 200. Newest first, so offset 200 is the 201st-newest trade onward. No maximum is declared on purpose: the end of the history is an empty page, not a cap.\n  offset?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_futures_summary",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_futures_summary(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_futures_trade_history",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_futures_trade_history(args: {\n  // Max rows (1-200, default 50).\n  limit?: number;\n  mode?: \"futures\" | \"degen\";\n  // Rows to skip before this page, for reading a history longer than 200. Newest first, so offset 200 is the 201st-newest trade onward. The end of the history is an empty page, not an error.\n  offset?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_price",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_price(args: {\n  // FX/CFD pair id (EURUSD, XAUUSD, NAS100…), crypto symbol, or token address.\n  symbol: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "get_technical_indicators",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__get_technical_indicators(args: {\n  // Optional subset to compute. Omit for all 10.\n  indicators?: Array<\"rsi\" | \"macd\" | \"sma\" | \"ema\" | \"bollinger\" | \"stochastic\" | \"atr\" | \"adx\" | \"cci\" | \"williamsr\">;\n  // Chart timeframe. Default \"4h\". (Forex/CFD does not support 6h/8h/12h.)\n  interval?: \"1m\" | \"5m\" | \"15m\" | \"30m\" | \"1h\" | \"2h\" | \"4h\" | \"6h\" | \"8h\" | \"12h\" | \"1d\" | \"1w\";\n  // Crypto symbol (BTC, ETH…) or FX/CFD pair (EURUSD, XAUUSD, NAS100, USOIL…).\n  symbol: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_forex_copyable_traders",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_forex_copyable_traders(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_forex_orders",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_forex_orders(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_forex_positions",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_forex_positions(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_futures_copyable_traders",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_futures_copyable_traders(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_futures_orders",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_futures_orders(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_futures_positions",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_futures_positions(args: { mode?: \"futures\" | \"degen\"; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_futures_tp_sl_orders",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_futures_tp_sl_orders(args: {\n  // Max rows of history (1-200, default 50). Not applied to \"active\".\n  limit?: number;\n  // Rows of history to skip before this page. The end of the history is an empty page, not an error.\n  offset?: number;\n  // \"active\" (default): every order still waiting to fire, never cut. \"triggered\", \"cancelled\" or \"all\": history, newest first, one page of it.\n  status?: \"active\" | \"triggered\" | \"cancelled\" | \"all\";\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "list_my_copy_relations",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__list_my_copy_relations(args: {}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "open_forex_limit_order",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__open_forex_limit_order(args: {\n  // Trigger price the order fills at.\n  limitPrice: number;\n  // Position size in lots (> 0).\n  lots: number;\n  // e.g. \"EURUSD\", \"XAUUSD\", \"NAS100\", \"SPX500\", \"USOIL\", \"COPPER\".\n  pairId: string;\n  side: \"buy\" | \"sell\";\n  // Optional stop-loss price.\n  stopLoss?: number;\n  // Optional take-profit price.\n  takeProfit?: number;\n  // Order type. Default \"limit\".\n  type?: \"limit\" | \"stop\";\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "open_forex_position",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__open_forex_position(args: {\n  // Position size in lots (> 0).\n  lots: number;\n  // e.g. \"EURUSD\", \"XAUUSD\", \"NAS100\", \"SPX500\", \"USOIL\", \"COPPER\".\n  pairId: string;\n  side: \"buy\" | \"sell\";\n  // Optional stop-loss price.\n  stopLoss?: number;\n  // Optional take-profit price.\n  takeProfit?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "open_futures_limit_order",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__open_futures_limit_order(args: {\n  // Leverage 1-1000 (capped at the token max).\n  leverage: number;\n  // Trigger price the order fills at.\n  limitPrice: number;\n  // Margin mode. Default \"cross\".\n  marginMode?: \"cross\" | \"isolated\";\n  // Margin to lock, in USDT.\n  marginUsdt: number;\n  side: \"long\" | \"short\";\n  // Crypto symbol, e.g. \"BTC\". Provide this OR tokenAddress.\n  symbol?: string;\n  // Token address. Provide this OR symbol.\n  tokenAddress?: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "open_futures_position",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__open_futures_position(args: {\n  // Leverage 1-1000.\n  leverage: number;\n  // Margin mode. Default \"cross\".\n  marginMode?: \"cross\" | \"isolated\";\n  // Margin to commit, in USDT.\n  marginUsdt: number;\n  // Default \"futures\". \"degen\" allows up to 1000x.\n  mode?: \"futures\" | \"degen\";\n  side: \"long\" | \"short\";\n  // Optional stop-loss trigger price. Ignored for 1000x/\"degen\" (unsupported).\n  stopLossPrice?: number;\n  // Crypto symbol, e.g. \"BTC\". Provide this OR tokenAddress.\n  symbol?: string;\n  // Optional take-profit trigger price. Ignored for 1000x/\"degen\" (unsupported).\n  takeProfitPrice?: number;\n  // Token address. Provide this OR symbol.\n  tokenAddress?: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "set_forex_tp_sl",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__set_forex_tp_sl(args: {\n  positionId: string;\n  // Absolute stop-loss price. Use this OR stopLossLossPercent.\n  stopLoss?: number;\n  // Set SL when loss reaches this % (ROI on margin, e.g. 30 = \"-30%\"). Server computes the price.\n  stopLossLossPercent?: number;\n  // Absolute take-profit price. Use this OR takeProfitGainPercent.\n  takeProfit?: number;\n  // Set TP at this profit % (ROI on margin, e.g. 50 = \"+50%\"). Server computes the price.\n  takeProfitGainPercent?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "set_futures_tp_sl",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__set_futures_tp_sl(args: {\n  positionId: string;\n  // Portion to close when SL hits, 1-100 (default 100 = full).\n  stopLossCloseFraction?: number;\n  // Set SL when the LOSS reaches this % (ROI on margin, e.g. 30 means \"-30%\"). Server computes the price.\n  stopLossLossPercent?: number;\n  // Absolute SL trigger price. Use this OR stopLossLossPercent.\n  stopLossPrice?: number;\n  // Portion of the position to close when TP hits, 1-100 (default 100 = full).\n  takeProfitCloseFraction?: number;\n  // Set TP at this PROFIT % — i.e. ROI on your margin (e.g. 50 means \"+50% profit\", what \"50% TP\" means). The server computes the price from your entry, side and leverage; you do NOT need the entry price.\n  takeProfitGainPercent?: number;\n  // Absolute TP trigger price. Use this OR takeProfitGainPercent.\n  takeProfitPrice?: number;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "start_forex_copy",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__start_forex_copy(args: {\n  // Restrict which instrument categories are copied.\n  allowedCategories?: Array<\"forex\" | \"metals\" | \"indices\" | \"energy\" | \"crypto\">;\n  // Lots per copied trade (for fixed mode), 0.01-100.\n  copyLots?: number;\n  // Only copy positions opened from now on.\n  copyOnlyOpenPositions?: boolean;\n  // Mirror the trader's stop-loss.\n  copySL?: boolean;\n  // Mirror the trader's take-profit.\n  copyTP?: boolean;\n  // How to size copied trades.\n  lotMode?: \"fixed\" | \"same\" | \"proportional\";\n  // Cap on lots per copied trade, 0.01-100.\n  maxLotsPerCopy?: number;\n  // The trader's `_id` from list_forex_copyable_traders.\n  traderId: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "start_futures_copy",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__start_futures_copy(args: {\n  // USDT allocated per copied trade (at least 1).\n  copyAmount: number;\n  // Only copy positions opened from now on.\n  copyOnlyOpenPositions?: boolean;\n  leverage?: unknown;\n  // Default \"isolated\".\n  marginType?: \"cross\" | \"isolated\" | \"same\";\n  // The trader's `_id` from list_futures_copyable_traders.\n  traderId: string;\n}): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "stop_forex_copy",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__stop_forex_copy(args: { traderId: string; }): Promise<CallToolResult>; };\n```"
+    },
+    {
+      "name": "stop_futures_copy",
+      "signature": "exec tool declaration:\n```ts\ndeclare const tools: { mcp__moonx__stop_futures_copy(args: { traderId: string; }): Promise<CallToolResult>; };\n```"
+    }
+  ]
+}

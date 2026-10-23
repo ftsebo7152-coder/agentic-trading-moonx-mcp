@@ -1,0 +1,15 @@
+[
+  {
+    "source": "manual",
+    "time": "2026-05-19T14:30:00+02:00",
+    "country": "US",
+    "event": "US CPI",
+    "impact": "high",
+    "forecast": null,
+    "previous": null,
+    "actual": null,
+    "assets": ["XAUUSD", "BTCUSD"],
+    "blackoutBeforeMinutes": 30,
+    "blackoutAfterMinutes": 15
+  }
+]

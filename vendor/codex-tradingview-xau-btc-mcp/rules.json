@@ -1,0 +1,96 @@
+{
+  "watchlist": ["OANDA:XAUUSD", "BINANCE:BTCUSDT"],
+  "default_timeframe": "15",
+  "capital_reference_usd": 200,
+  "capital_note": "200 USD is the deliberately conservative Paper Trading reference capital. At 1% risk this means 2 USD risk per trade; sizing must respect broker contract specs, spread and margin.",
+  "default_mode": "paper",
+  "risk": {
+    "risk_per_trade_pct": 1,
+    "max_daily_loss_pct": 3,
+    "max_weekly_loss_pct_learning": 6,
+    "max_trades_per_day": 4,
+    "optimal_trades_per_day": "2-3",
+    "min_rr": 2,
+    "pause_after_consecutive_losses": 2
+  },
+  "sessions": {
+    "london": {
+      "briefing_start": "07:30",
+      "active_start": "08:00",
+      "active_end": "10:30",
+      "scan_interval_minutes": 15,
+      "primary_asset": "XAUUSD"
+    },
+    "new_york": {
+      "briefing_start": "14:00",
+      "active_start": "14:30",
+      "active_end": "16:30",
+      "scan_interval_minutes": 15,
+      "primary_assets": ["XAUUSD", "BTCUSD"]
+    }
+  },
+  "asset_profiles": {
+    "XAUUSD": {
+      "symbols": ["OANDA:XAUUSD", "FOREXCOM:XAUUSD", "TVC:GOLD"],
+      "priority_sessions": ["london", "new_york"],
+      "macro_inputs": ["DXY", "US10Y", "Fed", "CPI", "NFP", "PCE", "FOMC", "geopolitics"],
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "DAILY_SWEEP", "OPR", "LONDON_BREAKOUT", "LIQUIDITY_SWEEP_VOLUME_ZONE"]
+    },
+    "BTCUSD": {
+      "symbols": ["BINANCE:BTCUSDT", "COINBASE:BTCUSD"],
+      "priority_sessions": ["new_york", "full_day"],
+      "macro_inputs": ["ETF flows", "funding", "open interest", "liquidations", "DXY", "risk sentiment"],
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "DAILY_SWEEP", "MITIGATION_BLOCK", "LIQUIDITY_SWEEP_VOLUME_ZONE"]
+    },
+    "GENERIC": {
+      "requires_manual_contract_specs": true,
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "FIB_618_OB", "BREAKOUT_RETEST"]
+    }
+  },
+  "bias_criteria": {
+    "bullish": [
+      "Higher-timeframe structure supports longs",
+      "Price trades in discount or reclaims a swept low",
+      "DXY and yield context do not contradict the long thesis",
+      "Setup has at least 3 independent confluences"
+    ],
+    "bearish": [
+      "Higher-timeframe structure supports shorts",
+      "Price trades in premium or rejects a swept high",
+      "DXY and yield context do not contradict the short thesis",
+      "Setup has at least 3 independent confluences"
+    ],
+    "neutral": [
+      "Macro and technical context conflict",
+      "Spread or ATR is unacceptable",
+      "High-impact news makes risk uncontrollable",
+      "No structural stop-loss is available"
+    ]
+  },
+  "news_rules": {
+    "pre_session_tool": "codex_pre_session_json",
+    "blackout_before_minutes": 30,
+    "blackout_after_minutes": 15,
+    "fomc_blackout_before_minutes": 60,
+    "fomc_blackout_after_minutes": 45,
+    "red_news_blocks_new_trades": true
+  },
+  "risk_rules": [
+    "No trade without predefined stop-loss",
+    "Calculate risk before every order",
+    "No live execution without explicit human validation",
+    "Do not submit an order if trading_detect_mode is not verified",
+    "Run risk_guard_check before execution",
+    "Run news_check_blackout before execution",
+    "Stop after daily loss limit",
+    "Journal every accepted and refused signal"
+  ],
+  "preferred_commands": {
+    "london_xau": "session_start asset=XAUUSD session=london mode=paper",
+    "ny_xau": "session_start asset=XAUUSD session=new_york mode=paper",
+    "btc_ny": "session_start asset=BTCUSD session=new_york mode=paper",
+    "pre_session_xau_ny": "codex_pre_session_json asset=XAUUSD session=new_york timezone=Europe/Paris",
+    "pre_session_btc_ny": "codex_pre_session_json asset=BTCUSD session=new_york timezone=Europe/Paris includeOrderBook=true"
+  },
+  "notes": "This file is the complete XAU/BTC rules profile. It can be copied to rules.json without losing session, asset, bias, risk or news logic."
+}

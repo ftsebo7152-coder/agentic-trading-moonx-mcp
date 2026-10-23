@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-trading-moonx-mcp"
+version = "0.1.0"
+description = "Trading research, deterministic risk and isolated paper execution"
+requires-python = ">=3.11"
+dependencies = ["tzdata>=2025.1"]
+
+[project.optional-dependencies]
+cloud = ["psycopg[binary]>=3.2,<4"]
+mcp = ["mcp>=1.12,<2"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+agentic-trading = "agentic_trading.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

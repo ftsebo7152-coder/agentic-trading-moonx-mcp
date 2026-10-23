@@ -1,0 +1,75 @@
+{
+  "watchlist": ["OANDA:XAUUSD", "BINANCE:BTCUSDT"],
+  "default_timeframe": "15",
+  "capital_reference_usd": 200,
+  "default_mode": "paper",
+  "risk": {
+    "risk_per_trade_pct": 1,
+    "max_daily_loss_pct": 3,
+    "max_weekly_loss_pct_learning": 6,
+    "max_trades_per_day": 4,
+    "optimal_trades_per_day": "2-3",
+    "min_rr": 2
+  },
+  "sessions": {
+    "london": {
+      "briefing_start": "07:30",
+      "active_start": "08:00",
+      "active_end": "10:30",
+      "scan_interval_minutes": 15
+    },
+    "new_york": {
+      "briefing_start": "14:00",
+      "active_start": "14:30",
+      "active_end": "16:30",
+      "scan_interval_minutes": 15
+    }
+  },
+  "asset_profiles": {
+    "XAUUSD": {
+      "symbols": ["OANDA:XAUUSD", "FOREXCOM:XAUUSD", "TVC:GOLD"],
+      "priority_sessions": ["london", "new_york"],
+      "macro_inputs": ["DXY", "US10Y", "Fed", "US high-impact news", "geopolitics"],
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "DAILY_SWEEP", "OPR", "LONDON_BREAKOUT"]
+    },
+    "BTCUSD": {
+      "symbols": ["BINANCE:BTCUSDT", "COINBASE:BTCUSD"],
+      "priority_sessions": ["new_york", "full_day"],
+      "macro_inputs": ["ETF flows", "funding", "open interest", "liquidations", "DXY", "risk sentiment"],
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "DAILY_SWEEP", "MITIGATION_BLOCK"]
+    },
+    "GENERIC": {
+      "requires_manual_contract_specs": true,
+      "strategies": ["OB_FVG_RETEST", "LIQUIDITY_SWEEP_REVERSAL", "FIB_618_OB", "BREAKOUT_RETEST"]
+    }
+  },
+  "bias_criteria": {
+    "bullish": [
+      "Higher-timeframe structure supports longs",
+      "Price trades in discount or reclaims a swept low",
+      "DXY context does not contradict XAU long bias",
+      "Setup has at least 3 independent confluences"
+    ],
+    "bearish": [
+      "Higher-timeframe structure supports shorts",
+      "Price trades in premium or rejects a swept high",
+      "DXY context does not contradict XAU short bias",
+      "Setup has at least 3 independent confluences"
+    ],
+    "neutral": [
+      "Macro and technical context conflict",
+      "Spread or ATR is unacceptable",
+      "High-impact news makes the risk uncontrollable",
+      "No structural stop-loss is available"
+    ]
+  },
+  "risk_rules": [
+    "No trade without predefined stop-loss",
+    "Calculate risk before every order",
+    "No live execution without explicit human validation",
+    "Do not submit an order if trading_detect_mode is not verified",
+    "Stop after daily loss limit",
+    "Journal every accepted and refused signal"
+  ],
+  "notes": "Customize broker contract values, spread limits and news blackout rules before live trading."
+}

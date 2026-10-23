@@ -1,0 +1,10 @@
+{
+  "broker": "example",
+  "positionsTable": [
+    "[data-name$=\".positions-table\"]"
+  ],
+  "ordersTable": [
+    "[data-name$=\".orders-table\"]"
+  ],
+  "notes": "Copy this file for a specific broker only after testing the live DOM selectors in Paper Trading."
+}

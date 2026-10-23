@@ -1,0 +1,20 @@
+[Unit]
+Description=Agentic trading isolated PAPER worker
+After=network-online.target
+
+[Service]
+Type=simple
+User=agentic-trading
+WorkingDirectory=/opt/agentic-trading
+EnvironmentFile=/etc/agentic-trading/environment
+ExecStart=/opt/agentic-trading/.venv/bin/python -m agentic_trading.cli worker --config configs/paper.json --bundle /var/lib/agentic-trading/market-bundle.json --send-email
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/agentic-trading
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+{
+  "language": "en",
+  "accountManagerToggleButton": [
+    "button[aria-label=\"Open Account Manager\"]",
+    "button[aria-label*=\"Account Manager\"]"
+  ],
+  "tradingPanelButton": [
+    "[data-name=\"trading-button\"]",
+    "[aria-label=\"Trading Panel\"]"
+  ]
+}

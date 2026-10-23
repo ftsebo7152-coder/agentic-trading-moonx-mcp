@@ -1,0 +1,87 @@
+
+> codex-tradingview-xau-btc-mcp@0.1.0 test
+> npm run test:unit
+
+
+> codex-tradingview-xau-btc-mcp@0.1.0 test:unit
+> node --test tests/pine_analyze.test.js tests/cli.test.js tests/launch.test.js tests/sanitization.test.js tests/trading_exec.test.js tests/trading_orders_filter.test.js
+
+Unknown command: nonexistent
+Run "tv --help" for a list of commands.
+{
+  "success": false,
+  "error": "No source provided. Pipe source via stdin or use --file."
+}
+▶ CLI — help and routing
+  ✔ --help shows command list (941.7841ms)
+  ✔ -h is same as --help (844.447ms)
+  ✔ no args shows help (600.9727ms)
+  ✔ unknown command exits 1 (512.5577ms)
+  ✔ pine --help shows subcommands (586.9728ms)
+  ✔ ohlcv --help shows options (508.8989ms)
+✔ CLI — help and routing (3998.8983ms)
+▶ CLI — pine analyze (offline)
+  ✔ analyzes clean v6 script (534.8899ms)
+  ✔ detects array out of bounds (546.1321ms)
+  ✔ detects strategy.entry without strategy() (613.1432ms)
+  ✔ errors without input (856.4612ms)
+  ✔ reads --file flag (629.2913ms)
+✔ CLI — pine analyze (offline) (3180.8873ms)
+▶ tv_launch
+  ✔ returns the existing CDP session without spawning another app (6.6233ms)
+  ✔ reports restart_required when TradingView is already open without CDP and kill_existing is false (0.872ms)
+  ✔ uses macOS open --args fallback when direct launch never exposes CDP (2.304ms)
+✔ tv_launch (12.9281ms)
+▶ pine_analyze — static analysis
+  ✔ clean v6 script — no issues (3.1956ms)
+  ✔ array.get out of bounds (0.6672ms)
+  ✔ array.get negative index (0.4687ms)
+  ✔ array.set out of bounds (0.416ms)
+  ✔ array.get valid index — no issue (0.3333ms)
+  ✔ .first() on empty array (0.3088ms)
+  ✔ .last() on empty array (0.3398ms)
+  ✔ .first() on non-empty array — no issue (0.3585ms)
+  ✔ strategy.entry without strategy() declaration (0.4078ms)
+  ✔ strategy.entry WITH strategy() — no issue (0.4127ms)
+  ✔ old version v3 warning (0.4214ms)
+  ✔ v5 — no version warning (2.2497ms)
+  ✔ multiple issues at once (0.6485ms)
+✔ pine_analyze — static analysis (14.2472ms)
+▶ escapeJsString
+  ✔ round-trips "AAPL" (2.0513ms)
+  ✔ round-trips "x'; window.__pwned = true; //" (0.3823ms)
+  ✔ round-trips "line1\nline2\rline3" (0.4385ms)
+  ✔ round-trips "backslash\\quote'mix" (0.4759ms)
+  ✔ round-trips " separator paragraph" (0.3307ms)
+  ✔ round-trips "\u0000null-byte" (0.314ms)
+  ✔ round-trips "${templateLiteral}" (0.322ms)
+  ✔ keeps classic single-quote injection inside the string literal (0.4656ms)
+✔ escapeJsString (8.9237ms)
+▶ validateNumber
+  ✔ accepts finite numbers and numeric strings (0.4985ms)
+  ✔ rejects non-finite and non-numeric values (1.2901ms)
+✔ validateNumber (3.9757ms)
+▶ source safety audit
+  ✔ does not call hideReplayToolbar from runtime code (3.8108ms)
+  ✔ keeps obvious user-controlled evaluate inputs behind sanitizers (21.4423ms)
+✔ source safety audit (25.6663ms)
+✔ normalizes BTCUSDT quantity to TradingView paper step (12.379ms)
+✔ keeps already-valid BTCUSDT quantity unchanged (0.62ms)
+✔ leaves unknown symbols untouched (0.6163ms)
+✔ rejects quote price buttons as order submit candidates (1.1365ms)
+✔ scores the real TradingView order-ticket submit button above quote buttons (10.0681ms)
+✔ rejects opposite-side order-ticket submit buttons (0.6059ms)
+✔ recognizes TradingView positions tab with count suffix (0.814ms)
+✔ terminal filled order rows are filtered from active orders (2.4378ms)
+✔ terminal cancelled bracket rows are filtered from active orders (0.4711ms)
+✔ working order rows remain active (0.4116ms)
+✔ executed market rows without explicit filled status are filtered (0.5258ms)
+✔ working stop-loss rows remain active (0.4064ms)
+ℹ tests 51
+ℹ suites 7
+ℹ pass 51
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7569.4583

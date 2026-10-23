@@ -1,0 +1,64 @@
+display_name: Trader XAU/BTC
+short_description: Intraday semi-auto workflow for XAU/USD and BTC/USD.
+default_prompt: Use this skill to analyze XAU/USD or BTC/USD, validate the setup, calculate risk, and refuse unsafe trades.
+categories:
+  - finance
+  - trading
+  - risk-management
+  - market-analysis
+tags:
+  - xauusd
+  - btcusd
+  - intraday
+  - day-trading
+  - smc
+  - ict
+  - tradingview
+  - mcp
+  - paper-trading
+  - risk-management
+  - macro-news
+input_schema:
+  type: object
+  properties:
+    asset:
+      type: string
+      enum:
+        - XAUUSD
+        - BTCUSD
+      description: Trading asset to analyze.
+    session:
+      type: string
+      enum:
+        - london
+        - new_york
+      description: Active intraday session.
+    mode:
+      type: string
+      enum:
+        - paper
+        - live
+      default: paper
+      description: Execution context. Live mode always requires explicit human validation.
+    current_phase:
+      type: string
+      enum:
+        - calibration
+        - validation
+        - maturite
+      default: calibration
+      description: Learning phase used to lock or unlock strategy families.
+    capital_usd:
+      type: number
+      default: 200
+      minimum: 1
+      description: Account capital used for risk calculations.
+    risk_per_trade_pct:
+      type: number
+      default: 1
+      minimum: 0.1
+      maximum: 2
+      description: Maximum initial risk per trade as percentage of capital.
+  required:
+    - asset
+    - session

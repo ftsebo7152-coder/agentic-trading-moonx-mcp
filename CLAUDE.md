@@ -1,0 +1,1 @@
+Lire `AGENTS.md` et `docs/OPERATIONS.md`. Les skills `.claude/skills` sont générés depuis `.agents/skills` avec `scripts/sync_skills.py`. Ne pas éditer les copies séparément. Le chargement d'un skill ne confère aucune permission d'exécution distante ou réelle.

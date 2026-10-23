@@ -1,0 +1,8 @@
+{
+  "name": "agentic-trading-moonx-mcp-tools",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test:tradingview": "npm --prefix vendor/codex-tradingview-xau-btc-mcp test"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "day-trader-fr",
+  "description": "11 skills Claude en français pour analyser les actions américaines, préparer un trade intraday, simuler un scénario et contrôler le risque.",
+  "version": "2.0.0-fr.1",
+  "author": {
+    "name": "Dan AI Lab (adaptation française ; original : Jake Schincariol)",
+    "url": "https://github.com/dan-ai-lab"
+  },
+  "homepage": "https://github.com/dan-ai-lab/day-trader-fr",
+  "repository": "https://github.com/dan-ai-lab/day-trader-fr",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-skills",
+    "day-trading",
+    "stock-market",
+    "backtesting",
+    "opening-range-breakout",
+    "paper-trading",
+    "french",
+    "francais"
+  ],
+  "skills": "./"
+}

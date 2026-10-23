@@ -1,0 +1,15 @@
+{
+  "mode": "PAPER",
+  "account": "local-paper",
+  "capital": "1250",
+  "watchlist": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "INJ",
+    "TRX"
+  ],
+  "scan_interval_minutes": 60,
+  "timezone": "Africa/Lagos",
+  "limits": {}
+}

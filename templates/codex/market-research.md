@@ -1,0 +1,1 @@
+Charger $agentic-trading-master. Mode recherche sans ordre. Lire les données autorisées, vérifier horodatages et sources, analyser technique/fondamentale/régime et score. Expliquer NO_TRADE et les données manquantes. Séparer observations et hypothèses; ne pas envoyer de transaction ni modifier les plafonds. Rapporter le résultat et sa fraîcheur.

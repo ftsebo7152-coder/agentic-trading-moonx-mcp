@@ -1,0 +1,1 @@
+Lire le journal confirmé et produire les métriques nettes par jour, actif, stratégie et mode. Séparer PAPER/LIVE et données synthétiques. Inclure refus, frais, drawdown, incertitude et incidents de mail. Ne pas promouvoir une stratégie à partir de peu de trades. Ne modifier aucune limite.

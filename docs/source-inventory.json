@@ -1,0 +1,2508 @@
+{
+  "day-trader-fr": {
+    "commit": "756e4f53cc1e79032ea7e1961c9e5589ae6477e0",
+    "files": [
+      {
+        "path": ".claude-plugin\\marketplace.json",
+        "bytes": 667,
+        "sha256": "d11dcbf8c1621084cf6256bc2779a0441c845fcf4f83b0e648ff800619fdf8c0"
+      },
+      {
+        "path": ".claude-plugin\\plugin.json",
+        "bytes": 749,
+        "sha256": "d1b7597c88b559f599faaff1197c4b375446f48ae37610df49d24b95c96cb0a6"
+      },
+      {
+        "path": ".gitignore",
+        "bytes": 68,
+        "sha256": "a291e2de65617cba1e86e1c747a417cafe565b843888d30fdd2402959a74575c"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "README.md",
+        "bytes": 12320,
+        "sha256": "2ff5de5810d15db83a3a6d15ce238e6c5f5e638561e55c51637eabc160e2c516"
+      },
+      {
+        "path": "tests\\__pycache__\\_load.cpython-312.pyc",
+        "bytes": 1292,
+        "sha256": "2708c501483702c3aa8f455370245aab70d0c3f926afb251be9351b6059fb29b"
+      },
+      {
+        "path": "tests\\__pycache__\\test_alerts.cpython-312.pyc",
+        "bytes": 43896,
+        "sha256": "0ffdea3bf09ea1cc50f7d6c4f96fbebd334c596078b67bd8b65fb5c66a050c9a"
+      },
+      {
+        "path": "tests\\__pycache__\\test_analyst.cpython-312.pyc",
+        "bytes": 14019,
+        "sha256": "16129e711672e46a224f422d1c4b2349b2005bc92bf0aad774100205ffcd3369"
+      },
+      {
+        "path": "tests\\__pycache__\\test_broker.cpython-312.pyc",
+        "bytes": 30074,
+        "sha256": "5f06050d3e2a4a6f0837cbe841116018b3c94dff7d4729dfaf8397119521cc5e"
+      },
+      {
+        "path": "tests\\__pycache__\\test_budget.cpython-312.pyc",
+        "bytes": 36470,
+        "sha256": "77c8845cdb89709d209de6a9007f82f0270d8ba32a2896c4ee0cb4d1714f40f8"
+      },
+      {
+        "path": "tests\\__pycache__\\test_entry.cpython-312.pyc",
+        "bytes": 53778,
+        "sha256": "6e8ba453a2af27b1ea22637c344c3bc0249992ea0c71dc138afe6d15683dc6ee"
+      },
+      {
+        "path": "tests\\__pycache__\\test_exit.cpython-312.pyc",
+        "bytes": 24037,
+        "sha256": "aace8e0e2947ad6ea3c84e9807a3f25d88927d39e4776b23918e4a0abcef5909"
+      },
+      {
+        "path": "tests\\__pycache__\\test_news.cpython-312.pyc",
+        "bytes": 19311,
+        "sha256": "f1fb46deeee0a399ff88a179ba9a0c55a1fe83b70b6da1d8077e3d51236a2927"
+      },
+      {
+        "path": "tests\\__pycache__\\test_pelosi.cpython-312.pyc",
+        "bytes": 19037,
+        "sha256": "5f5bdb9ca6d7ca2a979ea952b841ad2bace45d7017771d2188e53e70c8f29cd4"
+      },
+      {
+        "path": "tests\\__pycache__\\test_repo.cpython-312.pyc",
+        "bytes": 12238,
+        "sha256": "9796aa8d612bac95c9676b0ac9fd62d11e6bd0a4202a56b9e21ed6e1598916a5"
+      },
+      {
+        "path": "tests\\__pycache__\\test_risk.cpython-312.pyc",
+        "bytes": 49688,
+        "sha256": "42425813595c5dbc8b939df658b9f52b3f186f01d67490866a09059a4f4f17c1"
+      },
+      {
+        "path": "tests\\__pycache__\\test_scanner.cpython-312.pyc",
+        "bytes": 61809,
+        "sha256": "934d8a36b47d911234f770224bc522e30f3f3d3df0236c165bad2758bd12f772"
+      },
+      {
+        "path": "tests\\__pycache__\\test_timemachine.cpython-312.pyc",
+        "bytes": 58298,
+        "sha256": "85890ce17a9c5e50af8fe14d2ea2b4230c5ba429d7e89777abbef5cdcecd7c70"
+      },
+      {
+        "path": "tests\\_load.py",
+        "bytes": 483,
+        "sha256": "9e77e0bbe9b97c01e6ea71abb64e9e2a6ba04923296d12c618032d0e29b847d4",
+        "lines": 15,
+        "functions": [
+          "load"
+        ]
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\stooq-AAPL.csv",
+        "bytes": 111,
+        "sha256": "bd9b1914675c7abc21feeaec13210595734acc974cbde1aa52c48ce99b7bae94"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\stooq-ZZZZ.csv",
+        "bytes": 82,
+        "sha256": "9cfe313d5b195b177eae37ff61a21cfd82f630b6c273157fc678154393cda2a6"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-AAPL.json",
+        "bytes": 1297,
+        "sha256": "f39185b4c868848a26d8e9868bb6c2ba63e754189766d5764736e371f6924bc3"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-AXP.json",
+        "bytes": 1307,
+        "sha256": "c3ba28e353a1ce794d784282ed5dd5c632541d3b1875c5f37fa8fe4d8933dd23"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-BAC.json",
+        "bytes": 1325,
+        "sha256": "ab1a5ca1732da46e317753f0e742583c601df84d92753c2eb8f110cadcf7a954"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-GOOGL.json",
+        "bytes": 1304,
+        "sha256": "506b6c7a25e1d896d7a9eae5eacd927cf903aced9cdfa28e8b8e7cc5e6ef59ea"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-KO.json",
+        "bytes": 1308,
+        "sha256": "d6658491d812eaff1f82d0093014e3edd8f462522eafc1beca9895013b4d1d92"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-TSLA.json",
+        "bytes": 2875,
+        "sha256": "fc02d4e7c97173d1166e30550f56ffc1616b9eb30bf1e29d8af05f79c14745b6"
+      },
+      {
+        "path": "tests\\fixtures\\trader-alerts\\yahoo-ZZZZ.json",
+        "bytes": 110,
+        "sha256": "7bd32bb525b85d418e56c490c5d137e26d0fa3691ab58e7d9aa0b1d07856230f"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\000032019326000018\\index.json",
+        "bytes": 1890,
+        "sha256": "11f2b1e98e28910ecb42a3a2be040f257e258c80ecfe75780340b8ed07cf69e0"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\company_tickers.json",
+        "bytes": 239,
+        "sha256": "0369655216c73506680005fa1c4edc2cbfba0e63d5dbaf3d5072d26fa034d91b"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\companyfacts-CIK0000021344.json",
+        "bytes": 6616,
+        "sha256": "2bef9ad2c9feab5823d778fb92c9abf7e040a02a6cc445c0906d5b23d3921b8a"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\companyfacts-CIK0000320193.json",
+        "bytes": 26050,
+        "sha256": "d435cab7801489596ca2a0469e50f37717cf289d4836601292eb354e766500d2"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\submissions-CIK0000021344.json",
+        "bytes": 4013,
+        "sha256": "7e916621bf7e86c1881ae33d15c2aba3c95bdb2bf43f57d22bf8cc2a1087d295"
+      },
+      {
+        "path": "tests\\fixtures\\trader-analyst\\submissions-CIK0000320193.json",
+        "bytes": 5616,
+        "sha256": "2b1d71bbdeb8e4cda4951825087ea15ab07a91e62187f34eeb93814f227a0dec"
+      },
+      {
+        "path": "tests\\fixtures\\trader-budget\\berkshire-q2-2026-top5.json",
+        "bytes": 1231,
+        "sha256": "2b8832fde6a54d42160d3d71bbb134b4305fb21b24e3ce09998eec7fa11fdd87"
+      },
+      {
+        "path": "tests\\fixtures\\trader-budget\\plan-tsla.json",
+        "bytes": 525,
+        "sha256": "957321e233fb246e397efaa4dd7c09548ad80ef615a3667d4b6f3b3b282d8e24"
+      },
+      {
+        "path": "tests\\fixtures\\trader-entry\\DEMO-1m-synthetic.json",
+        "bytes": 2061,
+        "sha256": "e91faf77914f46f7d5cbfabe5e2e10b281954112c731c31105eeb0149477b272"
+      },
+      {
+        "path": "tests\\fixtures\\trader-entry\\TSLA-2026-10-19-5m.json",
+        "bytes": 2789,
+        "sha256": "eea729d62b01becd7f5c217b25f3b47ebb38b4d87bc51c58123a97a2ffa08f74"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\chart-TSLA.json",
+        "bytes": 2072,
+        "sha256": "a68a2ff6b3e09715e43d1a8a276247ef33e91325d115cfa53ac999627d923f0b"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\company_tickers.json",
+        "bytes": 568,
+        "sha256": "6e31c3fc04062fd021fffbe9f0cae6d91167b5a67b76ee041d77199551451ba0"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\sec-8-K-0000021344.xml",
+        "bytes": 7078,
+        "sha256": "21bfaa0854823e7b47e26d7d50eb963743c4e988ede4c2bb39df249381eddec7"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\sec-8-K-0000320193.xml",
+        "bytes": 7577,
+        "sha256": "99635c64c0adea64efc6bfd50b0faa6b4895fc4a02b28ed6afb889d1ae8370ff"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\yahoo-AAPL.xml",
+        "bytes": 4373,
+        "sha256": "212506b627330d51c82ee9a5ca6d41feb352bf3e28118f147d0bd1ead5483ee0"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\yahoo-KO.xml",
+        "bytes": 3203,
+        "sha256": "830975bd44923e2412c7b9e478bf81f0b7c2d2dc33518f865566a7f36b00d457"
+      },
+      {
+        "path": "tests\\fixtures\\trader-news\\yahoo-TSLA.xml",
+        "bytes": 12206,
+        "sha256": "20660cd493c84934b714ae5fb228dd1e4f6aae05288bc5a69c3cd1b419ef1f20"
+      },
+      {
+        "path": "tests\\fixtures\\trader-pelosi\\2026FD.zip",
+        "bytes": 716,
+        "sha256": "43f0c4d0c042e34d00f7ab41e0f07bed760dd4ede65ddc4d3d39f9bffd7a788b"
+      },
+      {
+        "path": "tests\\fixtures\\trader-pelosi\\ptr-20033725-excerpt.txt",
+        "bytes": 3650,
+        "sha256": "9c393d9d258086d3b790a1e54acc8565af8eda359428804502376fef1545c39c"
+      },
+      {
+        "path": "tests\\fixtures\\trader-pelosi\\ptr-20035143.txt",
+        "bytes": 4668,
+        "sha256": "538435224705788670a55a943cce646d5badc2a0c373a72dcf0108c0799bc1d6"
+      },
+      {
+        "path": "tests\\fixtures\\trader-pelosi\\ptr-20035562-excerpt.txt",
+        "bytes": 3530,
+        "sha256": "cafe71c4d3087351f07f73ef1fbe5025731ed7e9947f26466dc0ce6f4553209e"
+      },
+      {
+        "path": "tests\\fixtures\\trader-pelosi\\ptr-20035590.txt",
+        "bytes": 2212,
+        "sha256": "f232fc0eb674677035f2d1ba82c345269725a4bc615d13d1d97d43f5871218e1"
+      },
+      {
+        "path": "tests\\fixtures\\trader-risk\\orders-reel.json",
+        "bytes": 798,
+        "sha256": "db1060f8269a10cb2bb2699f0a6224964a8dbc666611908d76752918834a9f2e"
+      },
+      {
+        "path": "tests\\fixtures\\trader-risk\\orders-tsla.json",
+        "bytes": 953,
+        "sha256": "274df797a706839ab216a09fde168d1a884e7add6ea72c8dbbcac3f98abf6547"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\daily-spark-2026-10-19.json",
+        "bytes": 44323,
+        "sha256": "6d75c0522be098da20edc520b399ff0d505a053aeff0ff030b220c3ba4ae2c78"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\spark-3mo-live-2026-10-20.json",
+        "bytes": 42905,
+        "sha256": "3a9d08c979542fd9e5b21dc9100bf138ae51d4893339f6d0c64eb7e867bae9b5"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\spark-5m-live-2026-10-20-1001.json",
+        "bytes": 28175,
+        "sha256": "993d1ea552bc0f4059f279ed6cd3b32821d2e3058ed7454405358c6cc2f424d3"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\symdir\\nasdaqlisted.txt",
+        "bytes": 1384,
+        "sha256": "af34364e08526324097a1aca156de798287e5bf520e06d665ef764a782117dea"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\symdir\\otherlisted.txt",
+        "bytes": 1728,
+        "sha256": "d8703cf6f60e7c8400e884303eb10ad282e970cd7f8668a6d7891d2331748717"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\TSLA-5m-live-2026-10-20-1001.json",
+        "bytes": 1986,
+        "sha256": "c55abecb66adf64b7964b2e6824f0a9bdacc64016d669cd9117fab21a6549516"
+      },
+      {
+        "path": "tests\\fixtures\\trader-scanner\\wall5m-2026-10-19.json.gz",
+        "bytes": 65951,
+        "sha256": "067ab8eddfdd7925d517b71eb22b0a0a2ee9baee8a486efe03f89e92b3e33eeb"
+      },
+      {
+        "path": "tests\\fixtures\\trader-timemachine\\TSLA-60d5m.json.gz",
+        "bytes": 92941,
+        "sha256": "b326efd64aa807e93325cff52770976e0820610a9cb9442f17dcfc5cffc9ef9f"
+      },
+      {
+        "path": "tests\\test_alerts.py",
+        "bytes": 23142,
+        "sha256": "6f52fd1bea8b04b47c7e8d94df10d07f5ceac8b3e62775bcecbcb0c165025b54",
+        "lines": 454,
+        "functions": [
+          "ny",
+          "run",
+          "plan_rules",
+          "Calendar",
+          "Quotes",
+          "FakeNet",
+          "Network",
+          "Rules",
+          "Cli",
+          "test_holidays_match_the_published_list",
+          "test_daylight_saving_switches",
+          "test_parse_now",
+          "test_market_status",
+          "test_yahoo_fixtures",
+          "test_stooq_fixture",
+          "test_urls_and_user_agent",
+          "test_offline_quotes_and_errors",
+          "test_offline_gz",
+          "__init__",
+          "urlopen",
+          "setUp",
+          "tearDown",
+          "net",
+          "hosts",
+          "test_query2_first_with_the_contract_user_agent",
+          "test_one_retry_with_a_pause_on_429",
+          "test_falls_back_to_query1_on_429_and_5xx",
+          "test_a_404_is_yahoos_answer_and_a_403_is_not_retried",
+          "test_a_pause_between_tickers",
+          "setUp",
+          "at",
+          "test_a_target_rings_once",
+          "test_stop_and_rearm",
+          "test_pct_move_from_previous_close",
+          "test_opening_bell_once_per_trading_day",
+          "test_the_plan_gives_a_stop_a_target_and_flat_by_close",
+          "test_flat_by_close_rings_once_per_trading_day",
+          "test_a_time_alert_moves_with_an_early_close",
+          "test_the_example_rules_are_valid",
+          "test_bad_rules",
+          "setUp",
+          "tearDown",
+          "check",
+          "test_the_reel_trade_from_the_plan",
+          "test_the_v1_portfolio_evening_and_morning",
+          "test_add_time_and_target",
+          "test_quote_write_merges",
+          "test_quote_holdings_from_portfolio_and_plan",
+          "test_clock_exit_codes",
+          "test_check_without_rules"
+        ]
+      },
+      {
+        "path": "tests\\test_analyst.py",
+        "bytes": 7567,
+        "sha256": "c4d684d26621708a03ce30c901b6289e078fafe9402d707ebbea7a52d50f08af",
+        "lines": 163,
+        "functions": [
+          "companyfacts",
+          "run",
+          "Apple",
+          "Filings",
+          "LaggingData",
+          "Cli",
+          "setUp",
+          "test_latest_quarter",
+          "test_fiscal_labels_come_from_the_first_filing",
+          "test_q4_is_derived_from_the_10k",
+          "test_trailing_twelve_months",
+          "test_what_changed_in_words",
+          "test_restated_values_win_but_labels_stay",
+          "test_latest_10q_and_earnings_press_release",
+          "test_exhibit_names_seen_on_edgar",
+          "test_says_when_sec_facts_trail_a_filed_10q",
+          "test_one_offs_are_flagged",
+          "test_metrics_file_for_the_screener",
+          "test_unknown_ticker_and_no_user_agent",
+          "test_json_output"
+        ]
+      },
+      {
+        "path": "tests\\test_broker.py",
+        "bytes": 17223,
+        "sha256": "c0df7f62e6eb0263d842b5998c8a71adb4c4d2fc84759389ac2ed75538226e2b",
+        "lines": 333,
+        "functions": [
+          "tsla",
+          "run",
+          "ExplicitYes",
+          "TicketShape",
+          "DesktopConfig",
+          "Flow",
+          "yes",
+          "test_plain_yes_counts",
+          "test_standalone_french_confirmation",
+          "test_french_conditions_batches_and_changes_are_not_approval",
+          "test_anything_else_does_not",
+          "test_amount_must_match_this_order",
+          "test_a_bracket_yes",
+          "test_tool_input_is_the_alpaca_call",
+          "test_the_bracket_call_leaves_out_why_and_plan",
+          "test_plain_english",
+          "test_example_is_paper_with_placeholder_keys",
+          "setUp",
+          "tearDown",
+          "args",
+          "run_risk",
+          "state_doc",
+          "test_nothing_is_ready_before_the_risk_check",
+          "test_the_full_two_yes_flow",
+          "test_french_approval_keeps_the_original_reply_and_requires_risk",
+          "test_flatten_by_the_close",
+          "test_flatten_with_the_broker_qty",
+          "test_an_edited_order_is_not_ready",
+          "test_yesterdays_check_does_not_count",
+          "test_blocked_orders_are_never_ready",
+          "test_result_needs_an_approval_and_decline_is_logged",
+          "test_ibkr_tickets_send_the_final_yes_to_ibkr",
+          "test_fill_sell_relieves_the_oldest_lot"
+        ]
+      },
+      {
+        "path": "tests\\test_budget.py",
+        "bytes": 18421,
+        "sha256": "5c106d94695b7cb8a79657cce267ca3be1e8bedab7cdf87136b5cd510df79c1e",
+        "lines": 374,
+        "functions": [
+          "cfg",
+          "v1",
+          "plan",
+          "rows",
+          "dollars",
+          "run",
+          "prices_doc",
+          "TheReel",
+          "PlanRules",
+          "WeightsMode",
+          "test_config_example_is_the_contract",
+          "test_tsla_is_8_shares_bound_by_the_max_loss",
+          "test_the_bracket_order",
+          "test_the_fixture_orders_file_is_what_it_writes",
+          "test_a_limit_order",
+          "test_cli_writes_one_bracket_order",
+          "test_cli_json_and_limit",
+          "test_zero_shares_is_a_plain_refusal",
+          "test_each_limit_can_bind",
+          "test_a_fresh_higher_price_means_a_bigger_risk",
+          "test_prices_file_is_used_only_when_fresh",
+          "test_the_portfolio_cash_caps_the_size",
+          "test_bad_plans",
+          "test_under_the_minimum_order",
+          "test_missing_plan_and_weights_only_flags",
+          "check_reel",
+          "test_from_the_raw_weights",
+          "test_from_the_renormalised_weights_file",
+          "test_from_inline_weights",
+          "test_renormalised_weights",
+          "test_one_decimal_weights_stay_within_a_dollar",
+          "test_orders_are_place_stock_order_shaped",
+          "test_cents_mode_keeps_the_total",
+          "test_cap_redistributes_until_nobody_is_over",
+          "test_everything_capped_leaves_money_idle",
+          "test_slices_under_the_minimum_are_dropped_and_shared_out",
+          "test_blocked_tickers_are_dropped_first",
+          "test_top_n",
+          "test_whole_shares_need_prices",
+          "test_whole_shares_with_prices",
+          "test_no_budget_and_duplicates_are_errors",
+          "test_cli"
+        ]
+      },
+      {
+        "path": "tests\\test_entry.py",
+        "bytes": 30211,
+        "sha256": "ca4b9c92af2b471f42222b810ebc1e2d6d0e41cd3fa91c26e30648374ff2d624",
+        "lines": 605,
+        "functions": [
+          "ny",
+          "doc",
+          "chart",
+          "at",
+          "shift_to",
+          "no_breakout",
+          "run",
+          "TheReel",
+          "Rules",
+          "OneMinute",
+          "Calendar",
+          "Network",
+          "live_provider",
+          "Watch",
+          "Cli",
+          "SkillDoc",
+          "test_triggers_at_1015_on_the_1010_bar",
+          "test_at_1012_the_1010_bar_is_still_forming",
+          "test_before_the_open_and_while_the_range_forms",
+          "test_the_live_tick_and_the_in_progress_bar_are_dropped",
+          "test_after_the_close_it_stays_triggered_and_says_it_is_late",
+          "test_volume_confirmation_moves_the_trigger",
+          "test_level_setup",
+          "test_no_breakout_waits_then_expires_at_the_cutoff",
+          "test_the_bar_closing_at_the_cutoff_still_counts_when_yahoo_lags",
+          "test_config_cutoff",
+          "test_bad_inputs",
+          "test_or_minutes_30",
+          "c",
+          "test_wick_and_close_at_the_high_do_not_trigger",
+          "test_null_bar_tick_and_volume",
+          "test_the_file_and_the_interval_must_agree",
+          "test_dst_both_sides",
+          "test_half_day_moves_the_cutoff_up",
+          "test_weekend_holiday_and_empty_data",
+          "test_yahoo_errors",
+          "setUp",
+          "tearDown",
+          "answers",
+          "test_url_and_429_retry_once_after_a_pause",
+          "test_429_twice_falls_back_to_query1",
+          "test_5xx_falls_back_without_waiting",
+          "test_still_busy_is_one_plain_error",
+          "test_unknown_ticker_404",
+          "test_ranges_for_past_sessions",
+          "provider",
+          "loop",
+          "test_fires_on_the_first_closed_bar_not_the_spike_in_progress",
+          "test_waits_for_yahoo_to_catch_up",
+          "test_from_before_the_open_prints_the_range_bar_by_bar",
+          "test_a_computer_that_dozes_off_catches_up_when_it_wakes",
+          "test_expires_and_until",
+          "test_closed_day_and_repeated_errors",
+          "setUp",
+          "tearDown",
+          "test_check_write_is_the_contract_shape",
+          "test_check_waiting_json_and_exit_codes",
+          "test_offline_gz_folder_and_mismatch",
+          "test_longs_only_and_flag_errors",
+          "test_config_is_read",
+          "test_watch_replays_the_file_and_writes_the_entry",
+          "test_watchlist",
+          "test_skill_md",
+          "fake",
+          "Dozing",
+          "broken",
+          "sleep"
+        ]
+      },
+      {
+        "path": "tests\\test_exit.py",
+        "bytes": 14495,
+        "sha256": "201927d6a614e3f4f40d78a4ba54fd93ae02ad7a0c3ad8b5a547cdc2e1b50d58",
+        "lines": 290,
+        "functions": [
+          "run",
+          "c",
+          "Math",
+          "Cli",
+          "SkillDoc",
+          "test_the_reel_or_mid_1r",
+          "test_the_default_2r",
+          "test_raw_yahoo_floats_give_the_same_cents",
+          "test_other_stops",
+          "test_target_rounds_half_up_and_price_targets",
+          "test_refusals_say_why",
+          "test_atr_on_the_session_bars",
+          "setUp",
+          "tearDown",
+          "write",
+          "plan",
+          "read_plan",
+          "test_entry_to_plan_end_to_end",
+          "test_manual_flags_and_json",
+          "test_atr_stop_reads_bars",
+          "test_refusals_from_the_cli",
+          "test_flat_by_config_half_day_and_late_entries",
+          "test_show_without_a_plan",
+          "test_skill_md"
+        ]
+      },
+      {
+        "path": "tests\\test_news.py",
+        "bytes": 10209,
+        "sha256": "f5053d42c4db57d0a223f46a9bad32099f6eab5f6276439a3ea277853174d999",
+        "lines": 208,
+        "functions": [
+          "raw",
+          "run",
+          "Feeds",
+          "Tagging",
+          "Check",
+          "test_yahoo_rss",
+          "test_sec_atom_8k",
+          "test_times",
+          "test_yahoo_symbols",
+          "test_touches_and_tags",
+          "test_earnings_filings_are_tagged",
+          "test_dedupe_merges_the_same_story",
+          "setUp",
+          "tearDown",
+          "test_new_items_once_newest_first",
+          "test_filings_show_in_a_wider_window",
+          "test_tickers_from_watchlist_and_plan",
+          "test_no_tickers_is_an_error",
+          "test_sec_needs_a_user_agent",
+          "test_the_reel_tsla_morning",
+          "test_moves",
+          "test_new_york_time_follows_daylight_saving",
+          "test_day_trading_tags",
+          "test_state_forgets_after_30_days"
+        ]
+      },
+      {
+        "path": "tests\\test_pelosi.py",
+        "bytes": 9690,
+        "sha256": "3c972da9840206b4e2a9dd90f0619965077a3ce1f2d5f94917682368372b2ab0",
+        "lines": 200,
+        "functions": [
+          "text",
+          "run",
+          "Index",
+          "NewSinceLastCheck",
+          "ParseReport",
+          "setUp",
+          "test_finds_her_four_2026_ptrs",
+          "test_member_names_in_any_order",
+          "test_only_ptrs_unless_asked",
+          "test_since_and_newest_first",
+          "test_reads_the_xml_inside_or_alone",
+          "test_alerts_once",
+          "test_a_new_doc_id_is_new",
+          "test_dry_run_keeps_state",
+          "test_the_reel_alert_bloom_energy_calls",
+          "test_render_says_public_and_flags_your_stocks",
+          "test_joint_owner_and_account",
+          "test_self_owned_partial_sales_and_crowded_columns",
+          "test_page_breaks_exercises_and_exchanges",
+          "test_late_filings_are_flagged",
+          "test_parse_cli",
+          "test_dates"
+        ]
+      },
+      {
+        "path": "tests\\test_repo.py",
+        "bytes": 6855,
+        "sha256": "7654ca2d71c6b530f02da41654baae77e9b6bbc9eeacf83821780ba482003c39",
+        "lines": 139,
+        "functions": [
+          "frontmatter",
+          "every_text_file",
+          "Repo",
+          "test_eleven_skill_folders_at_the_root",
+          "test_root_contains_the_french_distribution",
+          "test_frontmatter_name_and_description",
+          "test_order_path_skills_carry_the_safety_rule",
+          "test_plugin_manifest_points_at_the_root_skills",
+          "test_readme_contains_installation_and_attribution",
+          "test_no_em_dashes_and_no_personal_email",
+          "test_no_v1_only_skill_is_left_behind",
+          "test_every_tool_runs_on_python_3_8",
+          "test_day_trading_limits_ship_in_the_example_config",
+          "test_paper_trading_is_the_default"
+        ]
+      },
+      {
+        "path": "tests\\test_risk.py",
+        "bytes": 28082,
+        "sha256": "fd8d6559d920686f36834bd4746880964a089338e727148990d985c1d5529c46",
+        "lines": 523,
+        "functions": [
+          "at",
+          "cfg",
+          "v1",
+          "tsla",
+          "bracket",
+          "v1_orders",
+          "buy",
+          "placed",
+          "verdicts",
+          "reasons",
+          "warnings",
+          "TheReel",
+          "DayTradeChecks",
+          "Exits",
+          "V1Checks",
+          "Cli",
+          "test_the_tsla_bracket_passes_every_check",
+          "test_nine_shares_is_blocked_by_the_max_loss_only",
+          "test_fingerprint_is_shared_with_the_broker",
+          "test_cli",
+          "one",
+          "test_a_stop_is_required",
+          "test_a_plan_stop_counts_but_warns",
+          "test_stop_and_target_on_the_right_side",
+          "test_reward_risk",
+          "test_a_fresh_higher_price_is_the_entry",
+          "test_a_stale_or_future_price_is_not_used",
+          "test_a_lower_price_does_not_shrink_the_risk",
+          "test_a_limit_order_uses_its_limit_price",
+          "test_daily_loss_and_trades_per_day",
+          "test_exits_and_declines_do_not_count_as_trades",
+          "test_the_batch_counts_toward_the_daily_limits",
+          "test_entry_window_new_york_time",
+          "test_the_window_uses_new_york_time_not_the_machine",
+          "test_pdt_guard",
+          "test_a_short_entry_when_allowed",
+          "test_bracket_format",
+          "test_extended_hours",
+          "test_getting_out_is_never_blocked_by_the_day_limits",
+          "test_a_partial_exit_and_the_rest",
+          "test_format_asset_and_short_still_apply_to_a_sell",
+          "test_buy_then_sell_in_one_batch",
+          "one",
+          "test_the_five_buys_pass_on_a_fresh_5000_paper_account",
+          "test_a_sixth_buy_is_blocked_three_ways",
+          "test_the_v2_config_blocks_buys_without_a_stop",
+          "test_max_and_min_order",
+          "test_blocked_list",
+          "test_options_off_unless_allowed",
+          "test_crypto_and_junk_symbols",
+          "test_format_rules",
+          "test_numbers_should_be_strings",
+          "test_share_orders_need_a_price",
+          "test_margin",
+          "test_short_sales_are_blocked",
+          "test_a_sell_frees_cash_for_a_later_buy",
+          "test_daily_limit_and_already_placed_today",
+          "test_live_account_warns",
+          "test_prices_file_freshness",
+          "test_v1_orders_with_a_v1_config_file",
+          "test_errors_are_one_line",
+          "trade"
+        ]
+      },
+      {
+        "path": "tests\\test_scanner.py",
+        "bytes": 36527,
+        "sha256": "ce05ab585f85d43530d4f462a7fae2ca442ad7ae821a20958a6019032eaca32d",
+        "lines": 646,
+        "functions": [
+          "run",
+          "ts",
+          "bars_series",
+          "Universe",
+          "Time",
+          "Spark",
+          "Network",
+          "Daily",
+          "Orb",
+          "LiveFiveMinute",
+          "Cli",
+          "setUp",
+          "why",
+          "test_the_kept_list",
+          "test_one_case_per_rule",
+          "test_nextshares_rule",
+          "test_not_a_symbol_file",
+          "test_dst_and_clock",
+          "test_a_real_spark_answer",
+          "test_spark_errors",
+          "test_urls",
+          "setUp",
+          "tearDown",
+          "answers",
+          "test_429_falls_back_then_waits_once",
+          "test_5xx_goes_to_query1_without_waiting",
+          "test_429_for_good_is_reported_as_partial",
+          "test_a_404_is_final",
+          "setUp",
+          "test_setups_before_the_open",
+          "test_the_in_progress_bar_is_dropped",
+          "test_half_day_bar_completes_at_one",
+          "test_liquidity_filter",
+          "test_short_and_empty_charts",
+          "test_rsi_matches_the_reel_math",
+          "setUpClass",
+          "scan_at",
+          "test_the_reel_scan_at_1015",
+          "test_price_floor",
+          "test_in_progress_bar_and_no_breakout_yet",
+          "test_the_live_tick_is_dropped",
+          "test_stage_one_is_a_necessary_condition",
+          "test_confirm_uses_the_v8_highs",
+          "test_a_missing_bar_makes_a_chart_unusable",
+          "test_winter_time_half_day_and_a_30_minute_range",
+          "test_window_messages",
+          "setUp",
+          "test_in_progress_bar_and_live_tick_are_dropped",
+          "test_tsla_broke_its_range_at_ten",
+          "test_stage_two_cap_takes_the_most_traded",
+          "setUp",
+          "tearDown",
+          "read",
+          "test_universe_daily_orb_end_to_end",
+          "test_partial_stage_two_is_said",
+          "test_plain_messages_and_exit_codes",
+          "test_offline_folder_of_v8_files",
+          "test_symbol_lists",
+          "test_daily_json",
+          "fake",
+          "confirm",
+          "broken",
+          "msg",
+          "confirm",
+          "get"
+        ]
+      },
+      {
+        "path": "tests\\test_timemachine.py",
+        "bytes": 32851,
+        "sha256": "4ce3f9dd49aba535afdc33a524001b7b82e84416824c53f3c2be3f4b7e5281fe",
+        "lines": 614,
+        "functions": [
+          "sha",
+          "plan",
+          "machine",
+          "edited",
+          "keep_bars",
+          "et",
+          "run",
+          "Reel",
+          "Seeds",
+          "Bars",
+          "Plans",
+          "Network",
+          "Cli",
+          "setUpClass",
+          "test_the_reel_odds",
+          "test_bit_for_bit_with_the_reel_sim",
+          "test_the_history_replay",
+          "test_the_verdict_says_coin_flip",
+          "test_bands_start_at_the_entry",
+          "test_the_plan_is_carried_through",
+          "test_the_text_report",
+          "test_same_seed_same_numbers",
+          "test_another_seed_gives_other_numbers",
+          "test_the_draws_are_stable_across_pythons",
+          "test_window_and_replays",
+          "setUp",
+          "test_the_in_progress_tick_is_dropped",
+          "test_now_pins_the_clock",
+          "test_daylight_saving",
+          "test_a_half_day_is_left_out",
+          "test_today_is_not_in_the_pool",
+          "test_a_missing_price_is_dropped",
+          "test_empty_and_broken_data",
+          "test_fewer_than_20_sessions_is_refused",
+          "test_an_early_close_day_ends_the_replay_at_1_pm",
+          "test_the_data_must_be_the_plans_ticker",
+          "test_an_entry_not_in_the_data_is_refused",
+          "test_plan_checks",
+          "test_entry_bar_or_entry_time_alone",
+          "test_until_cuts_the_replay",
+          "test_an_entry_outside_its_bar_is_flagged",
+          "test_stop_rounds_away_from_the_entry",
+          "test_the_stop_rule_is_worked_out_when_not_given",
+          "test_a_setup_other_than_orb_skips_the_history",
+          "test_a_sell_plan_mirrors_the_rules",
+          "test_the_verdict_thresholds_at_1r",
+          "test_a_2r_target_is_judged_against_its_break_even",
+          "test_2r_on_the_fixture_near_break_even",
+          "test_2r_on_the_fixture_a_clear_lean",
+          "setUp",
+          "tearDown",
+          "answer",
+          "test_url_and_user_agent",
+          "test_429_waits_retries_then_falls_back_to_query1",
+          "test_one_429_then_ok",
+          "test_5xx_falls_back",
+          "test_rate_limited_everywhere_is_one_plain_line",
+          "test_404",
+          "test_run_over_the_network_path",
+          "setUp",
+          "tearDown",
+          "test_run_with_the_plan_end_to_end",
+          "test_json_output",
+          "test_the_plan_as_flags_matches_the_file",
+          "test_offline_folder_and_default_paths",
+          "test_errors_are_one_plain_line",
+          "test_chart",
+          "cut",
+          "hole",
+          "trim",
+          "twenty",
+          "fake"
+        ]
+      },
+      {
+        "path": "trader-alerts\\__pycache__\\alerts.cpython-312.pyc",
+        "bytes": 50716,
+        "sha256": "6a4dc847f0e525e8bf93bbafc08bbdc3a4664533daaccde32fa9b5d6d0b514a5"
+      },
+      {
+        "path": "trader-alerts\\alerts.example.json",
+        "bytes": 606,
+        "sha256": "31705e9b5055232ee99a96797bbffd280bdb4bf19489c5608f6fcd7e592dda29"
+      },
+      {
+        "path": "trader-alerts\\alerts.py",
+        "bytes": 33612,
+        "sha256": "4b22d5ef4e26e03d6f8c356a1e2e2dd4aee682a3b05abb5f456a9e1370d4a127",
+        "lines": 787,
+        "functions": [
+          "AlertError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "parse_now",
+          "trading_day",
+          "session",
+          "market_status",
+          "stooq_url",
+          "yahoo_url",
+          "parse_stooq",
+          "parse_yahoo",
+          "_get",
+          "fetch",
+          "fetch_yahoo",
+          "_offline_text",
+          "get_quotes",
+          "write_prices",
+          "_write",
+          "_read",
+          "_hhmm",
+          "validate",
+          "active",
+          "_rang_today",
+          "ring_time",
+          "evaluate",
+          "_n",
+          "rules_from_plan",
+          "holdings",
+          "_dedupe",
+          "cmd_clock",
+          "cmd_quote",
+          "cmd_check",
+          "cmd_add",
+          "cmd_list",
+          "cmd_reset",
+          "main",
+          "f",
+          "net"
+        ]
+      },
+      {
+        "path": "trader-alerts\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-alerts\\SKILL.md",
+        "bytes": 9385,
+        "sha256": "bdfd43d8bb3752add94c2eb035fceab33f277c209fca1cf36a8e3875a0a678f6"
+      },
+      {
+        "path": "trader-analyst\\__pycache__\\facts.cpython-312.pyc",
+        "bytes": 35620,
+        "sha256": "1ba0a80f3adcb7317daa2a75bd6373d227b68464e7debc2ff91d52d8732d6745"
+      },
+      {
+        "path": "trader-analyst\\facts.py",
+        "bytes": 24544,
+        "sha256": "5f495a8d7c5f5686525e6a7eb62ae7c4151a1d5077daf18cad421e6d7b779704",
+        "lines": 548,
+        "functions": [
+          "FactsError",
+          "user_agent",
+          "Fetcher",
+          "_date",
+          "facts_for",
+          "periods",
+          "quarterly",
+          "series",
+          "_yoy_match",
+          "pct",
+          "margin",
+          "analyse",
+          "stale_note",
+          "changes",
+          "exhibit_name",
+          "latest_filings",
+          "_m",
+          "_p",
+          "_pm",
+          "render",
+          "metrics_row",
+          "clean_title",
+          "ticker_ciks",
+          "main",
+          "__init__",
+          "json",
+          "money"
+        ]
+      },
+      {
+        "path": "trader-analyst\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-analyst\\metrics.example.json",
+        "bytes": 2402,
+        "sha256": "fe9070c8e12bcff0e4badaa728daedc869a0042ee55cc031c9b839254c2165a5"
+      },
+      {
+        "path": "trader-analyst\\SKILL.md",
+        "bytes": 8009,
+        "sha256": "57c9bb0f9580382f4668fba469bd6ee0fae7e8b7b0c11b2dc5d6f8b0320f179b"
+      },
+      {
+        "path": "trader-broker\\__pycache__\\ticket.cpython-312.pyc",
+        "bytes": 50266,
+        "sha256": "5f523aed878163c3c32a814a46f66e8e254a5ff5a4885606d676b83a5310a774"
+      },
+      {
+        "path": "trader-broker\\claude_desktop_config.example.json",
+        "bytes": 392,
+        "sha256": "cffbae3fc51831aae136b7d8a8378fa6299d3b7ccaafaa6b0a7fec59e22d4680"
+      },
+      {
+        "path": "trader-broker\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-broker\\SKILL.md",
+        "bytes": 13014,
+        "sha256": "0fba425328fa712a68d01cb6bb4092a50ebd303e4386ee6c71fe738112c34061"
+      },
+      {
+        "path": "trader-broker\\ticket.py",
+        "bytes": 33431,
+        "sha256": "e832e435c5b3a8cdbb535f829e33638a73745581721434b8e381d8beb8e7d0a3",
+        "lines": 725,
+        "functions": [
+          "TicketError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "parse_now",
+          "ny_iso",
+          "read_json",
+          "write_json",
+          "rec_day",
+          "fingerprint",
+          "_str_num",
+          "_f",
+          "tool_input",
+          "_money",
+          "_p",
+          "is_bracket",
+          "max_loss",
+          "plain_parts",
+          "plain",
+          "amount_numbers",
+          "parse_yes",
+          "load_state",
+          "latest",
+          "risk_verdict",
+          "status_of",
+          "kind_of",
+          "render",
+          "ticket_json",
+          "apply_fill",
+          "log_fill",
+          "_clock",
+          "_load",
+          "_pick",
+          "cmd_show",
+          "cmd_approve",
+          "cmd_decline",
+          "cmd_result",
+          "cmd_fill",
+          "cmd_flatten",
+          "cmd_log",
+          "main",
+          "clock",
+          "common"
+        ]
+      },
+      {
+        "path": "trader-budget\\__pycache__\\size.cpython-312.pyc",
+        "bytes": 55324,
+        "sha256": "0bbaf9d1a24b3d23c977f65f3490d2afc8b56f13290b76a51a6bbd11fc6eda14"
+      },
+      {
+        "path": "trader-budget\\config.example.json",
+        "bytes": 620,
+        "sha256": "80db18b77f52ec88069b8ca0f6f72b96be6349650dae92a238888a8f005e6b9e"
+      },
+      {
+        "path": "trader-budget\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-budget\\size.py",
+        "bytes": 40119,
+        "sha256": "547b65b60d097086884e2454750fa4830ee7464eae7ea5126b631cf0dff30b37",
+        "lines": 881,
+        "functions": [
+          "SizeError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "parse_now",
+          "parse_utc",
+          "utc_iso",
+          "read_json",
+          "load_config",
+          "_f",
+          "parse_weights",
+          "weights_from_arg",
+          "load_prices",
+          "price_time",
+          "fresh_price",
+          "round_cent",
+          "shares_for",
+          "_price",
+          "_num",
+          "money",
+          "size_trade",
+          "bracket_order",
+          "plan_report",
+          "normalise",
+          "allocate",
+          "round_to_unit",
+          "whole_shares",
+          "size",
+          "orders_from",
+          "report",
+          "write_orders",
+          "run_plan",
+          "run_weights",
+          "main",
+          "units"
+        ]
+      },
+      {
+        "path": "trader-budget\\SKILL.md",
+        "bytes": 9515,
+        "sha256": "77f49d432bc4038b6e35b37e8e79dcf86babfe6ae7604c752499f7f5db7c9d5b"
+      },
+      {
+        "path": "trader-budget\\targets.example.json",
+        "bytes": 621,
+        "sha256": "975bae28ba360c22c2fc4fe3de9279f41cbe86d080b0feb03f330f90f24e5880"
+      },
+      {
+        "path": "trader-entry\\__pycache__\\entry.cpython-312.pyc",
+        "bytes": 61870,
+        "sha256": "21e39561e85749defb0ff8772c611499eb8e849ff5e193f2349a2397c1dad39b"
+      },
+      {
+        "path": "trader-entry\\entry.py",
+        "bytes": 43284,
+        "sha256": "40bfffb5b7a77494767f70a2fa14a37ed59af5ef75352e2bd1ab7aa45d16550a",
+        "lines": 960,
+        "functions": [
+          "EntryError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "utc_now",
+          "utc_of",
+          "ts_of",
+          "iso",
+          "parse_now",
+          "parse_hhmm",
+          "hm",
+          "short",
+          "ampm",
+          "trading_day",
+          "session",
+          "next_open",
+          "yahoo_symbol",
+          "chart_path",
+          "chart_range",
+          "_open_url",
+          "_sleep",
+          "yahoo_get",
+          "parse_chart",
+          "read_text",
+          "offline_file",
+          "get_chart",
+          "read_config",
+          "r2",
+          "early_cutoff",
+          "evaluate",
+          "public",
+          "entry_doc",
+          "write_json",
+          "setup_name",
+          "describe",
+          "bar_line",
+          "SimClock",
+          "watch_loop",
+          "_opts",
+          "_load",
+          "cmd_check",
+          "cmd_watch",
+          "cmd_watchlist",
+          "main",
+          "at",
+          "__init__",
+          "now",
+          "sleep",
+          "provider",
+          "on_trigger",
+          "emit",
+          "common"
+        ]
+      },
+      {
+        "path": "trader-entry\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-entry\\SKILL.md",
+        "bytes": 8750,
+        "sha256": "c4ddb85e8278fca3402640c91fe310c39b8811b349a2f628c10f8bbfaa2abfef"
+      },
+      {
+        "path": "trader-exit\\__pycache__\\exit.cpython-312.pyc",
+        "bytes": 46855,
+        "sha256": "cd2ca8795d123c08d877e58326eca83c0fb4956bb43e08b61a9e672bb877ddb1"
+      },
+      {
+        "path": "trader-exit\\exit.py",
+        "bytes": 31842,
+        "sha256": "3e4083e754cdef0b53ce4c84953d695c834a419cc8a0f95b13d80abbbd46c4ec",
+        "lines": 735,
+        "functions": [
+          "PlanError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "utc_now",
+          "utc_of",
+          "parse_now",
+          "parse_hhmm",
+          "parse_clock",
+          "hm",
+          "ampm",
+          "session",
+          "D",
+          "cents",
+          "floor_cents",
+          "money",
+          "num",
+          "ratio",
+          "parse_stop",
+          "parse_target",
+          "r_label",
+          "compute",
+          "_open_url",
+          "_sleep",
+          "yahoo_get",
+          "read_text",
+          "load_chart",
+          "session_bars",
+          "atr_of",
+          "read_json",
+          "read_config",
+          "resolve_flat_by",
+          "gather",
+          "build_plan",
+          "describe",
+          "cmd_plan",
+          "cmd_show",
+          "main",
+          "at"
+        ]
+      },
+      {
+        "path": "trader-exit\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-exit\\SKILL.md",
+        "bytes": 8231,
+        "sha256": "7cd1bf6d85c76a1ce29107833e58537e89a0c9c0cd5d875bdaf61feee4f018cf"
+      },
+      {
+        "path": "trader-news\\__pycache__\\news.cpython-312.pyc",
+        "bytes": 35765,
+        "sha256": "01c982df76d8ff56e6f4f6fe3ca7da5618f282dda5e8aa6b5b3d16e6fa6450af"
+      },
+      {
+        "path": "trader-news\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-news\\news.py",
+        "bytes": 23013,
+        "sha256": "e377784802b00159ace6a5f9caa5deaf48cb2d96312158532ce5818726783405",
+        "lines": 546,
+        "functions": [
+          "NewsError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "load_json",
+          "watch_from_files",
+          "sec_user_agent",
+          "Fetcher",
+          "yahoo_symbol",
+          "cik_map",
+          "_local",
+          "_text",
+          "parse_time",
+          "parse_rss",
+          "parse_sec_atom",
+          "parse_chart",
+          "collect_moves",
+          "mention_patterns",
+          "tag",
+          "dedupe",
+          "fingerprint",
+          "collect",
+          "select",
+          "remember",
+          "render_moves",
+          "render",
+          "_json_ready",
+          "main",
+          "__init__",
+          "get"
+        ]
+      },
+      {
+        "path": "trader-news\\SKILL.md",
+        "bytes": 7710,
+        "sha256": "07644633bb9814efb964e1ee370a1ea031764065638943a5019e947d7add0523"
+      },
+      {
+        "path": "trader-pelosi\\__pycache__\\ptr.cpython-312.pyc",
+        "bytes": 36376,
+        "sha256": "da82a97cee416a0c05a93b12a4698e6052f81f6f039e7176ffa3e8ae6fc67ff5"
+      },
+      {
+        "path": "trader-pelosi\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-pelosi\\ptr.py",
+        "bytes": 23494,
+        "sha256": "6d10c786d9d5a1c7480b03e664f7a0126d302be58155af2779ec637c0c954c88",
+        "lines": 566,
+        "functions": [
+          "PtrError",
+          "iso",
+          "download",
+          "read_index_bytes",
+          "parse_index",
+          "load_index",
+          "member_match",
+          "select",
+          "load_state",
+          "save_state",
+          "new_since",
+          "_amount",
+          "_finish",
+          "parse_ptr_text",
+          "pdf_to_text",
+          "watchlist",
+          "describe",
+          "render_report",
+          "render_index",
+          "_parser",
+          "_fetch_and_read",
+          "main",
+          "_run",
+          "common"
+        ]
+      },
+      {
+        "path": "trader-pelosi\\SKILL.md",
+        "bytes": 9200,
+        "sha256": "1442466d2d157d912aad49b4338fdbe0d5aa1593c8d0e2626363c9da5766ca74"
+      },
+      {
+        "path": "trader-risk\\__pycache__\\check.cpython-312.pyc",
+        "bytes": 52690,
+        "sha256": "f5aab09a5bcea222b50f902ef2ac3fef533e564909c40b5c55e12860bc8985fd"
+      },
+      {
+        "path": "trader-risk\\check.py",
+        "bytes": 39970,
+        "sha256": "e29c6c2b00b8408ac5c4c7306af1432e1ba59b5287c920a21ac48fda4b15695e",
+        "lines": 819,
+        "functions": [
+          "RiskError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "parse_now",
+          "parse_utc",
+          "trading_day",
+          "hhmm",
+          "_shift",
+          "window_check",
+          "business_days",
+          "read_json",
+          "fingerprint",
+          "_f",
+          "money",
+          "_cent",
+          "_p",
+          "account",
+          "rec_day",
+          "rec_is_entry",
+          "placed_today",
+          "day_trades",
+          "check",
+          "_pct",
+          "_num",
+          "report",
+          "load_prices",
+          "main",
+          "fresh"
+        ]
+      },
+      {
+        "path": "trader-risk\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-risk\\SKILL.md",
+        "bytes": 9916,
+        "sha256": "c8573d4c8af2afddfd07d960325c442db5d22266decee6007054dd8b4f35f4d0"
+      },
+      {
+        "path": "trader-scanner\\__pycache__\\scan.cpython-312.pyc",
+        "bytes": 73104,
+        "sha256": "7dd741c966103bf423525904b093fe4c9557f58f3d6ea40e4f1e481354f0eb81"
+      },
+      {
+        "path": "trader-scanner\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-scanner\\scan.py",
+        "bytes": 48762,
+        "sha256": "86aacc71321712bd68b39190127c9164a14f727449c868f60a5ced10edd1d839",
+        "lines": 1083,
+        "functions": [
+          "ScanError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "ts_to_eastern",
+          "parse_now",
+          "parse_hhmm",
+          "trading_day",
+          "session",
+          "clock_label",
+          "day_label",
+          "http_get",
+          "yahoo_get",
+          "to_yahoo",
+          "spark_path",
+          "chart_path",
+          "series_from_result",
+          "parse_spark",
+          "parse_chart",
+          "_read_maybe_gz",
+          "_stem",
+          "_absorb",
+          "load_offline",
+          "classify",
+          "parse_symdir",
+          "build_universe",
+          "rsi",
+          "daily_closes",
+          "find_setups",
+          "scan_daily",
+          "slot",
+          "session_bars",
+          "usable",
+          "orb_candidate",
+          "orb_hit",
+          "orb_window",
+          "scan_orb",
+          "progress",
+          "fetch_spark",
+          "read_symbols",
+          "symbols_from_file",
+          "read_config",
+          "write_json",
+          "money",
+          "cmd_universe",
+          "cmd_daily",
+          "_n",
+          "cmd_orb",
+          "_p",
+          "main",
+          "col",
+          "common",
+          "confirm"
+        ]
+      },
+      {
+        "path": "trader-scanner\\SKILL.md",
+        "bytes": 10996,
+        "sha256": "78676f96703f246501ab6d7493db915ec9eb377ece2a37beabe63239bd7ac8a5"
+      },
+      {
+        "path": "trader-timemachine\\__pycache__\\timemachine.cpython-312.pyc",
+        "bytes": 64184,
+        "sha256": "b70ddce124f1328226b69b6d84908247edc059443a1d733c193a609c36dc977e"
+      },
+      {
+        "path": "trader-timemachine\\LICENSE",
+        "bytes": 1094,
+        "sha256": "9f65c2af3935669d28c1afb82da45e5da609c590a636c233866a4888e84f91f4"
+      },
+      {
+        "path": "trader-timemachine\\SKILL.md",
+        "bytes": 9916,
+        "sha256": "c5a8a9580021e14bb846a90e15ec5ada6935f53283a2af123246a3cc2db3e9b2"
+      },
+      {
+        "path": "trader-timemachine\\timemachine.py",
+        "bytes": 44026,
+        "sha256": "3db5e7da25e421815f48caaa8bc52632a26120e5b124181a9a9358f6fd4a12f1",
+        "lines": 956,
+        "functions": [
+          "TMError",
+          "_nth_sunday",
+          "eastern_offset",
+          "to_eastern",
+          "eastern_to_utc",
+          "parse_now",
+          "utc_of",
+          "parse_clock",
+          "clock12",
+          "clock24",
+          "chart_url",
+          "_sleep",
+          "_get",
+          "fetch_chart",
+          "read_offline",
+          "chart_result",
+          "parse_bars",
+          "split_sessions",
+          "full_sessions",
+          "build_pool",
+          "pct",
+          "simulate",
+          "cents_away",
+          "opening_range",
+          "rule_stop",
+          "history_replay",
+          "_num",
+          "load_plan",
+          "normalize_plan",
+          "resolve_rule",
+          "_until12",
+          "lean",
+          "verdict",
+          "verdict_notes",
+          "time_machine",
+          "pc",
+          "report",
+          "render_chart",
+          "_write",
+          "compute",
+          "cmd_run",
+          "cmd_chart",
+          "main",
+          "slot",
+          "row",
+          "common"
+        ]
+      }
+    ]
+  },
+  "codex-tradingview-xau-btc-mcp": {
+    "commit": "2cbafc91b9a0c7313fd021a80a3e70576e15a8ef",
+    "files": [
+      {
+        "path": ".env.example",
+        "bytes": 744,
+        "sha256": "b3e98283971280f8acfb790388eb798393f13ca37a19e142e4ca2ff61c78300e"
+      },
+      {
+        "path": ".github\\workflows\\ci.yml",
+        "bytes": 292,
+        "sha256": "4785c642069ed9f6fa5e61846e9644b61767330d0c9be28f79690b337e9a0afa"
+      },
+      {
+        "path": ".gitignore",
+        "bytes": 144,
+        "sha256": "2224a6d845324537604a2549567842120f0779d49e73d5557e8c16ed2c7119c3"
+      },
+      {
+        "path": "agents\\performance-analyst.md",
+        "bytes": 1280,
+        "sha256": "1b880f3ff28d8bc073f5ef7fcd1c923fd7044f2ca4a0449083f441551c8622b9"
+      },
+      {
+        "path": "AGENTS.md",
+        "bytes": 2186,
+        "sha256": "dece2966c3bcbcf1bb98f45b8d01beb63f31d8837b8903ffe924653f62d8cfcd"
+      },
+      {
+        "path": "CLAUDE.md",
+        "bytes": 11806,
+        "sha256": "3a39a368389c0d8cc23f8bf823e3c08a1da6a9cbf07bcbe6367e79ccb3b4361e"
+      },
+      {
+        "path": "codex-config.example.toml",
+        "bytes": 272,
+        "sha256": "86343aecd14b1f4f40441da9dea15865a700999d0635128eb1978f6844fd074e"
+      },
+      {
+        "path": "codex-mcp.example.json",
+        "bytes": 349,
+        "sha256": "5e80974f8d4da787412f16530c5ee5d65a6e55a5b1eccea4194cfdcdad2a0226"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\.env.example",
+        "bytes": 306,
+        "sha256": "f122f92e5719604b282df8e3156e1a4d523abe3f449137a5c37b714d7a5a5631"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\agents\\openai.yaml",
+        "bytes": 1547,
+        "sha256": "e4cf493e4dd43215867e514401c58a91708dd52bdcfd5b136c01102883bc8ced"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\00-quick-reference.md",
+        "bytes": 2877,
+        "sha256": "1fb69fcd952bb8fc4dddbbaa93c78749a27df4c8d5d5a8bb146b4ceddc01c07b"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\01-technique-structure.md",
+        "bytes": 5720,
+        "sha256": "4655efdcda8a9ef7c45c08adc82005919a0f33982a9d71f83d938d4138b13d87"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\02-fondamental-macro-news.md",
+        "bytes": 7305,
+        "sha256": "8ab75211de66450d08ccf9cde35a1baf52b9fdcccf7080c005dbc8b94bf2599d"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\03-risk-capital-levier.md",
+        "bytes": 5765,
+        "sha256": "35959fefc560bb72a37be8066624e6758b399cc78bec6b801664e00af856b45f"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\04-sessions-timing.md",
+        "bytes": 3625,
+        "sha256": "713f1208dfdd0cbab84e8341ae0b9ac33403c37e2758f737efad643f6176eda3"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\05-strategies-playbooks.md",
+        "bytes": 7287,
+        "sha256": "690fa3a05bbebfa8ce5c70fd17f4e576b281acb786af5f8a11c10399e5a8cd30"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\06-journal-amelioration.md",
+        "bytes": 3853,
+        "sha256": "6722a2ac6b212f5014c00e83db07a1f5c5b121a96acd8fb342ace7fb00a13c2c"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\07-tradingview-mcp-workflow.md",
+        "bytes": 2641,
+        "sha256": "cc9a72c2dbcf22beb9c99fa803cb4b64066da40eda4338bb733310a3467ac377"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\08-orderflow-footprint-heatmap.md",
+        "bytes": 9211,
+        "sha256": "f66f1350414cc790a7f9e5630a6ea146d3153b050effa342cc407ada292c7cf4"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\09-strategies-statistiques.md",
+        "bytes": 2255,
+        "sha256": "313c0c114d1fb5c570d141fd0e4cfa323ca433a5cc3f8833edad13982a81a3aa"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\references\\10-mcp-news-fundamentals.md",
+        "bytes": 1072,
+        "sha256": "8346199dfd475afabca2b7886723831ce1fbaa732d4b0188b40c634efae7026a"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\SKILL.md",
+        "bytes": 11738,
+        "sha256": "b12aaf1d13184aa9870abd377a8e00f547c9c91317fb745d98c8f5120e7c0635"
+      },
+      {
+        "path": "codex-skills\\trader-xau-btc\\tools\\codex_pre_session_json.md",
+        "bytes": 3772,
+        "sha256": "1aaee5824ae14f5586ded6bb9f829ea8970d4b4ea7bbe421f7e70efb2e462efe"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "bytes": 2330,
+        "sha256": "d07aac84156b43e456ffaba76cb7bd5e5d8905c5d467d1737e9532df8019d722"
+      },
+      {
+        "path": "data\\manual_calendar.example.json",
+        "bytes": 322,
+        "sha256": "13f281235bcca43c779d059b6a8d5d3730ccde642e211bf7012f6eb19ceb6e9e"
+      },
+      {
+        "path": "data\\rss_sources.json",
+        "bytes": 556,
+        "sha256": "fe965164600eddcfd730090764f88aeb9409122195d2f89003888a41103fa98b"
+      },
+      {
+        "path": "docs\\CODEX_WINDOWS_SETUP.md",
+        "bytes": 2147,
+        "sha256": "5b64da20b0d714c71a6bff61f0483e38c25871b082ae6d2eec1b4b6607ee4139"
+      },
+      {
+        "path": "docs\\INTRADAY_STRATEGY_LIBRARY.md",
+        "bytes": 2033,
+        "sha256": "eb74a06d1cbc7a0d7d00578bb4a1e138efe5436844cdf3f5452039af236bf5bf"
+      },
+      {
+        "path": "docs\\MULTI_ASSET_EXTENSION.md",
+        "bytes": 1026,
+        "sha256": "a214e1bc50a189f5ad8e2a4870e76951893cdb0d6a29b14f7dfa51cfcffa33ea"
+      },
+      {
+        "path": "docs\\SAFETY_AND_LIMITS.md",
+        "bytes": 960,
+        "sha256": "34673989811066856a5a534b98f3c4cef1fb5c4ed63ccc718ce5789457b1473f"
+      },
+      {
+        "path": "docs\\TRADING_WORKFLOW_XAU_BTC.md",
+        "bytes": 1480,
+        "sha256": "c8c5a879029acfa5c7152af0cd72a9ff257169f004eec9833ff5a4e0f4748899"
+      },
+      {
+        "path": "docs\\UPSTREAM_INTEGRATION.md",
+        "bytes": 1171,
+        "sha256": "dce5d35b2b5f1a3c56d8c71a597688d80518364b9fb2260dab3e0a47c378e8a1"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1760,
+        "sha256": "acb84dc39fca14ecf7baa224b13f7d013a1164b109e9eccba3ade30624d97c52"
+      },
+      {
+        "path": "package-lock.json",
+        "bytes": 47014,
+        "sha256": "24cba262ef1d913313d99383a9fb906b3c4e0f109b24a9a21cac03d1bd1292eb"
+      },
+      {
+        "path": "package.json",
+        "bytes": 2009,
+        "sha256": "e1ed2a83fcb18ae6118f2abc85c9bf4fe100de1e2036ec58bb827a5ab8175551"
+      },
+      {
+        "path": "pine\\codex_xau_btc_context.pine",
+        "bytes": 1860,
+        "sha256": "165ea9e2e0c0c00ebb752ed54ae9813ba609428a44c42f04b2764b4f22af3f89"
+      },
+      {
+        "path": "README.es.md",
+        "bytes": 18261,
+        "sha256": "401e4dc84dde94491e49867e37af09820ec872bcb9f4150a62b9f38773f8601a"
+      },
+      {
+        "path": "README.fr.md",
+        "bytes": 2456,
+        "sha256": "29401c2e7052da4f4ea7ec03912480b4e5a4a9aca62279738cd280270b688b95"
+      },
+      {
+        "path": "README.md",
+        "bytes": 3905,
+        "sha256": "30da78b53cfb9278bf14be97da904bc419379a6c612e76565907677fb9769435"
+      },
+      {
+        "path": "RESEARCH.md",
+        "bytes": 6096,
+        "sha256": "896e5b153cd9d2c26c5dbd9696e87d4cc93caae59f97ee325d77f1c35395417a"
+      },
+      {
+        "path": "rules.example.json",
+        "bytes": 2748,
+        "sha256": "13cabc16de4ab10b3fa92d34632dcc89f2a6b9d25911589f81048db708e44005"
+      },
+      {
+        "path": "rules.json",
+        "bytes": 4049,
+        "sha256": "759337c07a0fcb5bfa0a8002c25e368fe8aaa11e97941a95706f4648f6c67f1d"
+      },
+      {
+        "path": "rules.xau-btc.json",
+        "bytes": 4049,
+        "sha256": "759337c07a0fcb5bfa0a8002c25e368fe8aaa11e97941a95706f4648f6c67f1d"
+      },
+      {
+        "path": "scripts\\launch_tv_debug.bat",
+        "bytes": 2268,
+        "sha256": "74de0cbe6f0e6fefa175002dda0d498be226df02083bc3d483fb0cb6f3836382"
+      },
+      {
+        "path": "scripts\\launch_tv_debug.vbs",
+        "bytes": 308,
+        "sha256": "d3a69d2540080cfc48346dfff11674014198bae5eba414fe0e6dd1358a98040e"
+      },
+      {
+        "path": "scripts\\launch_tv_debug_linux.sh",
+        "bytes": 2109,
+        "sha256": "25194678c771b93e94c9f8e492bfd24f36259eeab200b088042d47d09d8061f3"
+      },
+      {
+        "path": "scripts\\launch_tv_debug_mac.sh",
+        "bytes": 2085,
+        "sha256": "cc8dcbc08a8b11d9bcbf3328fdb5733248ad1f51fd9ea29c7661bd881bdaec10"
+      },
+      {
+        "path": "scripts\\pine_pull.js",
+        "bytes": 1554,
+        "sha256": "d348f4f9e40b4eefafef8c0480995b727f3e9f91322a922d45505129ac2ff2eb",
+        "lines": 22
+      },
+      {
+        "path": "scripts\\pine_push.js",
+        "bytes": 3608,
+        "sha256": "553a87822f369b7279a3dc46cf0a122811960e723f9262e79ed122a6f9153c65",
+        "lines": 51
+      },
+      {
+        "path": "scripts\\setup_codex_windows.ps1",
+        "bytes": 8845,
+        "sha256": "5b9c0aed52695737a76a1cc5a5e91331cb69378d1c573f41f0a348d7c494b724"
+      },
+      {
+        "path": "scripts\\start_tradingview_codex_mode.bat",
+        "bytes": 682,
+        "sha256": "77e61f3c013112efbbb1a0f5a8f55b46577a9c4052d40268c86d4a43d669461c"
+      },
+      {
+        "path": "SECURITY.md",
+        "bytes": 1265,
+        "sha256": "33ae9a4115b657f8b1fa736b00a97a361a1a4b7ccb70dbe36239989496069f18"
+      },
+      {
+        "path": "selectors\\broker.example.json",
+        "bytes": 275,
+        "sha256": "93598e14a95484aa099ebe5a59df537556079ae5b25fdffa7fe37ca3653e7f28"
+      },
+      {
+        "path": "selectors\\tradingview.en.json",
+        "bytes": 276,
+        "sha256": "f8f047c06e3c205eb72c4d9c9bf457fa23035f176b01650282008f6297c6802f"
+      },
+      {
+        "path": "selectors\\tradingview.fr.json",
+        "bytes": 272,
+        "sha256": "5ba13b3147b45ed1bcfa344ff6a8bb39fdc129796c22dec5d5ab2cb8d0072e43"
+      },
+      {
+        "path": "selectors\\tradingview.paper.json",
+        "bytes": 248,
+        "sha256": "dd07318ff3dbac16714b78125abeb2f201b32e6961c4b820b511e406650292f3"
+      },
+      {
+        "path": "setup-codex-windows.bat",
+        "bytes": 498,
+        "sha256": "21cb80e3093832d26d7a8e1f053c85130f032ba5b7b4a75e2103d62616593428"
+      },
+      {
+        "path": "SETUP_GUIDE.md",
+        "bytes": 3391,
+        "sha256": "c9a6306b7c2b0f7303f9f3b58fee3b758e75e13b536ed78d63f7440df8f7da0b"
+      },
+      {
+        "path": "skills\\chart-analysis\\SKILL.md",
+        "bytes": 2140,
+        "sha256": "f4720d6267296ced005a73fd74a08a651731ef89176ad907c5cb0b2b5bf384a2"
+      },
+      {
+        "path": "skills\\multi-symbol-scan\\SKILL.md",
+        "bytes": 1861,
+        "sha256": "b8f67dec6dc6f9497b131a163302a02e5b5cd683ec4dc5458454d74a77d2348d"
+      },
+      {
+        "path": "skills\\pine-develop\\SKILL.md",
+        "bytes": 2562,
+        "sha256": "2de454fd04725da0785d331951493693b97584e496faa836bac596134ea84151"
+      },
+      {
+        "path": "skills\\replay-practice\\SKILL.md",
+        "bytes": 1860,
+        "sha256": "4e304c73044d986e71855d8583ad2cce9d108790f18e15899c58ace23e550b05"
+      },
+      {
+        "path": "skills\\strategy-report\\SKILL.md",
+        "bytes": 2462,
+        "sha256": "5567972afaccd371ddb39534e6953637a956050723c30e70a02a5fe0bb762747"
+      },
+      {
+        "path": "src\\await.js",
+        "bytes": 5787,
+        "sha256": "1b452b6115e7ac7bb0773beb6940dfcbd7d2bd5719fc55f3742cf63e92e43318",
+        "lines": 185
+      },
+      {
+        "path": "src\\cli\\commands\\alerts.js",
+        "bytes": 1075,
+        "sha256": "e3ae23bdf9527ab7b9ba7c251fbc38dc1ce3c754a9791b68b1f1058efa5e4b34",
+        "lines": 32
+      },
+      {
+        "path": "src\\cli\\commands\\capture.js",
+        "bytes": 491,
+        "sha256": "e891fee5f805abed19761260948a32dfccd5b6812aefae0a11c8ae8fe09c0d6f",
+        "lines": 14
+      },
+      {
+        "path": "src\\cli\\commands\\chart.js",
+        "bytes": 2847,
+        "sha256": "07338ce61f50d064377ebb8a4095fe816a650179e8123ddc407c28acafb5ab5b",
+        "lines": 82
+      },
+      {
+        "path": "src\\cli\\commands\\data.js",
+        "bytes": 3553,
+        "sha256": "0171963cc1593b55996d2b7836f922592d5b29ca22813211f830f20e5f7b993a",
+        "lines": 88
+      },
+      {
+        "path": "src\\cli\\commands\\desk.js",
+        "bytes": 2874,
+        "sha256": "5d2ef48a6fc2dfc74e9451a60d92483edfd16b44231283abd0cbec3bd8cb6f07",
+        "lines": 68
+      },
+      {
+        "path": "src\\cli\\commands\\doctor.js",
+        "bytes": 510,
+        "sha256": "2d0cec725771ed1b73cb38b75ef024351c9b58c541d98b4ff1df30052e989944",
+        "lines": 11
+      },
+      {
+        "path": "src\\cli\\commands\\drawing.js",
+        "bytes": 1859,
+        "sha256": "208ea42d587f39b689d7e8a3cb8f9a78cfc2270ebdbe438bea4cda546f6fb8d9",
+        "lines": 41
+      },
+      {
+        "path": "src\\cli\\commands\\health.js",
+        "bytes": 617,
+        "sha256": "818d658367f2320802e08c697c1408a2ffbc8e6594fef2964edeb95f7905df93",
+        "lines": 19
+      },
+      {
+        "path": "src\\cli\\commands\\indicator.js",
+        "bytes": 2635,
+        "sha256": "434cdf52860d43bc83baa3a10ccda86ef14e9018415844fff3070379ff2b2685",
+        "lines": 57
+      },
+      {
+        "path": "src\\cli\\commands\\layout.js",
+        "bytes": 624,
+        "sha256": "9520bdfd9f62566dbebfe78e3aebd1125a25d96f8f5f560e8d3c03e085f6a364",
+        "lines": 19
+      },
+      {
+        "path": "src\\cli\\commands\\morning.js",
+        "bytes": 1493,
+        "sha256": "2d4815c38d6c6e1d4c3c7e5eb4d55f440aa725db1d6e1aa087f64d81c633558e",
+        "lines": 56
+      },
+      {
+        "path": "src\\cli\\commands\\pane.js",
+        "bytes": 1230,
+        "sha256": "1bea882aa3e8e368cc46fc5dc129d5dbee35f58d3c25d3d1089984ca839c7c5d",
+        "lines": 33
+      },
+      {
+        "path": "src\\cli\\commands\\pine.js",
+        "bytes": 3582,
+        "sha256": "ebb4110f63e3d0de9a1660a225fc763931273f1eb0884a353aaef95ff75cb257",
+        "lines": 106
+      },
+      {
+        "path": "src\\cli\\commands\\replay.js",
+        "bytes": 1381,
+        "sha256": "0e1837dab91c475b9639631382442119fa2d7f7db1a3d860046b200adce49ffb",
+        "lines": 41
+      },
+      {
+        "path": "src\\cli\\commands\\stream.js",
+        "bytes": 3579,
+        "sha256": "09d93e326e3530f9714f3116148dde085454df364d59c4657d87e67a2f72c0e5",
+        "lines": 85
+      },
+      {
+        "path": "src\\cli\\commands\\tab.js",
+        "bytes": 816,
+        "sha256": "cf6aba554a47424b0cebd4882481477fb8a615ee16549b911ce9b85765a5d695",
+        "lines": 27
+      },
+      {
+        "path": "src\\cli\\commands\\ui.js",
+        "bytes": 4357,
+        "sha256": "4de1ca907d0bcc6dae9db4d0d1fb4c6d27175aeb1f08ed2118c1591cb71d139b",
+        "lines": 103
+      },
+      {
+        "path": "src\\cli\\commands\\watchlist.js",
+        "bytes": 584,
+        "sha256": "d5a9fee0219ade31e6660903dd9631f5cf988fd0ac0e1d979501ae439c360639",
+        "lines": 19
+      },
+      {
+        "path": "src\\cli\\index.js",
+        "bytes": 1048,
+        "sha256": "cba85a7dcd462e1254421a4e6990994c6e3976d9f3e4587ace279c4cc85fd223",
+        "lines": 38
+      },
+      {
+        "path": "src\\cli\\router.js",
+        "bytes": 4833,
+        "sha256": "b0eddf4373a1e5a95b509f116224e476c14270f611aea239700d4c7c25a96e4b",
+        "lines": 150
+      },
+      {
+        "path": "src\\config.js",
+        "bytes": 2469,
+        "sha256": "940060057e97fc1d63b8dc8025215c14e5dea081531ea9f91b1141f1c325fbda",
+        "lines": 62
+      },
+      {
+        "path": "src\\connection.js",
+        "bytes": 4974,
+        "sha256": "7ad3597a5a9dc8a18c36ac66d81445f083913abef9e862459595d08435ecd077",
+        "lines": 146
+      },
+      {
+        "path": "src\\core\\alerts.js",
+        "bytes": 5135,
+        "sha256": "ad45f171823e6529fbf04338f0481a21fde95e11e05219126fa84bc4641e40c6",
+        "lines": 124
+      },
+      {
+        "path": "src\\core\\batch.js",
+        "bytes": 4148,
+        "sha256": "f63535b3c81173736576e1abba81854eb0951503c82b5614fc94569aa03979ec",
+        "lines": 89
+      },
+      {
+        "path": "src\\core\\blackout.js",
+        "bytes": 4030,
+        "sha256": "b1b335737f05723a55915ff54744304a1bfb467af206f98d99dd116d41066fe5",
+        "lines": 76
+      },
+      {
+        "path": "src\\core\\capture.js",
+        "bytes": 2567,
+        "sha256": "6393153ef977d6798e1aff8123a43557e15d5878fc9c8dec3495ca2a1c8fbc8e",
+        "lines": 70
+      },
+      {
+        "path": "src\\core\\chart.js",
+        "bytes": 14405,
+        "sha256": "4b64ff4962f74644b0312948dc75537816bb5ac28439da6299d6ca90cbed250c",
+        "lines": 389
+      },
+      {
+        "path": "src\\core\\context.js",
+        "bytes": 5209,
+        "sha256": "089216096bb8198dfafdf123ad0f2174f517770d15ba92e6eca943c93ad27e2b",
+        "lines": 117
+      },
+      {
+        "path": "src\\core\\data.js",
+        "bytes": 23844,
+        "sha256": "4c5a0001a301d4b3273add3fc3b4a2d9ae579c6589d680dc385b0b4be47f570b",
+        "lines": 514
+      },
+      {
+        "path": "src\\core\\doctor.js",
+        "bytes": 7211,
+        "sha256": "16938d0ea1fa2c8793acd97ddb1791497dd7035513f5c090e05e23a9ab256b60",
+        "lines": 190
+      },
+      {
+        "path": "src\\core\\drawing.js",
+        "bytes": 21575,
+        "sha256": "8266bd36e551c55add399a3caf78ea7dbf16dc1ebc5e048b9e5d21b555addb2f",
+        "lines": 532
+      },
+      {
+        "path": "src\\core\\health.js",
+        "bytes": 15764,
+        "sha256": "be3c0373fef960a7bf4bd1c3b02907c2df97c7b790e187de44ab8224302068e8",
+        "lines": 401
+      },
+      {
+        "path": "src\\core\\index.js",
+        "bytes": 597,
+        "sha256": "c6cc273f8eab5cf02e4cb45363207ca93c6e072fb36d4a0cb0c6c775b6998e89",
+        "lines": 16
+      },
+      {
+        "path": "src\\core\\indicators.js",
+        "bytes": 2573,
+        "sha256": "c7a6179e921c5ef364b240af676e212b067bb5c546527161bcb11cbd8d4579e6",
+        "lines": 65
+      },
+      {
+        "path": "src\\core\\morning.js",
+        "bytes": 5370,
+        "sha256": "bcc0a8d7efed60f8e17dfdcb59f32335ee66604df7cfff65842dc2b6c45cce33",
+        "lines": 175
+      },
+      {
+        "path": "src\\core\\observe.js",
+        "bytes": 4207,
+        "sha256": "f1eba25c20b109b17e609a80508bfe0bc44218f46e31860311c01d3f23824b7d",
+        "lines": 130
+      },
+      {
+        "path": "src\\core\\pane.js",
+        "bytes": 4995,
+        "sha256": "f0c92812171d2301e82e1ee6f9541cff2e670e1c0dc7a413ae637e4f072974b8",
+        "lines": 158
+      },
+      {
+        "path": "src\\core\\pine.js",
+        "bytes": 22542,
+        "sha256": "b0e77bfb0cc258e63c76876172df314bee400bc226e6dabf4e2043055d2f2143",
+        "lines": 623
+      },
+      {
+        "path": "src\\core\\replay.js",
+        "bytes": 10701,
+        "sha256": "95aa0b65207e8b08d7c8753c03c32fa10737f8bb2ef72423145df8f0b12a2462",
+        "lines": 267
+      },
+      {
+        "path": "src\\core\\scoring.js",
+        "bytes": 4403,
+        "sha256": "5bcf5110940d23965d1dbec263b9bf96e0ba9244dba89f73842d4d4d4a2390b7",
+        "lines": 78
+      },
+      {
+        "path": "src\\core\\session.js",
+        "bytes": 16002,
+        "sha256": "4b82a8587eba961e158184f1e96da627b117784be458f24ae7e9a3f89a71914e",
+        "lines": 455
+      },
+      {
+        "path": "src\\core\\stream.js",
+        "bytes": 12288,
+        "sha256": "a32e2f2c27788c49e1923029e2af19207ae5cdb5d404c172e04e6f22234ef130",
+        "lines": 335
+      },
+      {
+        "path": "src\\core\\streamBuffer.js",
+        "bytes": 6115,
+        "sha256": "ec5d150e9275129aee5117079b118f568c3ac8191240aff378fcb90bebfb572b",
+        "lines": 195
+      },
+      {
+        "path": "src\\core\\tab.js",
+        "bytes": 3185,
+        "sha256": "2ca5c2b2e203b78c0992981223b80605b30527910c636c6b2cd2b0da37587b33",
+        "lines": 106
+      },
+      {
+        "path": "src\\core\\tradeSnapshot.js",
+        "bytes": 10561,
+        "sha256": "e9e23893e5b7dd6d970f40955aa83f3fc286a241f9e1eac3ab6be6b991583911",
+        "lines": 231
+      },
+      {
+        "path": "src\\core\\trading.js",
+        "bytes": 10216,
+        "sha256": "a00ee058007c72477acfa3c50262bcc139e2d80fb1ea569acc9c3bd0753a9b02",
+        "lines": 251
+      },
+      {
+        "path": "src\\core\\tradingExec.js",
+        "bytes": 42713,
+        "sha256": "c849b08e6b162dabb2eb5d059725a6ffb42546b8a0bf275fe77499115f29e996",
+        "lines": 959
+      },
+      {
+        "path": "src\\core\\ui.js",
+        "bytes": 17944,
+        "sha256": "53b8e1aea92ad51c2750c9307e2b940560dc8a22b5c49029d4cdd52caab73d80",
+        "lines": 308
+      },
+      {
+        "path": "src\\core\\watchlist.js",
+        "bytes": 5583,
+        "sha256": "cc326ada556bac7e793d3bf52418b988bde772d4589dc36d192536c04e370fc4",
+        "lines": 132
+      },
+      {
+        "path": "src\\dates.js",
+        "bytes": 1325,
+        "sha256": "0670320a0ca749ab46f42e96c9e867fc577c4e46ed61a14162b1714c2c33a18b",
+        "lines": 33
+      },
+      {
+        "path": "src\\errors.js",
+        "bytes": 2620,
+        "sha256": "b4616ca2e51613f475e4a0b0873c20d77996cd33bfafc157682a191e946e27b0",
+        "lines": 98
+      },
+      {
+        "path": "src\\http.js",
+        "bytes": 3097,
+        "sha256": "b1057e72897c7f959bef6c6a26b9f991fb957eeaa28d0910710586a3219509d2",
+        "lines": 95
+      },
+      {
+        "path": "src\\providers\\binance.js",
+        "bytes": 5466,
+        "sha256": "fadea895d65ad0145e43ece5106e83e77d2f65647d604681ba3bc612daa5cfd7",
+        "lines": 132
+      },
+      {
+        "path": "src\\providers\\brave.js",
+        "bytes": 1295,
+        "sha256": "c44f18d8b77ececca16692fa464ecff44684bd576be87ed97a3d0ab4da625344",
+        "lines": 34
+      },
+      {
+        "path": "src\\providers\\coingecko.js",
+        "bytes": 1943,
+        "sha256": "ab194fc2645a453c9824e1e2911b54169a098bd2d9d3fe40fde370e5c5ac3d01",
+        "lines": 52
+      },
+      {
+        "path": "src\\providers\\cryptopanic.js",
+        "bytes": 1145,
+        "sha256": "f9205c457578b52c8680ea8c02e2a88735c0b9f95ac3d39f449d6bb1a68f31ed",
+        "lines": 29
+      },
+      {
+        "path": "src\\providers\\finnhub.js",
+        "bytes": 2910,
+        "sha256": "b18b3d4ee88334a5cf85010a6db927bd8391a94076f1eb7ec213fadf8492b2a4",
+        "lines": 60
+      },
+      {
+        "path": "src\\providers\\fred.js",
+        "bytes": 2738,
+        "sha256": "46c295a586ac31c5d3e009e437c61cf8a7379cb72e5c0afeb3c485db36a13003",
+        "lines": 56
+      },
+      {
+        "path": "src\\providers\\manualCalendar.js",
+        "bytes": 685,
+        "sha256": "8ecf763eac3cc99f1bd682fb452748adf673b8b02eafc47aa293023647e5a1a9",
+        "lines": 12
+      },
+      {
+        "path": "src\\providers\\rss.js",
+        "bytes": 1782,
+        "sha256": "2ec5a7931a824a7b0fd566ec7b3361327310a3b55ab9607fd71e0b8d118d7ccd",
+        "lines": 45
+      },
+      {
+        "path": "src\\sanitize.js",
+        "bytes": 1275,
+        "sha256": "5242c2e37eff1698c964e645c275867783597396dae67cc21a48d2fcca56415e",
+        "lines": 36
+      },
+      {
+        "path": "src\\selectors.js",
+        "bytes": 5845,
+        "sha256": "bc752d51f65d317371d2a5243d11bde1711c2397c8740368b3786655035fd07b",
+        "lines": 185
+      },
+      {
+        "path": "src\\server.js",
+        "bytes": 9521,
+        "sha256": "18336a83af9c32de68d7c90ff77955b612d938503151f10e7936e0ad06cc33c9",
+        "lines": 189
+      },
+      {
+        "path": "src\\tools\\_format.js",
+        "bytes": 312,
+        "sha256": "aae06d95138504c10ec7d6b743795bca5648468b773e059433aa156856c9202b",
+        "lines": 10
+      },
+      {
+        "path": "src\\tools\\alerts.js",
+        "bytes": 1298,
+        "sha256": "d638db362c2c4629ac7784ef155e6ac0caa5ba9f862360f32969acf5ae79129b",
+        "lines": 26
+      },
+      {
+        "path": "src\\tools\\batch.js",
+        "bytes": 1052,
+        "sha256": "6af6652485b0ddb12f53bf489944c58622ac33b80d931b045d8f8b4bb1f184b2",
+        "lines": 16
+      },
+      {
+        "path": "src\\tools\\capture.js",
+        "bytes": 836,
+        "sha256": "8ba9993e7355c73ef39698c5002fb646b189e219093c6f2813d722e3287b3c3a",
+        "lines": 14
+      },
+      {
+        "path": "src\\tools\\chart.js",
+        "bytes": 6166,
+        "sha256": "dbdb5cd2df791668221a207b0fc5845fc9fbcd358e8358e0e1ec3e465716d42b",
+        "lines": 101
+      },
+      {
+        "path": "src\\tools\\data.js",
+        "bytes": 5799,
+        "sha256": "79c671da8fd5db4713978f3f2ece91ae8f115b7630c1b28cfbd15462e0015510",
+        "lines": 86
+      },
+      {
+        "path": "src\\tools\\drawing.js",
+        "bytes": 7141,
+        "sha256": "36b8315fd0ab35131c5d84adf5a04fba4c0438e09f0ed5330c5131d9985da656",
+        "lines": 89
+      },
+      {
+        "path": "src\\tools\\health.js",
+        "bytes": 1775,
+        "sha256": "f8a052b0333798001064827ff462e75df79a2874b14ce08474bf1b866eb83d13",
+        "lines": 31
+      },
+      {
+        "path": "src\\tools\\indicators.js",
+        "bytes": 1219,
+        "sha256": "c9411a546c4fe678a9f314e284c9649b3843c682edad130f680ae5fdbeee00cc",
+        "lines": 21
+      },
+      {
+        "path": "src\\tools\\morning.js",
+        "bytes": 2021,
+        "sha256": "e66e8864521ddd4c9b65b845b6e113242fdf4ded078e289c781452c0c725f1cb",
+        "lines": 66
+      },
+      {
+        "path": "src\\tools\\news.js",
+        "bytes": 7663,
+        "sha256": "610100434161caefd37da591b08ea37cc4dc15331ac4f59e4993d6a21e851bfd",
+        "lines": 188
+      },
+      {
+        "path": "src\\tools\\observe.js",
+        "bytes": 2486,
+        "sha256": "4ffdd913fe3e35a0c1c7af251b254bb52fe3a97e31b317f3dbce8bd60ba16d73",
+        "lines": 40
+      },
+      {
+        "path": "src\\tools\\pane.js",
+        "bytes": 1639,
+        "sha256": "ac7611e57e02c9cc1df74074983f8139c5f28257d827c0903e2cb31b1069c610",
+        "lines": 32
+      },
+      {
+        "path": "src\\tools\\pine.js",
+        "bytes": 4021,
+        "sha256": "a66ff991e7ca9e964d3f568ac5a9c0d6d8f4ae77d594101c383d0510da1b2d35",
+        "lines": 75
+      },
+      {
+        "path": "src\\tools\\replay.js",
+        "bytes": 2260,
+        "sha256": "5f9ef5a7a74446572e2d1ca03b651cd1d8fcdf31c9b3ee1d7af2ffa966fc4ee7",
+        "lines": 41
+      },
+      {
+        "path": "src\\tools\\session.js",
+        "bytes": 5883,
+        "sha256": "4a0bf05db3da59534a977f085af8b2ffa5266a1376940247a7705ac735293cea",
+        "lines": 164
+      },
+      {
+        "path": "src\\tools\\stream.js",
+        "bytes": 2253,
+        "sha256": "fc62a7a9dc1b0972db1c871c4d72f5c693b9d8806acf6be40c812c0d2c2e044f",
+        "lines": 64
+      },
+      {
+        "path": "src\\tools\\tab.js",
+        "bytes": 1164,
+        "sha256": "5660c0d0f4a82562306dc1b211b76b1fbd9956cee307394e3fad673db8121b15",
+        "lines": 27
+      },
+      {
+        "path": "src\\tools\\trading.js",
+        "bytes": 1030,
+        "sha256": "bf2e92babc57506275e361beb3082a18cd7226bd8cc431626c4f89b8dce8a662",
+        "lines": 31
+      },
+      {
+        "path": "src\\tools\\tradingExec.js",
+        "bytes": 5497,
+        "sha256": "83bba41f3f807c568230c2e6615585d50e0727a6c7110bc9aaf887927ff6ea97",
+        "lines": 147
+      },
+      {
+        "path": "src\\tools\\ui.js",
+        "bytes": 5452,
+        "sha256": "5f22a49f84f72fc308b59d1e146f90dd47df4e3aab816e8912c05ce8a5c89f12",
+        "lines": 94
+      },
+      {
+        "path": "src\\tools\\watchlist.js",
+        "bytes": 1256,
+        "sha256": "f14ccb8bab4412c90218791f2d160c4ab3a3338c8ee0399c97950ba8bbe8b488",
+        "lines": 26
+      },
+      {
+        "path": "src\\wait.js",
+        "bytes": 650,
+        "sha256": "e5e8c4891104165b8b4022f8399b73b7aee6fde224012b026cbd070147224d33",
+        "lines": 21
+      },
+      {
+        "path": "tests\\cli.test.js",
+        "bytes": 4447,
+        "sha256": "46e6ac2746145209983077b565da037030fa32217759640b67eb940404ff1ada",
+        "lines": 130
+      },
+      {
+        "path": "tests\\cli_remote.test.js",
+        "bytes": 1592,
+        "sha256": "d71a46f0e9a3a9d490cd8549af81dac7422fb47f68a99bd71c03a77a5fcef793",
+        "lines": 51
+      },
+      {
+        "path": "tests\\e2e.test.js",
+        "bytes": 69768,
+        "sha256": "556f67d1d5fb5552435e68eeadd64c296d04e87a09e197819eb2c8d1469a071a",
+        "lines": 1709
+      },
+      {
+        "path": "tests\\launch.test.js",
+        "bytes": 3405,
+        "sha256": "faf1b45da768e94c827428150f50891f21118f03d60a390619cc29663c00e652",
+        "lines": 105
+      },
+      {
+        "path": "tests\\pine_analyze.test.js",
+        "bytes": 7533,
+        "sha256": "f30be9cc556cf8b3c4adee64e7fc033b7f421f193439b0b7e2e0e9be2b7a420f",
+        "lines": 241
+      },
+      {
+        "path": "tests\\pine_remote.test.js",
+        "bytes": 2362,
+        "sha256": "645c764a2b871fc868438ed2e695cbc6d674ba61c2e7b0019f3f31055f0b1126",
+        "lines": 67
+      },
+      {
+        "path": "tests\\sanitization.test.js",
+        "bytes": 3120,
+        "sha256": "3f707b0bddc0250ff65ebd429c116bb1c9dd8f29afa4c1f48640dda4eb4bd055",
+        "lines": 76
+      },
+      {
+        "path": "tests\\selectors.test.js",
+        "bytes": 3287,
+        "sha256": "809e7656f35a7930417c735dcc0fccd8500ab3bb57bd07b72454f5661b4217a2",
+        "lines": 98
+      },
+      {
+        "path": "tests\\trading_exec.test.js",
+        "bytes": 2583,
+        "sha256": "1f28497b6da1954c48396e26e9796aca848daf2eaa50bba4517ba04430e57ba6",
+        "lines": 81
+      },
+      {
+        "path": "tests\\trading_orders_filter.test.js",
+        "bytes": 1008,
+        "sha256": "8f7a5f5267e1ecc2b748440297067240399024781d5d92f0a577730308f18f36",
+        "lines": 23
+      }
+    ]
+  }
+}

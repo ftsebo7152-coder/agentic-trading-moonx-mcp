@@ -1,0 +1,24 @@
+{
+  "macro": [
+    {
+      "name": "Federal Reserve Press Releases",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "assetTags": ["XAUUSD", "BTCUSD"],
+      "trust": "high"
+    }
+  ],
+  "crypto": [
+    {
+      "name": "CoinDesk",
+      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+      "assetTags": ["BTCUSD"],
+      "trust": "medium"
+    },
+    {
+      "name": "Cointelegraph",
+      "url": "https://cointelegraph.com/rss",
+      "assetTags": ["BTCUSD"],
+      "trust": "medium"
+    }
+  ]
+}

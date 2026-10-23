@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+coverage/
+dist/
+.DS_Store
+screenshots/
+captures/
+*.tmp
+.codex-tv-mcp/

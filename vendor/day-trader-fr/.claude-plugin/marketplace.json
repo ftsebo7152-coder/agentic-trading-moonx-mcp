@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "day-trader-fr",
+  "description": "Adaptation française indépendante de day-trader-skill, créé par Jake Schincariol.",
+  "owner": {
+    "name": "Dan AI Lab",
+    "url": "https://github.com/dan-ai-lab"
+  },
+  "plugins": [
+    {
+      "name": "day-trader-fr",
+      "description": "11 skills Claude en français pour analyser les actions américaines, préparer un trade intraday, simuler un scénario et contrôler le risque.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/dan-ai-lab/day-trader-fr"
+    }
+  ]
+}

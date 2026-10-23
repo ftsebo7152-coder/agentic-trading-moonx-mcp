@@ -1,0 +1,74 @@
+{
+  "BTC": {
+    "symbol": "BTC",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+  },
+  "ETH": {
+    "symbol": "ETH",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+  },
+  "SOL": {
+    "symbol": "SOL",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+  },
+  "INJ": {
+    "symbol": "INJ",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "note": "Injective; never ING."
+  },
+  "PUMP": {
+    "symbol": "PUMP",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "note": "Require CMC ID, slug and platform/address identity; symbol alone is insufficient."
+  },
+  "TRX": {
+    "symbol": "TRX",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION"
+  },
+  "XAUUSD": {
+    "symbol": "XAUUSD",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "macro_filters": [
+      "USD",
+      "real_yields",
+      "Fed",
+      "inflation",
+      "employment",
+      "geopolitics"
+    ]
+  },
+  "XAGUSD": {
+    "symbol": "XAGUSD",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "macro_filters": [
+      "USD",
+      "real_yields",
+      "industrial_demand",
+      "Fed",
+      "inflation"
+    ]
+  },
+  "NAS100": {
+    "symbol": "NAS100",
+    "broker_specs_verified": false,
+    "execution_enabled": false,
+    "identity_status": "REQUIRES_PROVIDER_CONFIRMATION",
+    "note": "NAS100/US100/NDX/futures are not interchangeable."
+  }
+}

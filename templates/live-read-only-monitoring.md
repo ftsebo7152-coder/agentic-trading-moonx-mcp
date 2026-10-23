@@ -1,0 +1,1 @@
+Mode LIVE_READ_ONLY. Vérifier la connexion MCP autorisée, lire compte, positions, ordres et protections. Ne faire aucun appel de mutation. Signaler stop absent, incohérence, données périmées et limite de surveillance. Ne pas prétendre avoir fermé une position ni placé un stop. Aucun secret dans le rapport.
