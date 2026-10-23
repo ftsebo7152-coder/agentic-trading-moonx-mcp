@@ -85,4 +85,4 @@ Lire [SOURCE_AUDIT.md](docs/SOURCE_AUDIT.md), [TEST_RESULTS.md](docs/TEST_RESULT
 
 ## Mise a jour de l'univers surveille
 
-La configuration PAPER raccorde automatiquement le Top 100 CoinMarketCap a chaque scan et conserve les 15 actifs prioritaires, dont PUMP et HOOD (action NASDAQ). Sans CMC_API_KEY, repli explicite sur les priorites. La couverture des prix et fondamentaux depend du collecteur de bundles; aucun flux supplementaire ni ordre reel n'est active. Voir [Top 100 et identites](docs/TOP100_CRYPTO.md).
+La configuration PAPER raccorde automatiquement le Top 100 CoinMarketCap a chaque scan et conserve les 15 actifs prioritaires, dont PUMP et HOOD (action NASDAQ). L'API publique officielle est utilisee sans cle. En cas d'indisponibilite ou de limitation, repli explicite sur les priorites. La couverture des prix et fondamentaux depend du collecteur de bundles; aucun flux supplementaire ni ordre reel n'est active. Voir [Top 100 et identites](docs/TOP100_CRYPTO.md).

@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-10-23T13:35:32.403116+00:00",
+  "source": "CoinMarketCap official public API",
+  "endpoint": "/public-api/v3/cryptocurrency/listings/latest",
+  "access": "public",
+  "api_key_sent": false,
+  "status": "CMC_TOP100_PLUS_PINNED",
+  "assets": 100,
+  "unique_ids": 100,
+  "rank_range": [
+    1,
+    100
+  ],
+  "provider_timestamp": "2026-10-23T13:35:32.156Z",
+  "watchlist_union_size": 101,
+  "scanner_no_market_data_results": 101,
+  "core_tests": {
+    "passed": 131,
+    "failed": 0
+  },
+  "limits": "Read-only universe fetch and PAPER integration verified; per-asset candles/fundamentals still require a collector; no remote orders enabled."
+}

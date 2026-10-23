@@ -51,17 +51,47 @@ def moonx_candles(raw,interval_seconds,now):
 
 
 class CoinMarketCapUniverse:
-    def __init__(self,client=None):self.client=client or PublicJSONClient()
+    def __init__(self,client=None,*,access="public"):
+        if access not in ("public","authenticated"):raise TradingError("CMC_ACCESS_INVALID")
+        self.client=client or PublicJSONClient()
+        self.access=access
     def top100(self,store,now):
-        key=os.environ.get("CMC_API_KEY")
-        if not key:raise TradingError("CMC_API_KEY_REQUIRED")
-        url="https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?"+urlencode({"start":1,"limit":100,"sort":"market_cap","convert":"USD"})
-        raw=self.client.get(url,{"X-CMC_PRO_API_KEY":key})
-        if raw.get("status",{}).get("error_code",0)!=0 or len(raw.get("data",[]))!=100:
+        headers={}
+        path="/public-api/v3/cryptocurrency/listings/latest"
+        if self.access=="authenticated":
+            key=os.environ.get("CMC_API_KEY")
+            if not key:raise TradingError("CMC_API_KEY_REQUIRED")
+            path="/v1/cryptocurrency/listings/latest"
+            headers={"X-CMC_PRO_API_KEY":key}
+        url="https://pro-api.coinmarketcap.com"+path+"?"+urlencode({"start":1,"limit":100,"sort":"market_cap","convert":"USD"})
+        raw=self.client.get(url,headers)
+        if (not isinstance(raw,dict) or not isinstance(raw.get("status"),dict) or
+                str(raw["status"].get("error_code"))!="0" or
+                not isinstance(raw.get("data"),list) or len(raw["data"])!=100):
             raise TradingError("TOP100_RESPONSE_INCOMPLETE")
-        rows=[{"id":r["id"],"symbol":r["symbol"],"name":r["name"],"slug":r["slug"],"rank":r["cmc_rank"],
-               "tags":r.get("tags",[]),"quote":r["quote"]["USD"],"platform":r.get("platform"),
-               "opportunity_excluded":"stablecoin" in r.get("tags",[])} for r in raw["data"]]
+        rows=[]
+        try:
+            for r in raw["data"]:
+                # Public v3 returns a list of quotes; authenticated v1 uses a USD map.
+                quotes=r["quote"]
+                if isinstance(quotes,list):
+                    usd=[q for q in quotes if q.get("symbol")=="USD"]
+                    if len(usd)!=1:raise ValueError("missing or duplicate USD quote")
+                    quote=usd[0]
+                else:quote=quotes["USD"]
+                if not isinstance(quote,dict) or D(quote["price"])<=0:raise ValueError("invalid price")
+                if type(r["id"]) is not int or r["id"]<=0 or type(r["cmc_rank"]) is not int:
+                    raise ValueError("invalid CMC identity/rank")
+                if any(not isinstance(r[k],str) or not r[k].strip() for k in ("symbol","name","slug")):
+                    raise ValueError("missing asset identity")
+                tags=r.get("tags",[])
+                if not isinstance(tags,list) or any(not isinstance(t,str) for t in tags):
+                    raise ValueError("invalid tags")
+                rows.append({"id":r["id"],"symbol":r["symbol"],"name":r["name"],"slug":r["slug"],"rank":r["cmc_rank"],
+                             "tags":tags,"quote":quote,"platform":r.get("platform"),
+                             "opportunity_excluded":"stablecoin" in tags})
+        except (KeyError,ValueError,TypeError,AttributeError,TradingError):
+            raise TradingError("TOP100_SCHEMA_INVALID") from None
         if len({r["id"] for r in rows})!=100:raise TradingError("duplicate CMC IDs")
         if {r["rank"] for r in rows} != set(range(1,101)):
             raise TradingError("TOP100_RANKS_INVALID")
@@ -69,7 +99,8 @@ class CoinMarketCapUniverse:
             previous=tx.execute("SELECT payload FROM snapshots WHERE kind='CMC_TOP100' ORDER BY at DESC LIMIT 1").fetchone()
         previous_ids={r["id"] for r in json.loads(previous["payload"])["assets"]} if previous else set()
         current={r["id"] for r in rows}
-        result={"source":"CoinMarketCap official API","asof":now,"assets":rows,"entered":sorted(current-previous_ids),"exited":sorted(previous_ids-current),
+        result={"source":"CoinMarketCap official API","access":self.access,"endpoint":path,
+                "provider_timestamp":raw["status"].get("timestamp"),"asof":now,"assets":rows,"entered":sorted(current-previous_ids),"exited":sorted(previous_ids-current),
                 "broker_availability":"UNVERIFIED","identity_note":"PUMP must be verified by CMC id/slug/platform; never match symbol alone."}
         store.snapshot("CMC_TOP100",result,now)
         return result

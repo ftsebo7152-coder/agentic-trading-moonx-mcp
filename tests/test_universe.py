@@ -43,11 +43,51 @@ class UniverseTests(unittest.TestCase):
         self.assertEqual(len(result['symbols']),103)
         self.assertIn('PUMP',result['symbols'])
 
-    def test_no_key_falls_back_explicitly(self):
+    def test_no_key_uses_public_api(self):
         with patch.dict(os.environ,{},clear=True):result=self.resolve()
-        self.assertEqual(result['status'],'FALLBACK_PINNED_ONLY')
-        self.assertEqual(result['symbols'],list(self.settings.watchlist))
-        self.assertEqual(result['assets'],[])
+        self.assertEqual(result['status'],'CMC_TOP100_PLUS_PINNED')
+        self.assertEqual(result['access'],'public')
+        self.assertEqual(len(result['assets']),100)
+
+    def test_public_v3_normalized_without_sending_existing_key(self):
+        for row in self.client.rows:
+            row['quote']=[{'symbol':'EUR','price':2},{'symbol':'USD','price':1}]
+        raw={'status':{'error_code':'0','timestamp':'2026-10-23T12:00:00Z'},'data':self.client.rows}
+        with patch.object(self.client,'get',return_value=raw) as request:
+            result=self.resolve()
+        url,headers=request.call_args.args
+        self.assertIn('/public-api/v3/cryptocurrency/listings/latest?',url)
+        self.assertIn('limit=100',url)
+        self.assertEqual(headers,{})
+        self.assertEqual(result['assets'][0]['quote']['symbol'],'USD')
+        self.assertEqual(result['provider_timestamp'],raw['status']['timestamp'])
+
+    def test_authenticated_mode_is_explicit_and_preserved(self):
+        with patch.object(self.client,'get',wraps=self.client.get) as request:
+            result=CoinMarketCapUniverse(self.client,access='authenticated').top100(self.store,NOW)
+        url,headers=request.call_args.args
+        self.assertNotIn('/public-api/',url)
+        self.assertEqual(headers,{'X-CMC_PRO_API_KEY':'TEST_ONLY'})
+        self.assertEqual(result['access'],'authenticated')
+        with patch.dict(os.environ,{},clear=True),self.assertRaises(TradingError):
+            CoinMarketCapUniverse(self.client,access='authenticated').top100(self.store,NOW)
+
+    def test_invalid_public_status_and_partial_results_rejected(self):
+        for raw in [
+            {'status':{'error_code':'1008'},'data':self.client.rows},
+            {'status':{'error_code':'0'},'data':self.client.rows[:99]},
+            {'data':self.client.rows},
+            {'status':{'error_code':'0'},'data':{}},
+        ]:
+            with self.subTest(raw_type=type(raw)),patch.object(self.client,'get',return_value=raw):
+                self.assertEqual(self.resolve()['status'],'FALLBACK_PINNED_ONLY')
+
+    def test_invalid_public_quotes_rejected(self):
+        for quote in [[],[{'symbol':'EUR','price':1}],
+                      [{'symbol':'USD','price':1},{'symbol':'USD','price':2}],
+                      [{'symbol':'USD','price':None}]]:
+            self.client.rows[0]['quote']=quote
+            self.assertEqual(self.resolve()['status'],'FALLBACK_PINNED_ONLY')
 
     def test_network_failure_does_not_use_stale_snapshot(self):
         self.resolve()

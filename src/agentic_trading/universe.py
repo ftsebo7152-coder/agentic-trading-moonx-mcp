@@ -27,6 +27,8 @@ def resolve_universe(settings, store, now, provider=None):
         return result
     rows=snapshot["assets"]
     result.update(status="CMC_TOP100_PLUS_PINNED", assets=rows,
+                  access=snapshot.get("access"), endpoint=snapshot.get("endpoint"),
+                  provider_timestamp=snapshot.get("provider_timestamp"),
                   entered=snapshot["entered"], exited=snapshot["exited"])
     counts=Counter(r["symbol"] for r in rows)
     for row in rows:
