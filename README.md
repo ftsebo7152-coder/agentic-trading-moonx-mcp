@@ -102,3 +102,15 @@ python -m agentic_trading.enhancements.cli cycle --config configs/paper.json --b
 ```
 
 Lire [les commandes, formats et limites](docs/ENHANCEMENTS.md), [l'audit des 17 sources](docs/SOURCE_INTEGRATION_AUDIT.md) et [les vérifications](docs/ENHANCEMENTS_VERIFICATION.md). Les prix spot publics ne qualifient pas les contrats MoonX; l'absence de calendrier exhaustif ou de preuves conserve les refus d'entrée. Aucun nouvel ordre réel n'est activé.
+
+## Moteur PAPER multi-actifs et multi-stratégies
+
+Un parcours supplémentaire raccorde confirmation multi-timeframe, six stratégies explicites, collecte H1/H4 crypto et CFD via MCP, sélection déterministe, replay multi-actifs et worker persistant avec supervision M1 et reprise. La nouvelle configuration ajoute XAUUSD, XAGUSD et NAS100 aux priorités existantes. Les contrats, quotes, calendriers et attestations restent des conditions d'entrée indépendantes.
+
+```sh
+python -m agentic_trading.autonomy.cli strategies
+python -m agentic_trading.autonomy.cli --output state/autonomy-demo.json demo
+python -m agentic_trading.autonomy.cli --output state/readiness.json check --bundle state/autonomy-bundle.json
+```
+
+Lire [le fonctionnement et les commandes](docs/AUTONOMOUS_PAPER.md) et [les vérifications](docs/AUTONOMY_VERIFICATION.md). La démonstration est synthétique. Le worker accepte uniquement PAPER et ne démarre pas lors de l'installation du skill.

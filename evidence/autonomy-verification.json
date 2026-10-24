@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-24",
+  "base_commit": "bb2fe42aa4b3ce4f54273504741d617d2fb760a5",
+  "tests_total": 295,
+  "baseline_tests": 222,
+  "new_tests": 73,
+  "python": "3.12.14",
+  "mcp_sdk": "1.30.0",
+  "strategies_implemented": 6,
+  "default_enabled": 5,
+  "real_orders_sent": false,
+  "continuous_worker_started": false,
+  "services_installed": false,
+  "financial_attestations_created": false,
+  "readonly_smoke": "autonomy-readonly-smoke.json",
+  "qualification_limits": "docs/AUTONOMY_VERIFICATION.md",
+  "independent_recheck": {
+    "strategy_listing_exit": 0,
+    "synthetic_demo_exit": 0,
+    "demo_closed_trades": 2,
+    "require_ready_exit": 3,
+    "synthetic_dynamic_universe_assets_checked": 20,
+    "network_or_secrets_used": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mode": "PAPER",
+  "account": "local-paper",
+  "capital": "1250",
+  "watchlist": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "INJ",
+    "TRX",
+    "PUMP",
+    "XRP",
+    "BNB",
+    "HYPE",
+    "UNI",
+    "AVAX",
+    "AAVE",
+    "POL",
+    "ALGO",
+    "HOOD",
+    "XAUUSD",
+    "XAGUSD",
+    "NAS100"
+  ],
+  "scan_interval_minutes": 60,
+  "timezone": "Africa/Lagos",
+  "limits": {},
+  "universe": "cmc_top100"
+}

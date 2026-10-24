@@ -1,0 +1,19 @@
+[Unit]
+Description=Agentic multi-strategy PAPER runtime
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/agentic-trading
+EnvironmentFile=/etc/agentic-trading/paper.env
+ExecStart=/opt/agentic-trading/.venv/bin/python -m agentic_trading.autonomy.cli worker --source hybrid --context /var/lib/agentic-trading/operator-context.json
+Restart=on-failure
+RestartSec=20
+TimeoutStopSec=45
+User=agentic-paper
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

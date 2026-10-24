@@ -1,0 +1,42 @@
+[
+  {
+    "strategies": [
+      "range-breakout-v1"
+    ],
+    "base_interval": "1h",
+    "higher_interval": "4h",
+    "minimum_base_bars": 60,
+    "minimum_higher_bars": 60,
+    "maximum_signal_age_seconds": 3900,
+    "retest_lookback": 12,
+    "session_open": "09:30",
+    "opening_range_minutes": 30,
+    "session_timezone": "America/New_York",
+    "asset_classes": {
+      "XAUUSD": "metal",
+      "XAGUSD": "metal",
+      "NAS100": "index",
+      "HOOD": "equity"
+    }
+  },
+  {
+    "strategies": [
+      "trend-pullback-v1"
+    ],
+    "base_interval": "1h",
+    "higher_interval": "4h",
+    "minimum_base_bars": 60,
+    "minimum_higher_bars": 60,
+    "maximum_signal_age_seconds": 3900,
+    "retest_lookback": 12,
+    "session_open": "09:30",
+    "opening_range_minutes": 30,
+    "session_timezone": "America/New_York",
+    "asset_classes": {
+      "XAUUSD": "metal",
+      "XAGUSD": "metal",
+      "NAS100": "index",
+      "HOOD": "equity"
+    }
+  }
+]

@@ -24,6 +24,12 @@ class PaperBroker:
             existing = tx.execute("SELECT id FROM positions WHERE account=? AND signal=?", (self.account,plan.signal_id)).fetchone()
             if existing:
                 return {"status":"DUPLICATE", "position_id":existing["id"]}
+            # Cross-runtime fencing also applies to legacy PAPER entry commands.
+            if not self.store.postgres and tx.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='autonomy_leases'").fetchone():
+                lease=tx.execute('SELECT token,expires FROM autonomy_leases WHERE resource=?',('PAPER:'+self.account,)).fetchone()
+                from .models import utc
+                if lease and utc(lease['expires'])>now_utc() and getattr(self,'runtime_token',None)!=lease['token']:
+                    return {'status':'BLOCK','reasons':['PAPER_ACCOUNT_OWNED_BY_ANOTHER_RUNTIME']}
             fill = self.fill_price(plan.entry,plan.sign,True,spec,self.costs)
             try:
                 filled_plan = replace(plan,entry=fill)
