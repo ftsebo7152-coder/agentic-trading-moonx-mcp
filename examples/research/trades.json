@@ -1,0 +1,30 @@
+{
+  "_label": "SYNTHETIC_EXAMPLE_NOT_MARKET_DATA_OR_VALIDATION",
+  "pnls": [
+    10,
+    -5,
+    7,
+    -3,
+    4,
+    8,
+    -6,
+    2,
+    9,
+    -4
+  ],
+  "notionals": [
+    100,
+    100,
+    110,
+    100,
+    120,
+    100,
+    100,
+    100,
+    110,
+    120
+  ],
+  "capital": 1250,
+  "runs": 1000,
+  "seed": 19
+}

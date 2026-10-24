@@ -90,3 +90,15 @@ La configuration PAPER raccorde automatiquement le Top 100 CoinMarketCap a chaqu
 ## Passage supervise au reel
 
 Voir [le parcours d'activation](docs/LIVE_TRADING_SAFETY.md) : configuration separee, verification en lecture seule, preparation du plan, approbation par empreinte, envoi, reconciliation et fermeture. Les commandes ne sont pas exposees au worker ni au MCP PAPER. Aucun compte reel n'a ete active pendant le developpement.
+
+## Extensions de recherche et collecte publique
+
+La mise à jour du 24 octobre ajoute un collecteur crypto public avec cache et budget, des revues par desks, des thèses versionnées, des partitions purgées/CPCV et forward, des diagnostics de robustesse et portefeuille, une analyse des coûts observés, une simulation de carnet/TWAP, des structures SMC causales et un journal de recherche avec holdouts et tâches sous bail. Les fonctionnalités initiales sont conservées.
+
+```sh
+python -m agentic_trading.enhancements.cli --help
+python -m agentic_trading.enhancements.cli --output state/research-bundle.json collect --config configs/paper.json --symbols BTC ETH SOL PUMP --derivatives --news
+python -m agentic_trading.enhancements.cli cycle --config configs/paper.json --bundle state/research-bundle.json
+```
+
+Lire [les commandes, formats et limites](docs/ENHANCEMENTS.md), [l'audit des 17 sources](docs/SOURCE_INTEGRATION_AUDIT.md) et [les vérifications](docs/ENHANCEMENTS_VERIFICATION.md). Les prix spot publics ne qualifient pas les contrats MoonX; l'absence de calendrier exhaustif ou de preuves conserve les refus d'entrée. Aucun nouvel ordre réel n'est activé.

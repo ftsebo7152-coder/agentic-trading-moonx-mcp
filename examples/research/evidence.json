@@ -1,0 +1,30 @@
+{
+  "_label": "SYNTHETIC_EXAMPLE_NOT_MARKET_DATA_OR_VALIDATION",
+  "symbol": "BTC",
+  "evidence": [
+    {
+      "id": "macro-1",
+      "symbol": "ALL",
+      "desk": "macro",
+      "source": "SYNTHETIC",
+      "source_url": "https://example.org/synthetic",
+      "published_at": "2026-10-24T11:50:00.000Z",
+      "available_at": "2026-10-24T11:51:00.000Z",
+      "fetched_at": "2026-10-24T11:52:00.000Z",
+      "stance": "bullish",
+      "observation": "Synthetic hypothesis"
+    },
+    {
+      "id": "risk-1",
+      "symbol": "BTC",
+      "desk": "risk",
+      "source": "SYNTHETIC",
+      "source_url": "https://example.org/synthetic",
+      "published_at": "2026-10-24T11:55:00.000Z",
+      "available_at": "2026-10-24T11:56:00.000Z",
+      "fetched_at": "2026-10-24T11:57:00.000Z",
+      "stance": "bearish",
+      "observation": "Synthetic counterargument"
+    }
+  ]
+}

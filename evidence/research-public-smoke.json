@@ -1,0 +1,49 @@
+{
+  "assets": {
+    "BTC": {
+      "asof": "2026-10-24T12:38:28.887546+00:00",
+      "basis": "SPOT_USDT_NOT_MOONX_FUTURES",
+      "broker_mapping_verified": false,
+      "completed_bars": 99,
+      "fallback_errors": [],
+      "fetched_at": "2026-10-24T12:38:30.352090+00:00",
+      "instrument": "BTC-USDT",
+      "source": "OKX_SPOT"
+    }
+  },
+  "calendar_coverage_known": false,
+  "calendar_events": 413,
+  "checked_at": "2026-10-24T12:38:28.887546+00:00",
+  "derivatives": {
+    "BTC": {
+      "execution_authority": false,
+      "fetched_at_by_field": {
+        "funding_rate": "2026-10-24T12:38:32.091239+00:00",
+        "open_interest_usd": "2026-10-24T12:38:33.081106+00:00"
+      },
+      "instrument": "BTC-USDT-SWAP",
+      "missing": [],
+      "source": "OKX_PUBLIC_SWAP",
+      "status": "OBSERVED",
+      "values": {
+        "funding_rate": "0.0001000000000000",
+        "open_interest_usd": "2469701723.512511001555"
+      }
+    }
+  },
+  "evidence": 11,
+  "execution_enabled": false,
+  "failures": {},
+  "news": {
+    "count": 8,
+    "failed_sources": [
+      "coindesk"
+    ],
+    "status": "OBSERVED",
+    "items_by_source": {
+      "cointelegraph": 8
+    }
+  },
+  "requests": 8,
+  "scope": "One BTC read-only smoke; not full Top100, live execution, profitability or ongoing provider availability."
+}

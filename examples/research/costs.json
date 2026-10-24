@@ -1,0 +1,22 @@
+{
+  "_label": "SYNTHETIC_EXAMPLE_NOT_MARKET_DATA_OR_VALIDATION",
+  "fills": [
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T12:00:00Z",
+      "side": "buy",
+      "price": "101",
+      "quantity": "1",
+      "fee_amount": ".101",
+      "fee_currency": "USD"
+    }
+  ],
+  "quotes": [
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T11:59:59.400Z",
+      "bid": "99",
+      "ask": "101"
+    }
+  ]
+}

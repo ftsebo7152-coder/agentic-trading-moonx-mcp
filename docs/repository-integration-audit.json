@@ -1,0 +1,270 @@
+{
+  "review_date": "2026-10-24",
+  "scope": "13-page user PDF plus prior 7 repositories; 12 unique main repositories + 5 specialized references = 17. README and selected skill/license review, not full codebase audits.",
+  "overlap": "HKUDS/Vibe-Trading",
+  "base_commit": "0d3e73e99686cbf254868ebfa0a050b65f5680f7",
+  "implementation": "Independent additions using standard-library Python and existing project APIs; no upstream package or source code imported.",
+  "repositories": [
+    {
+      "repository": "HKUDS/Vibe-Trading",
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "default_branch": "main",
+      "readme_blob_sha": "9e5df8459f58998351b6aaf0ed4c5af2fd7ced7f",
+      "readme_url": "https://github.com/HKUDS/Vibe-Trading/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "08701c0ee954c73edbc0d64178641cadd7faf58a",
+      "selected_concepts": [
+        "revues par desks",
+        "journal de recherche persistant"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "ginlix-ai/LangAlpha",
+      "url": "https://github.com/ginlix-ai/LangAlpha",
+      "default_branch": "main",
+      "readme_blob_sha": "4680e2cacd82d92648a2a50a113748f00f2ad7eb",
+      "readme_url": "https://github.com/ginlix-ai/LangAlpha/blob/main/README.md",
+      "license": "Apache-2.0",
+      "license_blob_sha": "49f398b994fc35452798288754a857877555efb2",
+      "selected_concepts": [
+        "taches avec bail et reprise",
+        "separation collecte/recherche/decision"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "agiprolabs/claude-trading-skills",
+      "url": "https://github.com/agiprolabs/claude-trading-skills",
+      "default_branch": "main",
+      "readme_blob_sha": "9a6d5708ded358ff9fc78f86d760271328568f0b",
+      "readme_url": "https://github.com/agiprolabs/claude-trading-skills/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "c62d40b6544655a6508044aec4cf836eadbe2870",
+      "selected_concepts": [
+        "funding et open interest publics",
+        "validation temporelle"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "marketcalls/vectorbt-backtesting-skills",
+      "url": "https://github.com/marketcalls/vectorbt-backtesting-skills",
+      "default_branch": "master",
+      "readme_blob_sha": "b32965919fd01f371d2454511ef7f5a81a27157d",
+      "readme_url": "https://github.com/marketcalls/vectorbt-backtesting-skills/blob/master/README.md",
+      "license": "NON_CONFIRMED",
+      "selected_concepts": [
+        "stress des couts",
+        "bruit adverse",
+        "retrait du meilleur trade"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "marketcalls/openalgo-execution-skills",
+      "url": "https://github.com/marketcalls/openalgo-execution-skills",
+      "default_branch": "main",
+      "readme_blob_sha": "99406be8f08122d8fb34ee538cc2300d07762bfc",
+      "readme_url": "https://github.com/marketcalls/openalgo-execution-skills/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "5f99bdf3f902767ed849f4491ef3f70ce3f21126",
+      "selected_concepts": [
+        "cycle reutilisant le moteur existant",
+        "etat et protections conserves"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "quantskills/skill-ml-purged-cv",
+      "url": "https://github.com/quantskills/skill-ml-purged-cv",
+      "default_branch": "main",
+      "readme_blob_sha": "ce4454a041bc8b7af93addb14d0cdd122b95c5c6",
+      "readme_url": "https://github.com/quantskills/skill-ml-purged-cv/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "0314eee75abecf378cfd0efbec4e4cbafa48acbe",
+      "selected_concepts": [
+        "splits purges et CPCV",
+        "embargo",
+        "holdout immutable a usage unique"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "MobiusQuant/OpenMobius-skill",
+      "url": "https://github.com/MobiusQuant/OpenMobius-skill",
+      "default_branch": "main",
+      "readme_blob_sha": "cc5703dbce329aeb45a7468e10cca2ebfab15789",
+      "readme_url": "https://github.com/MobiusQuant/OpenMobius-skill/blob/main/README.md",
+      "license": "Apache-2.0",
+      "license_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "selected_concepts": [
+        "structures SMC causales explicites",
+        "opening range avec fuseau"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "quantskills/skill-quant-execution-microstructure",
+      "url": "https://github.com/quantskills/skill-quant-execution-microstructure",
+      "default_branch": "main",
+      "readme_blob_sha": "b2defcb353a0be25e99a98f01dbe2dcaba0d4b9a",
+      "readme_url": "https://github.com/quantskills/skill-quant-execution-microstructure/blob/main/README.md",
+      "license": "GPL-3.0 (voir fichier pour clauses exactes)",
+      "license_blob_sha": "d9a5094db6773f662213682fca1424dc4b1c9868",
+      "selected_concepts": [
+        "consommation de carnet simulee",
+        "plan TWAP sans envoi"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "quantskills/skill-transaction-cost-calibration",
+      "url": "https://github.com/quantskills/skill-transaction-cost-calibration",
+      "default_branch": "main",
+      "readme_blob_sha": "d5509a3c55e8345eb9ec6364eff59fefc60829a6",
+      "readme_url": "https://github.com/quantskills/skill-transaction-cost-calibration/blob/main/README.md",
+      "license": "GPL-3.0 (voir fichier pour clauses exactes)",
+      "license_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "selected_concepts": [
+        "TCA fills/quotes anterieures",
+        "frais et slippage observes"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "quantskills/skill-walk-forward-validator",
+      "url": "https://github.com/quantskills/skill-walk-forward-validator",
+      "default_branch": "main",
+      "readme_blob_sha": "124f7181724002de376083cd3c48d83444098e9a",
+      "readme_url": "https://github.com/quantskills/skill-walk-forward-validator/blob/main/README.md",
+      "license": "GPL-3.0 (voir fichier pour clauses exactes)",
+      "license_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "selected_concepts": [
+        "walk-forward causal",
+        "predictions et labels arrives a maturite"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "yolojewjitsu/moon-dev-ai-agents",
+      "url": "https://github.com/yolojewjitsu/moon-dev-ai-agents",
+      "default_branch": "main",
+      "readme_blob_sha": "30f7747e878d5c607bca62a5dbc7496421a1f65b",
+      "readme_url": "https://github.com/yolojewjitsu/moon-dev-ai-agents/blob/main/README.md",
+      "license": "NON_CONFIRMED",
+      "selected_concepts": [
+        "contexte funding",
+        "desk liquidation explicitement manquant sans donnees"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "default_branch": "main",
+      "readme_blob_sha": "7fc2a10b770ea872b4052962ca26048cd7056fdc",
+      "readme_url": "https://github.com/tradermonty/claude-trading-skills/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "f04a7bced8bb1f03ce92fbdc6912594b0c37d3c0",
+      "selected_concepts": [
+        "RSS et calendrier public optionnel",
+        "these falsifiable",
+        "preuves sourcees"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "ml4t/skills",
+      "url": "https://github.com/ml4t/skills",
+      "default_branch": "main",
+      "readme_blob_sha": "671607a634f8ec21030ffd23e4554556eafb1818",
+      "readme_url": "https://github.com/ml4t/skills/blob/main/README.md",
+      "license": "Apache-2.0",
+      "license_blob_sha": "80dc5380448a59b2157f971affd4ee2df14abbe5",
+      "selected_concepts": [
+        "univers historique point-in-time",
+        "provenance et maturite des labels"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "wshobson/agents",
+      "url": "https://github.com/wshobson/agents",
+      "default_branch": "main",
+      "readme_blob_sha": "ab17b5031412a6f0efd8a7ffbef4d440430d0a49",
+      "readme_url": "https://github.com/wshobson/agents/blob/main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "326f0a55c96e672fedf9d807ca043c00df05ba0e",
+      "selected_concepts": [
+        "heat portefeuille",
+        "VaR et expected shortfall historiques",
+        "correlations alignees"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "default_branch": "main",
+      "readme_blob_sha": "cedcdb1e5bf56705cab3fa4b86944686cd62276c",
+      "readme_url": "https://github.com/TauricResearch/TradingAgents/blob/main/README.md",
+      "license": "Apache-2.0",
+      "license_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "selected_concepts": [
+        "cas haussier/baissier et desaccord",
+        "desks sans autorite sur le risque"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "freqtrade/freqtrade",
+      "url": "https://github.com/freqtrade/freqtrade",
+      "default_branch": "develop",
+      "readme_blob_sha": "3d1a903ce1c76f32e5d3e7fc12f0e5c4845f2308",
+      "readme_url": "https://github.com/freqtrade/freqtrade/blob/develop/README.md",
+      "license": "GPL-3.0 (voir fichier pour clauses exactes)",
+      "license_blob_sha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "selected_concepts": [
+        "collecteur public de bougies cloturees",
+        "conservation du moteur PAPER existant"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    },
+    {
+      "repository": "okx/agent-skills",
+      "url": "https://github.com/okx/agent-skills",
+      "default_branch": "github-main",
+      "readme_blob_sha": "61e9431a1c835c5a823feafb845186dadc6ed595",
+      "readme_url": "https://github.com/okx/agent-skills/blob/github-main/README.md",
+      "license": "MIT",
+      "license_blob_sha": "1edf389978e2cb6ca60651b48ed2b15c4bc9b524",
+      "selected_concepts": [
+        "bougies/carnet/funding/OI publics OKX",
+        "repli bougies/carnet Bybit"
+      ],
+      "upstream_code_copied": false,
+      "upstream_runtime_installed": false
+    }
+  ],
+  "user_pdf": {
+    "pages": 13,
+    "sha256": "66bca5d28d04b069d0434afce9e620237c52b48f182e9b9aa2af8fe7a7a0db9d"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "_label": "SYNTHETIC_EXAMPLE_NOT_MARKET_DATA_OR_VALIDATION",
+  "exposures": {
+    "BTC": 500,
+    "ETH": 300
+  },
+  "returns": [
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T06:00:00.000Z",
+      "available_at": "2026-10-24T06:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": -0.02
+    },
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T07:00:00.000Z",
+      "available_at": "2026-10-24T07:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.01
+    },
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T08:00:00.000Z",
+      "available_at": "2026-10-24T08:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": -0.03
+    },
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T09:00:00.000Z",
+      "available_at": "2026-10-24T09:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.04
+    },
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T10:00:00.000Z",
+      "available_at": "2026-10-24T10:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.01
+    },
+    {
+      "symbol": "BTC",
+      "time": "2026-10-24T11:00:00.000Z",
+      "available_at": "2026-10-24T11:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.03
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T06:00:00.000Z",
+      "available_at": "2026-10-24T06:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": -0.026000000000000002
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T07:00:00.000Z",
+      "available_at": "2026-10-24T07:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.013000000000000001
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T08:00:00.000Z",
+      "available_at": "2026-10-24T08:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": -0.039
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T09:00:00.000Z",
+      "available_at": "2026-10-24T09:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.052000000000000005
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T10:00:00.000Z",
+      "available_at": "2026-10-24T10:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.013000000000000001
+    },
+    {
+      "symbol": "ETH",
+      "time": "2026-10-24T11:00:00.000Z",
+      "available_at": "2026-10-24T11:01:00.000Z",
+      "source": "SYNTHETIC",
+      "return": 0.039
+    }
+  ]
+}

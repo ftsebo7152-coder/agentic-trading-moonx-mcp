@@ -1,0 +1,8 @@
+{
+  "_label": "SYNTHETIC_EXAMPLE_NOT_MARKET_DATA_OR_VALIDATION",
+  "quantity": "1.01",
+  "step": ".01",
+  "slices": 3,
+  "start": "2026-10-24T12:00:00Z",
+  "interval_seconds": 60
+}
